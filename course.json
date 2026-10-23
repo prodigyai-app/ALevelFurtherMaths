@@ -1,0 +1,2720 @@
+{
+  "board": "Pearson Edexcel",
+  "qualification": "9FM0",
+  "checked": "2026-10-23",
+  "modules": [
+    {
+      "id": "core",
+      "title": "Core Pure Mathematics",
+      "code": "Compulsory · both Core Pure papers"
+    },
+    {
+      "id": "fp1",
+      "title": "Further Pure Mathematics 1",
+      "code": "9FM0/3A"
+    },
+    {
+      "id": "fp2",
+      "title": "Further Pure Mathematics 2",
+      "code": "9FM0/4A"
+    },
+    {
+      "id": "fs1",
+      "title": "Further Statistics 1",
+      "code": "9FM0/3B"
+    },
+    {
+      "id": "fs2",
+      "title": "Further Statistics 2",
+      "code": "9FM0/4B"
+    },
+    {
+      "id": "fm1",
+      "title": "Further Mechanics 1",
+      "code": "9FM0/3C"
+    },
+    {
+      "id": "fm2",
+      "title": "Further Mechanics 2",
+      "code": "9FM0/4C"
+    },
+    {
+      "id": "d1",
+      "title": "Decision Mathematics 1",
+      "code": "9FM0/3D"
+    },
+    {
+      "id": "d2",
+      "title": "Decision Mathematics 2",
+      "code": "9FM0/4D"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "cp-induction",
+      "module": "core",
+      "title": "Proof by induction",
+      "refs": "1.1",
+      "notes": [
+        "Induction proves a statement for an infinite sequence of integer values using a base case and a conditional step. State the starting integer, assume the exact proposition for k, and use that assumption to establish the proposition for k + 1. The assumption is a temporary hypothesis, not the conclusion.",
+        "For sums, add the new term to the assumed formula. For divisibility, separate the new expression into a multiple of the assumed expression and an explicitly divisible remainder. For matrix powers, multiply in the correct order. Finish by stating that the base case and implication establish the result for all integers in the stated domain."
+      ],
+      "example": {
+        "q": "Prove 1 + 3 + … + (2n − 1) = n² for n ≥ 1.",
+        "steps": [
+          "Base n = 1: 1 = 1².",
+          "Assume the sum to k equals k².",
+          "The sum to k + 1 is k² + (2k + 1).",
+          "This equals (k + 1)².",
+          "The statement holds for n = 1 and propagates from k to k + 1, so it holds for all integers n ≥ 1."
+        ]
+      },
+      "practice": {
+        "q": "Prove that 3ⁿ − 1 is divisible by 2 for every integer n ≥ 1.",
+        "answer": null,
+        "steps": [
+          "Base n = 1: 3 − 1 = 2.",
+          "Assume 3ᵏ − 1 = 2m for some integer m.",
+          "3ᵏ⁺¹ − 1 = 3(3ᵏ − 1) + 2.",
+          "This is 6m + 2 = 2(3m + 1), a multiple of 2.",
+          "State the inductive conclusion."
+        ]
+      },
+      "check": {
+        "q": "Using 1+3+…+(2n−1)=n², what is the sum when n=6?",
+        "a": 36
+      }
+    },
+    {
+      "id": "cp-complex",
+      "module": "core",
+      "title": "Complex arithmetic and polynomial roots",
+      "refs": "2.1–2.3",
+      "notes": [
+        "The imaginary unit satisfies i² = −1. Combine real and imaginary parts separately in addition, and expand products before replacing i². To divide, multiply numerator and denominator by the conjugate of the denominator; the denominator becomes a real modulus squared.",
+        "A polynomial with real coefficients has non-real roots in conjugate pairs. This conclusion depends on real coefficients: it is not true for an arbitrary complex-coefficient polynomial. A quadratic with negative discriminant still has two complex roots. Check a proposed root by substitution rather than by its appearance."
+      ],
+      "example": {
+        "q": "Solve z² − 4z + 13 = 0 and calculate the product of the roots.",
+        "steps": [
+          "Discriminant = 16 − 52 = −36.",
+          "z = (4 ± 6i)/2 = 2 ± 3i.",
+          "(2 + 3i)(2 − 3i) = 4 − 9i².",
+          "The product is 13, agreeing with the constant term."
+        ]
+      },
+      "practice": {
+        "q": "Simplify (3 + 4i)/(1 − 2i), giving a + bi.",
+        "answer": null,
+        "steps": [
+          "Multiply top and bottom by 1 + 2i.",
+          "Numerator = 3 + 6i + 4i + 8i² = −5 + 10i.",
+          "Denominator = 1 + 4 = 5.",
+          "The result is −1 + 2i."
+        ]
+      },
+      "check": {
+        "q": "What is i²?",
+        "a": -1
+      }
+    },
+    {
+      "id": "cp-argand",
+      "module": "core",
+      "title": "Argand diagrams, loci and regions",
+      "refs": "2.4, 2.7",
+      "notes": [
+        "An Argand point represents z = x + iy by coordinates (x,y). The distance |z − a| is the distance from the point for z to the point for a. Equality of distances gives a perpendicular bisector; a fixed distance gives a circle. An argument condition fixes a directed angle and usually describes a ray, not an entire line.",
+        "Use an algebraic equation to check the geometry, and distinguish boundaries included by ≤ from boundaries excluded by <. The argument of zero is undefined, so a point making the argument expression zero is excluded. Intersections of regions must satisfy every original condition."
+      ],
+      "example": {
+        "q": "Describe |z − (2 + i)| = 3 and |z − 1| = |z + 3|.",
+        "steps": [
+          "The first locus is a circle with centre (2,1) and radius 3.",
+          "For the second, points are equally far from (1,0) and (−3,0).",
+          "The perpendicular bisector is x = −1.",
+          "Algebra confirms (x − 1)² + y² = (x + 3)² + y² gives x = −1."
+        ]
+      },
+      "practice": {
+        "q": "Describe the locus |z − (1 − 2i)| = 4 and determine whether z = 1 + 2i lies on it.",
+        "answer": null,
+        "steps": [
+          "Centre (1,−2), radius 4.",
+          "At z = 1 + 2i the distance from the centre is 4.",
+          "The point lies on the circle.",
+          "A correct sketch labels both axes, centre and radius."
+        ]
+      },
+      "check": {
+        "q": "What is the radius of |z−(2+i)|=3?",
+        "a": 3
+      }
+    },
+    {
+      "id": "cp-exponential",
+      "module": "core",
+      "title": "Modulus, argument and exponential form",
+      "refs": "2.5–2.6, 2.9",
+      "notes": [
+        "For z = x + iy, the modulus is √(x² + y²); choose the argument using the quadrant as well as a tangent ratio. Euler form z = re^(iθ) makes multiplication and division geometric: multiply or divide moduli and add or subtract arguments.",
+        "Principal arguments are normally chosen in (−π,π]. Angles differing by 2π represent the same non-zero complex number. An exponential-form calculation must preserve the modulus; addition is generally easier in Cartesian form and does not add moduli and arguments separately."
+      ],
+      "example": {
+        "q": "Write −1 + i in exponential form and square it.",
+        "steps": [
+          "The modulus is √2.",
+          "The point is in quadrant II, so arg z = 3π/4.",
+          "z = √2 e^(3πi/4).",
+          "z² = 2e^(3πi/2) = −2i; the principal argument is −π/2."
+        ]
+      },
+      "practice": {
+        "q": "Write −√3 − i in modulus-argument form.",
+        "answer": null,
+        "steps": [
+          "Modulus = √(3 + 1) = 2.",
+          "The point lies in quadrant III.",
+          "A principal argument is −5π/6.",
+          "z = 2[cos(−5π/6) + i sin(−5π/6)]."
+        ]
+      },
+      "check": {
+        "q": "What is the modulus of −3+4i?",
+        "a": 5
+      }
+    },
+    {
+      "id": "cp-demoivre",
+      "module": "core",
+      "title": "De Moivre, roots of unity and trigonometric identities",
+      "refs": "2.8, 2.10–2.11",
+      "notes": [
+        "For an integer n, [r(cosθ + i sinθ)]ⁿ = rⁿ(cos nθ + i sin nθ). To find all nth roots, use every angle (θ + 2kπ)/n for k = 0,…,n − 1. These points are equally spaced on a circle, and omitting the 2kπ term loses roots.",
+        "Expand (cosθ + i sinθ)ⁿ and compare real and imaginary parts to derive identities. For powers of sine and cosine, Euler forms convert products to sums of exponentials; pair conjugate terms to obtain a real result. Check the number of distinct roots and the modulus of each."
+      ],
+      "example": {
+        "q": "Find all cube roots of 8.",
+        "steps": [
+          "Write 8 = 8e^(2kπi).",
+          "Each cube root has modulus 2 and angle 2kπ/3.",
+          "For k = 0,1,2, the roots are 2, −1 + √3 i, −1 − √3 i.",
+          "Cubing each gives 8; the roots are 120° apart."
+        ]
+      },
+      "practice": {
+        "q": "Find all fourth roots of −16.",
+        "answer": null,
+        "steps": [
+          "Write −16 = 16e^((π+2kπ)i).",
+          "The root modulus is 2.",
+          "Angles are π/4, 3π/4, 5π/4 and 7π/4.",
+          "The roots are ±√2 ± √2 i, with all four sign combinations.",
+          "Plot four equally spaced points on the circle of radius 2."
+        ]
+      },
+      "check": {
+        "q": "How many distinct fifth roots does a non-zero complex number have?",
+        "a": 5
+      }
+    },
+    {
+      "id": "cp-matrix",
+      "module": "core",
+      "title": "Matrix multiplication, determinants and inverses",
+      "refs": "3.1–3.2, 3.5–3.6",
+      "notes": [
+        "A matrix product is defined only when the inner dimensions agree. Each entry is a row–column dot product, so AB and BA need not agree. The determinant of a 2×2 matrix [[a,b],[c,d]] is ad − bc; an inverse exists only when this is non-zero.",
+        "For a 3×3 determinant, expand along a convenient row or column with alternating cofactor signs. Transpose the cofactor matrix to form the adjugate, then divide by the determinant. Check an inverse by multiplying to obtain I; a singular matrix cannot be rescued by dividing by zero."
+      ],
+      "example": {
+        "q": "Find the inverse of A = [[2,1],[3,2]].",
+        "steps": [
+          "det A = 4 − 3 = 1.",
+          "Swap diagonal entries and negate the other two.",
+          "A⁻¹ = [[2,−1],[−3,2]].",
+          "Multiplying AA⁻¹ gives [[1,0],[0,1]]."
+        ]
+      },
+      "practice": {
+        "q": "Find the determinant and inverse of B = [[3,1],[2,1]].",
+        "answer": null,
+        "steps": [
+          "det B = 3 − 2 = 1.",
+          "B⁻¹ = [[1,−1],[−2,3]].",
+          "Check BB⁻¹ = I.",
+          "State that the non-zero determinant guarantees an inverse."
+        ]
+      },
+      "check": {
+        "q": "Find det([[2,1],[3,2]]).",
+        "a": 1
+      }
+    },
+    {
+      "id": "cp-transform",
+      "module": "core",
+      "title": "Linear transformations and invariant objects",
+      "refs": "3.3–3.4",
+      "notes": [
+        "The columns of a 2D transformation matrix are the images of the standard basis vectors. If B acts first and A second, the composite matrix is AB. A determinant gives signed area scale factor: its magnitude scales area and its sign records orientation.",
+        "An invariant point satisfies Mx = x. A line can be invariant without every point on it being fixed. To test a proposed invariant line, transform a general point on the line and check that its image still satisfies the line equation. Rotations, reflections, stretches and shears should be interpreted geometrically as well as algebraically."
+      ],
+      "example": {
+        "q": "For M = [[1,2],[0,1]], describe the transformation and find its invariant points.",
+        "steps": [
+          "(x,y) maps to (x + 2y,y).",
+          "This is a shear parallel to the x-axis, with shear factor 2.",
+          "Invariant points satisfy x + 2y = x, so y = 0.",
+          "Every point on the x-axis is fixed; det M = 1 preserves area."
+        ]
+      },
+      "practice": {
+        "q": "A maps (x,y) to (−y,x). Write A and find A².",
+        "answer": null,
+        "steps": [
+          "Images of (1,0) and (0,1) are (0,1) and (−1,0).",
+          "A = [[0,−1],[1,0]].",
+          "A² = [[−1,0],[0,−1]].",
+          "These represent anticlockwise 90° and 180° rotations about the origin."
+        ]
+      },
+      "check": {
+        "q": "For the shear (x,y)↦(x+2y,y), find the first coordinate of the image of (1,3).",
+        "a": 7
+      }
+    },
+    {
+      "id": "cp-systems",
+      "module": "core",
+      "title": "Three-equation systems and singular geometry",
+      "refs": "3.7–3.8",
+      "notes": [
+        "Write a linear system as Ax = b and use elimination or a matrix inverse when available. A zero determinant means a unique solution is not guaranteed: the system may be inconsistent or may have infinitely many solutions. Compare augmented rows to distinguish these cases.",
+        "In three dimensions, each linear equation represents a plane. Three planes may meet at one point, share a line or plane, or have no common point. A determinant calculation alone does not distinguish an empty intersection from a non-unique intersection; interpret the equations and any free parameter."
+      ],
+      "example": {
+        "q": "Solve x + y + z = 6, x − y + z = 2, and 2x + y − z = 3.",
+        "steps": [
+          "Subtract the second equation from the first: 2y = 4, so y = 2.",
+          "The first gives x + z = 4.",
+          "The third gives 2x − z = 1.",
+          "Adding gives 3x = 5: x = 5/3 and z = 7/3.",
+          "Substitute all three values in the original equations."
+        ]
+      },
+      "practice": {
+        "q": "Explain the solution set of x + y + z = 2 and 2x + 2y + 2z = 5.",
+        "answer": null,
+        "steps": [
+          "Doubling the first equation requires 2x + 2y + 2z = 4.",
+          "This contradicts the second equation.",
+          "There is no common solution.",
+          "The planes are parallel and distinct."
+        ]
+      },
+      "check": {
+        "q": "If x+y+z=6 and x−y+z=2, what is y?",
+        "a": 2
+      }
+    },
+    {
+      "id": "cp-roots",
+      "module": "core",
+      "title": "Polynomial roots and transformations of roots",
+      "refs": "4.1–4.2",
+      "notes": [
+        "For a monic cubic with roots α, β, γ, the coefficients give α+β+γ, αβ+βγ+γα and αβγ with alternating signs. Use these relations to build a polynomial or evaluate symmetric expressions without solving the original equation.",
+        "If new roots are a transformation of the old ones, introduce a new variable and substitute its inverse relation into the original polynomial. Clear denominators and check degree and leading coefficient. Squaring a sum includes cross terms; Σα² is not (Σα)²."
+      ],
+      "example": {
+        "q": "Roots α,β,γ satisfy x³ − 6x² + 11x − 6 = 0. Find α² + β² + γ².",
+        "steps": [
+          "α + β + γ = 6.",
+          "αβ + βγ + γα = 11.",
+          "The sum of squares is 6² − 2×11.",
+          "The result is 14."
+        ]
+      },
+      "practice": {
+        "q": "Find a monic polynomial whose roots are twice the roots of x³ − 3x + 1 = 0.",
+        "answer": null,
+        "steps": [
+          "Let y = 2x, so x = y/2.",
+          "Substitute: y³/8 − 3y/2 + 1 = 0.",
+          "Multiply by 8: y³ − 12y + 8 = 0.",
+          "The degree and number of roots are unchanged."
+        ]
+      },
+      "check": {
+        "q": "For roots of x³−6x²+11x−6=0, what is their sum?",
+        "a": 6
+      }
+    },
+    {
+      "id": "cp-series",
+      "module": "core",
+      "title": "Power sums and the method of differences",
+      "refs": "4.3–4.4",
+      "notes": [
+        "Use standard sums of r, r² and r³ to simplify a polynomial term before summing. The method of differences works by expressing a term as consecutive differences; nearly all interior terms then cancel. Write the first few and last few terms so the uncancelled endpoints are visible.",
+        "Partial fractions can reveal a telescoping form. A finite identity and an infinite sum are different statements: to pass to infinity, show that the remaining endpoint tends to a finite limit. Keep the starting index consistent."
+      ],
+      "example": {
+        "q": "Find the sum from r = 1 to n of 1/[r(r + 1)].",
+        "steps": [
+          "1/[r(r + 1)] = 1/r − 1/(r + 1).",
+          "The sum is (1 − 1/2) + (1/2 − 1/3) + … + (1/n − 1/(n + 1)).",
+          "Everything cancels except 1 − 1/(n + 1).",
+          "The sum is n/(n + 1); its limit is 1."
+        ]
+      },
+      "practice": {
+        "q": "Find the sum from r = 1 to n of 2r² + 3r.",
+        "answer": null,
+        "steps": [
+          "Use Σr² = n(n+1)(2n+1)/6.",
+          "Use Σr = n(n+1)/2.",
+          "The result is n(n+1)(4n+11)/6.",
+          "Check n = 1: the result is 5."
+        ]
+      },
+      "check": {
+        "q": "Find Σr from r=1 to 10.",
+        "a": 55
+      }
+    },
+    {
+      "id": "cp-maclaurin",
+      "module": "core",
+      "title": "Maclaurin expansions and approximation",
+      "refs": "4.5–4.6",
+      "notes": [
+        "A Maclaurin expansion uses derivatives at zero: f(0)+f′(0)x+f″(0)x²/2!+… . Recognise the expansions of eˣ, sin x, cos x and ln(1+x), and substitute a complete expression carefully into a known series. Calculate derivatives through the requested order before evaluating them at zero.",
+        "A truncated series approximates a function near its expansion point. State the terms retained and any domain or convergence restriction. Terms with the same power must be collected after multiplying series, and powers discarded only after all products contributing to the requested order have been included."
+      ],
+      "example": {
+        "q": "Expand e^(2x) through the x³ term.",
+        "steps": [
+          "Use eᵘ = 1 + u + u²/2 + u³/6 + … .",
+          "Substitute u = 2x.",
+          "e^(2x) = 1 + 2x + 2x² + (4/3)x³ + … .",
+          "At x = 0.05, the cubic approximation is 1.105166… ."
+        ]
+      },
+      "practice": {
+        "q": "Expand sin(2x) through the x⁵ term.",
+        "answer": null,
+        "steps": [
+          "Use sin u = u − u³/6 + u⁵/120 + … .",
+          "Substitute u = 2x.",
+          "sin(2x) = 2x − (4/3)x³ + (4/15)x⁵ + … .",
+          "The approximation is local to x = 0."
+        ]
+      },
+      "check": {
+        "q": "What is the coefficient of x³ in the Maclaurin expansion of e^(2x)?",
+        "a": 1.3333333333333333
+      }
+    },
+    {
+      "id": "cp-improper",
+      "module": "core",
+      "title": "Improper integrals and volumes of revolution",
+      "refs": "5.1–5.2",
+      "notes": [
+        "An improper integral has an infinite limit or an unbounded integrand at a boundary. Replace the problematic endpoint by a variable and take a one-sided limit after integrating. Writing infinity directly into an antiderivative is not a justification of convergence.",
+        "A solid formed by rotating y = f(x) about the x-axis has volume π∫y² dx over the specified interval. Rotation about the y-axis can use π∫x² dy. The squared radius and the integration variable must match the slices."
+      ],
+      "example": {
+        "q": "Evaluate the integral from 1 to infinity of 1/x² dx.",
+        "steps": [
+          "Use a finite upper limit R.",
+          "The integral from 1 to R is [−1/x] = 1 − 1/R.",
+          "As R tends to infinity, 1/R tends to zero.",
+          "The improper integral converges to 1."
+        ]
+      },
+      "practice": {
+        "q": "The curve y = √x for 0 ≤ x ≤ 4 is rotated about the x-axis. Find the volume.",
+        "answer": null,
+        "steps": [
+          "Cross-sectional area = πy² = πx.",
+          "V = π∫₀⁴ x dx.",
+          "V = π[x²/2]₀⁴ = 8π.",
+          "State cubic units if x and y are measured in a length unit."
+        ]
+      },
+      "check": {
+        "q": "Evaluate the convergent integral from 1 to infinity of x⁻².",
+        "a": 1
+      }
+    },
+    {
+      "id": "cp-inverse-calculus",
+      "module": "core",
+      "title": "Inverse trigonometric calculus and substitutions",
+      "refs": "5.3–5.6",
+      "notes": [
+        "Differentiate inverse sine by implicit differentiation, respecting its principal range. The standard forms ∫1/√(a²−x²) dx and ∫1/(a²+x²) dx lead to inverse trigonometric functions with scale factors. A substitution must transform dx as well as the integrand.",
+        "For x = a sinθ, choose a range for θ that makes the square root sign consistent. Other algebraic and trigonometric substitutions can simplify roots or rational functions. Differentiate your antiderivative to check the constant factors."
+      ],
+      "example": {
+        "q": "Evaluate ∫1/(9 + x²) dx.",
+        "steps": [
+          "Match a² + x² with a = 3.",
+          "The result is (1/3) arctan(x/3) + C.",
+          "Differentiating gives (1/3)(1/3)/(1+x²/9).",
+          "This simplifies to 1/(9+x²), confirming the scale."
+        ]
+      },
+      "practice": {
+        "q": "Find ∫1/√(16 − x²) dx and state an appropriate real domain.",
+        "answer": null,
+        "steps": [
+          "Use a = 4 in the inverse-sine form.",
+          "The antiderivative is arcsin(x/4) + C.",
+          "It applies on an interval inside −4 < x < 4.",
+          "Differentiate to recover 1/√(16−x²)."
+        ]
+      },
+      "check": {
+        "q": "What is the coefficient multiplying arctan(x/3) in ∫dx/(9+x²)?",
+        "a": 0.3333333333333333
+      }
+    },
+    {
+      "id": "cp-vector-lines",
+      "module": "core",
+      "title": "Vector lines, scalar products and angles",
+      "refs": "6.1–6.4",
+      "notes": [
+        "A line has vector equation r = a + λd, where a locates a point and d is a non-zero direction vector. Intersections require all three coordinates to agree for the same parameter pair. In 3D, non-parallel lines can be skew rather than intersecting.",
+        "The scalar product a·b = |a||b|cosθ gives angles and perpendicularity. For the acute angle between unoriented lines use the absolute value of the dot product. A shortest point-to-line distance can be found by locating the perpendicular foot and solving the scalar-product condition."
+      ],
+      "example": {
+        "q": "Find the angle between direction vectors (1,1,0) and (1,0,1).",
+        "steps": [
+          "The dot product is 1.",
+          "Each magnitude is √2.",
+          "cosθ = 1/2.",
+          "θ = 60°."
+        ]
+      },
+      "practice": {
+        "q": "Find where r = (1,0,2) + λ(1,2,−1) intersects the plane x + y + z = 6.",
+        "answer": null,
+        "steps": [
+          "Coordinates are (1+λ,2λ,2−λ).",
+          "Substitute: 3 + 2λ = 6.",
+          "λ = 3/2.",
+          "The intersection is (5/2,3,1/2)."
+        ]
+      },
+      "check": {
+        "q": "Find the scalar product (1,1,0)·(1,0,1).",
+        "a": 1
+      }
+    },
+    {
+      "id": "cp-planes",
+      "module": "core",
+      "title": "Planes, intersections and distances",
+      "refs": "6.2–6.5",
+      "notes": [
+        "A plane with normal n through a satisfies (r−a)·n = 0. In Cartesian form ax+by+cz=d, the vector (a,b,c) is normal to the plane. The angle between planes is obtained from their normals; the acute line–plane angle is complementary to the acute line–normal angle.",
+        "The perpendicular distance from (x₀,y₀,z₀) to ax+by+cz=d is |ax₀+by₀+cz₀−d|/√(a²+b²+c²). For intersections, substitute a line into a plane or solve two plane equations with a free parameter. Check whether parallel objects are coincident before describing a distance."
+      ],
+      "example": {
+        "q": "Find the distance from (1,2,3) to 2x − y + 2z = 3.",
+        "steps": [
+          "Normal vector is (2,−1,2), with magnitude 3.",
+          "The signed numerator is 2−2+6−3 = 3.",
+          "Distance = |3|/3 = 1."
+        ]
+      },
+      "practice": {
+        "q": "Find a Cartesian equation of the plane through (1,0,2) with normal (2,3,−1).",
+        "answer": null,
+        "steps": [
+          "Use 2(x−1)+3y−(z−2)=0.",
+          "Expand to 2x+3y−z=0.",
+          "The given point satisfies the equation.",
+          "The coefficient vector matches the specified normal."
+        ]
+      },
+      "check": {
+        "q": "Find the magnitude of the normal (2,−1,2).",
+        "a": 3
+      }
+    },
+    {
+      "id": "cp-polar",
+      "module": "core",
+      "title": "Polar curves, tangents and enclosed area",
+      "refs": "7.1–7.3",
+      "notes": [
+        "Polar coordinates use x=r cosθ and y=r sinθ. A sketch should consider symmetry, zeros of r and the interval over which a loop is traced once. Negative r places a point on the opposite ray, so it must be interpreted rather than silently discarded.",
+        "The polar area is ½∫r² dθ. Check the bounds carefully to avoid counting a loop twice. For tangents, differentiate x(θ) and y(θ), then use dy/dx=(dy/dθ)/(dx/dθ); horizontal and vertical tangent tests must also consider points where both derivatives vanish."
+      ],
+      "example": {
+        "q": "Find the area of the circle r = 2cosθ, using −π/2 ≤ θ ≤ π/2.",
+        "steps": [
+          "The interval traces the circle once.",
+          "A = (1/2)∫₋π/₂^π/₂ 4cos²θ dθ.",
+          "Use cos²θ = (1+cos2θ)/2.",
+          "A = [θ + (1/2)sin2θ]₋π/₂^π/₂ = π.",
+          "This agrees with a circle of radius 1 centred at (1,0)."
+        ]
+      },
+      "practice": {
+        "q": "Convert r = 4sinθ to Cartesian form and identify the curve.",
+        "answer": null,
+        "steps": [
+          "Multiply by r: r² = 4r sinθ.",
+          "x²+y² = 4y.",
+          "Complete the square: x²+(y−2)² = 4.",
+          "It is a circle with centre (0,2) and radius 2."
+        ]
+      },
+      "check": {
+        "q": "For r=4sinθ, what is the circle radius in Cartesian coordinates?",
+        "a": 2
+      }
+    },
+    {
+      "id": "cp-hyperbolic",
+      "module": "core",
+      "title": "Hyperbolic functions, identities and inverses",
+      "refs": "8.1–8.4",
+      "notes": [
+        "Define sinh x=(eˣ−e⁻ˣ)/2 and cosh x=(eˣ+e⁻ˣ)/2. Their identity is cosh²x−sinh²x=1, with a minus sign. Differentiation gives d(sinh x)/dx=cosh x and d(cosh x)/dx=sinh x; use the chain rule for a scaled argument.",
+        "The inverse of cosh requires a domain restriction, commonly x≥0. Logarithmic inverse forms follow by solving an exponential equation. For arcosh x the real domain is x≥1; for artanh x it is |x|<1. Keep the required real domain when simplifying logarithms."
+      ],
+      "example": {
+        "q": "Solve cosh x = 5/3 for real x.",
+        "steps": [
+          "Let u = eˣ > 0. Then (u+1/u)/2 = 5/3.",
+          "3u²−10u+3=0, so (3u−1)(u−3)=0.",
+          "u=3 or 1/3.",
+          "x=ln3 or −ln3, consistent with cosh being even."
+        ]
+      },
+      "practice": {
+        "q": "Differentiate sinh(3x) and integrate cosh(2x).",
+        "answer": null,
+        "steps": [
+          "By the chain rule, d[sinh(3x)]/dx = 3cosh(3x).",
+          "An antiderivative of cosh(2x) is (1/2)sinh(2x)+C.",
+          "Differentiating the proposed integral restores cosh(2x).",
+          "Include the integration constant."
+        ]
+      },
+      "check": {
+        "q": "Evaluate cosh(0).",
+        "a": 1
+      }
+    },
+    {
+      "id": "cp-de-first",
+      "module": "core",
+      "title": "First-order differential equations and modelling",
+      "refs": "9.1–9.2",
+      "notes": [
+        "A linear first-order equation y′+P(x)y=Q(x) has integrating factor exp(∫P dx). Multiplying every term makes the left side a product derivative. Apply an initial condition only after finding the general solution and keep the independent variable consistent.",
+        "In a model, identify what the variables and rate constants mean and whether the limiting behaviour is sensible. An initial value selects a particular solution; it does not prove that the model remains accurate indefinitely. A separable equation is a special convenient case, not the only first-order form."
+      ],
+      "example": {
+        "q": "Solve y′ + 2y = 6, given y(0)=1.",
+        "steps": [
+          "Integrating factor = e^(2x).",
+          "d(e^(2x)y)/dx = 6e^(2x).",
+          "e^(2x)y = 3e^(2x)+C.",
+          "y = 3+Ce^(−2x).",
+          "The initial condition gives C=−2, so y=3−2e^(−2x)."
+        ]
+      },
+      "practice": {
+        "q": "Solve y′ + y = 4 with y(0)=2.",
+        "answer": null,
+        "steps": [
+          "Multiply by the integrating factor eˣ.",
+          "d(eˣy)/dx = 4eˣ.",
+          "y=4+Ce⁻ˣ.",
+          "At x=0, C=−2, so y=4−2e⁻ˣ.",
+          "The solution approaches 4 as x increases."
+        ]
+      },
+      "check": {
+        "q": "What is the equilibrium solution of y′+2y=6?",
+        "a": 3
+      }
+    },
+    {
+      "id": "cp-de-second",
+      "module": "core",
+      "title": "Second-order equations and complementary functions",
+      "refs": "9.3–9.5",
+      "notes": [
+        "For ay″+by′+cy=0, solve the auxiliary equation ar²+br+c=0, obtained by trying y=e^(rx). Distinct real roots give a sum of exponentials; a repeated root requires (A+Bx)e^(rx). Complex roots α±iβ give e^(αx)(Acosβx+Bsinβx).",
+        "For a non-zero forcing term, add a particular integral to the complementary function. If a trial form duplicates a term of the complementary function, multiply it by a sufficient power of x. Verify by substitution before applying the two initial or boundary conditions."
+      ],
+      "example": {
+        "q": "Solve y″−3y′+2y=0 with y(0)=0 and y′(0)=1.",
+        "steps": [
+          "Auxiliary equation (r−1)(r−2)=0.",
+          "y=Aeˣ+Be^(2x).",
+          "At x=0, A+B=0.",
+          "y′=Aeˣ+2Be^(2x), so A+2B=1.",
+          "B=1, A=−1; hence y=e^(2x)−eˣ."
+        ]
+      },
+      "practice": {
+        "q": "Find the general solution of y″+4y=8.",
+        "answer": null,
+        "steps": [
+          "Auxiliary roots are ±2i.",
+          "Complementary function = Acos2x+Bsin2x.",
+          "Try a constant particular integral K; 4K=8 gives K=2.",
+          "y=Acos2x+Bsin2x+2.",
+          "Substitution confirms y″+4y=8."
+        ]
+      },
+      "check": {
+        "q": "For y″−3y′+2y=0, what is the larger auxiliary root?",
+        "a": 2
+      }
+    },
+    {
+      "id": "cp-coupled",
+      "module": "core",
+      "title": "Coupled equations and physical interpretations",
+      "refs": "9.6–9.9",
+      "notes": [
+        "Differentiate one of a pair of first-order linear equations and eliminate the other dependent variable to obtain a second-order equation. Solve it and use the original first-order relation to recover the second variable. The initial conditions for a derivative may come from the other variable.",
+        "Interpret damping and forcing through the roots and particular integral. A negative real part in the complementary function corresponds to decay; purely imaginary roots give undamped oscillation. Boundary values and units should support the model, and any small-angle or proportional-resistance assumption must be stated."
+      ],
+      "example": {
+        "q": "Solve x′=y and y′=−4x with x(0)=1 and y(0)=0.",
+        "steps": [
+          "Differentiate x′=y to obtain x″=y′=−4x.",
+          "x=Acos2t+Bsin2t.",
+          "x(0)=1 gives A=1.",
+          "y=x′=−2sin2t+2Bcos2t.",
+          "y(0)=0 gives B=0; x=cos2t and y=−2sin2t."
+        ]
+      },
+      "practice": {
+        "q": "For x′=y and y′=−9x, find x and y when x(0)=0 and y(0)=3.",
+        "answer": null,
+        "steps": [
+          "x″+9x=0.",
+          "x=Acos3t+Bsin3t.",
+          "x(0)=0 gives A=0; y(0)=3B=3 gives B=1.",
+          "x=sin3t and y=3cos3t.",
+          "Both original equations and both initial values are satisfied."
+        ]
+      },
+      "check": {
+        "q": "For x″=−9x, what is the positive angular frequency?",
+        "a": 3
+      }
+    },
+    {
+      "id": "fp1-tformula",
+      "module": "fp1",
+      "title": "Half-angle substitutions and trigonometric equations",
+      "refs": "1",
+      "notes": [
+        "With t=tan(θ/2), sinθ=2t/(1+t²), cosθ=(1−t²)/(1+t²) and tanθ=2t/(1−t²). These rational forms turn many trigonometric equations into polynomial equations in t. Derive them from double-angle identities rather than treating t as tanθ.",
+        "The substitution misses angles at which tan(θ/2) is undefined. Test those angles in the original equation. Map every t-root back into the stated θ-interval, and reject values introduced by multiplying a denominator that can be zero."
+      ],
+      "example": {
+        "q": "Solve sinθ=cosθ for 0≤θ<2π using t=tan(θ/2).",
+        "steps": [
+          "2t=1−t², so t²+2t−1=0.",
+          "t=−1±√2.",
+          "Converting to θ gives π/4 and 5π/4.",
+          "The missing substitution point θ=π is not a solution."
+        ]
+      },
+      "practice": {
+        "q": "Use the t-formulae to solve sinθ=1−cosθ for 0≤θ<2π.",
+        "answer": null,
+        "steps": [
+          "2t=2t², so t(t−1)=0.",
+          "t=0 gives θ=0; t=1 gives θ=π/2.",
+          "Test θ=π separately: 0≠2.",
+          "The two solutions are 0 and π/2."
+        ]
+      },
+      "check": {
+        "q": "If t=tan(θ/2)=1, what is sinθ?",
+        "a": 1
+      }
+    },
+    {
+      "id": "fp1-taylor",
+      "module": "fp1",
+      "title": "Taylor expansions about a non-zero point",
+      "refs": "2.1–2.2",
+      "notes": [
+        "Taylor expansion about x=a uses h=x−a and derivatives evaluated at a. The expansion is f(a)+hf′(a)+h²f″(a)/2!+… . Retain enough terms before dividing by a power of h or taking a limit, and identify any interval required for convergence.",
+        "A numerical approximation should state the expansion point, retained order and why the input is close to that point. A truncated series is not an equality valid for every x. The leading neglected term can give a useful indication of error, but is not automatically a rigorous error bound."
+      ],
+      "example": {
+        "q": "Expand ln x about x=1 through (x−1)³.",
+        "steps": [
+          "Let h=x−1.",
+          "At 1, f=0, f′=1, f″=−1 and f‴=2.",
+          "ln x = h−h²/2+h³/3+… .",
+          "The power series converges for |h|<1; endpoints require separate checks."
+        ]
+      },
+      "practice": {
+        "q": "Find the quadratic Taylor approximation to √x about x=4.",
+        "answer": null,
+        "steps": [
+          "f(4)=2, f′(4)=1/4 and f″(4)=−1/32.",
+          "Let h=x−4.",
+          "√x≈2+h/4−h²/64.",
+          "Use the approximation close to x=4 and distinguish it from an exact identity."
+        ]
+      },
+      "check": {
+        "q": "What is the coefficient of (x−1)² in the Taylor expansion of ln x about 1?",
+        "a": -0.5
+      }
+    },
+    {
+      "id": "fp1-leibniz",
+      "module": "fp1",
+      "title": "Leibniz differentiation and indeterminate limits",
+      "refs": "2.3–2.4",
+      "notes": [
+        "Leibniz’s theorem gives the nth derivative of a product as a binomial sum of derivatives of its factors. When one factor is a low-degree polynomial, most terms vanish. Check the derivative orders and binomial coefficients explicitly.",
+        "L’Hospital’s rule applies to suitable 0/0 or infinity/infinity limits when its hypotheses are met. Differentiate numerator and denominator separately, not the quotient as one function. Recheck the indeterminate form before applying the rule again; it is not a replacement for ordinary substitution in a determinate limit."
+      ],
+      "example": {
+        "q": "Find the nth derivative of x eˣ and evaluate the limit of (eˣ−1−x)/x² as x→0.",
+        "steps": [
+          "Only the zeroth and first derivatives of x are non-zero.",
+          "Leibniz gives eˣ(x+n).",
+          "The limit is 0/0; apply L’Hospital to obtain (eˣ−1)/(2x).",
+          "It remains 0/0; apply the rule again to obtain eˣ/2.",
+          "The limit is 1/2."
+        ]
+      },
+      "practice": {
+        "q": "Find the nth derivative of x²eˣ.",
+        "answer": null,
+        "steps": [
+          "The surviving derivatives of x² are x², 2x and 2.",
+          "Leibniz gives eˣ[x²+2nx+n(n−1)].",
+          "The expression also works for n=0 and n=1.",
+          "Check n=2 by differentiating twice."
+        ]
+      },
+      "check": {
+        "q": "Evaluate the limit of (eˣ−1−x)/x² as x tends to 0.",
+        "a": 0.5
+      }
+    },
+    {
+      "id": "fp1-weierstrass",
+      "module": "fp1",
+      "title": "Weierstrass substitution in integration",
+      "refs": "2.5",
+      "notes": [
+        "The substitution t=tan(x/2) makes sine and cosine rational: sin x=2t/(1+t²), cos x=(1−t²)/(1+t²), and dx=2dt/(1+t²). Transform the differential as well as the integrand and apply ordinary rational integration.",
+        "The substitution is local to an interval avoiding its singular points. An antiderivative may have different equivalent inverse-trigonometric forms on different intervals. For a definite integral, transform the limits carefully and check whether the interval crosses a substitution discontinuity."
+      ],
+      "example": {
+        "q": "Find ∫dx/(2+cos x) using t=tan(x/2).",
+        "steps": [
+          "2+cos x=(3+t²)/(1+t²).",
+          "The integral becomes ∫2dt/(t²+3).",
+          "An antiderivative is (2/√3)arctan(t/√3)+C.",
+          "Replace t by tan(x/2), on an interval where the substitution is valid."
+        ]
+      },
+      "practice": {
+        "q": "Use the same substitution to find ∫dx/(3+2cos x).",
+        "answer": null,
+        "steps": [
+          "3+2cos x=(5+t²)/(1+t²).",
+          "The integral becomes ∫2dt/(t²+5).",
+          "The result is (2/√5)arctan[tan(x/2)/√5]+C.",
+          "State that a suitable continuous branch is used."
+        ]
+      },
+      "check": {
+        "q": "For t=tan(x/2), what is dt/dx at x=0?",
+        "a": 0.5
+      }
+    },
+    {
+      "id": "fp1-de-series",
+      "module": "fp1",
+      "title": "Taylor methods and substitutions for differential equations",
+      "refs": "3",
+      "notes": [
+        "Successive derivatives of a differential equation can produce a local Taylor solution from initial data. Calculate each derivative from the original relation before evaluating it at the starting point. A transformed dependent variable can also make a non-linear-looking equation separable or linear.",
+        "The resulting finite polynomial is an approximation near the initial point, not the complete exact solution. In an exact substitution, recover the original dependent variable and apply its original initial condition. Always test whether a substitution introduces restrictions or excludes a constant solution."
+      ],
+      "example": {
+        "q": "For y′=x+y and y(0)=1, find the cubic Taylor approximation at zero.",
+        "steps": [
+          "y′(0)=1.",
+          "Differentiate: y″=1+y′, so y″(0)=2.",
+          "Then y‴=y″, so y‴(0)=2.",
+          "y≈1+x+x²+x³/3."
+        ]
+      },
+      "practice": {
+        "q": "For y′=y² and y(0)=1, find the cubic Taylor polynomial.",
+        "answer": null,
+        "steps": [
+          "y′(0)=1.",
+          "y″=2yy′=2y³, giving y″(0)=2.",
+          "y‴=6y²y′=6y⁴, giving y‴(0)=6.",
+          "The polynomial is 1+x+x²+x³.",
+          "It agrees locally with the exact solution 1/(1−x)."
+        ]
+      },
+      "check": {
+        "q": "For y′=x+y and y(0)=1, find y″(0).",
+        "a": 2
+      }
+    },
+    {
+      "id": "fp1-conics",
+      "module": "fp1",
+      "title": "Conics, eccentricity, tangents and loci",
+      "refs": "4",
+      "notes": [
+        "Parabolas, ellipses and hyperbolas can be described by focus–directrix relationships. For x²/a²+y²/b²=1 with a>b>0, the foci are (±ae,0), e²=1−b²/a² and the directrices are x=±a/e. A hyperbola instead has e²=1+b²/a².",
+        "Use implicit or parametric differentiation to obtain a tangent. At a point on an ellipse, the tangent is xx₁/a²+yy₁/b²=1. Check that the point lies on the curve before using a tangent formula. A parabola y²=4ax has focus (a,0) and directrix x=−a."
+      ],
+      "example": {
+        "q": "For x²/25+y²/9=1, find the eccentricity, foci and tangent at (3,12/5).",
+        "steps": [
+          "a=5 and b=3, so e²=1−9/25=16/25.",
+          "e=4/5; the foci are (±4,0).",
+          "The point satisfies 9/25+144/225=1.",
+          "The tangent is 3x/25+(12/5)y/9=1.",
+          "Equivalently 9x+20y=75."
+        ]
+      },
+      "practice": {
+        "q": "For y²=12x, find the focus, directrix and tangent at (3,6).",
+        "answer": null,
+        "steps": [
+          "4a=12 gives a=3.",
+          "Focus (3,0); directrix x=−3.",
+          "Differentiate: 2y y′=12, so at the point the gradient is 1.",
+          "The tangent is y−6=x−3, or y=x+3."
+        ]
+      },
+      "check": {
+        "q": "For x²/25+y²/9=1, find the positive x-coordinate of a focus.",
+        "a": 4
+      }
+    },
+    {
+      "id": "fp1-cross",
+      "module": "fp1",
+      "title": "Vector products, areas and triple products",
+      "refs": "5",
+      "notes": [
+        "The vector product a×b is perpendicular to both vectors; its magnitude is the area of their parallelogram. Its order matters because b×a=−a×b. Use components with a consistent cofactor-sign pattern and check that the result has zero scalar product with each original vector.",
+        "The absolute scalar triple product |a·(b×c)| is a parallelepiped volume; divide by 6 for the tetrahedron formed by the three edges from a common vertex. A zero triple product indicates coplanarity, provided the geometrical interpretation uses the correct common origin."
+      ],
+      "example": {
+        "q": "For a=(1,0,1), b=(0,2,0), find a×b and the triangle area.",
+        "steps": [
+          "a×b=(−2,0,2).",
+          "Its magnitude is √8=2√2.",
+          "The triangle area is half the parallelogram area: √2.",
+          "Both a·(a×b) and b·(a×b) equal zero."
+        ]
+      },
+      "practice": {
+        "q": "Find the volume of the tetrahedron with edge vectors (2,0,0), (0,3,0), (0,0,4) from the same vertex.",
+        "answer": 4,
+        "steps": [
+          "The scalar triple product has magnitude 2×3×4=24.",
+          "A tetrahedron occupies one sixth of that parallelepiped.",
+          "Volume=24/6=4."
+        ]
+      },
+      "check": {
+        "q": "Find the volume of a parallelepiped with perpendicular edge lengths 2,3,4.",
+        "a": 24
+      }
+    },
+    {
+      "id": "fp1-numerical",
+      "module": "fp1",
+      "title": "Simpson, numerical differential equations and inequalities",
+      "refs": "6–7",
+      "notes": [
+        "Simpson’s rule uses an even number of equal subintervals and alternating weights 1,4,2,4,…,2,4,1. Its estimate is h/3 times the weighted sum. State the interval and spacing before inserting values. Euler and central-difference methods require equally careful indexing of the point or derivative being approximated.",
+        "For rational or modulus inequalities, locate zeros and excluded denominator values before testing sign intervals. Multiplying through by an expression of unknown sign is unsafe. A numerical approximation can suggest a solution, but algebra and sign checks establish the inequality intervals."
+      ],
+      "example": {
+        "q": "Use Simpson’s rule with 2 intervals to estimate ∫₀²x² dx, then solve (x−1)/(x+2)>0.",
+        "steps": [
+          "h=1 and ordinates are 0,1,4.",
+          "Simpson estimate=(1/3)(0+4×1+4)=8/3, exact here.",
+          "The sign boundaries are x=−2 and x=1.",
+          "The quotient is positive when x<−2 or x>1.",
+          "Exclude −2 because the expression is undefined, and 1 because the inequality is strict."
+        ]
+      },
+      "practice": {
+        "q": "Use one Euler step of length 0.1 for y′=x+y from (0,1).",
+        "answer": 1.1,
+        "steps": [
+          "Initial gradient=0+1=1.",
+          "y₁=1+0.1×1=1.1 at x₁=0.1.",
+          "This is a numerical estimate, not an exact solution."
+        ]
+      },
+      "check": {
+        "q": "How many subintervals are used when Simpson ordinates are y₀,y₁,y₂,y₃,y₄?",
+        "a": 4
+      }
+    },
+    {
+      "id": "fp2-groups",
+      "module": "fp2",
+      "title": "Groups, subgroups, orders and isomorphisms",
+      "refs": "1",
+      "notes": [
+        "A group has a closed associative operation, an identity and an inverse for every element. Commutativity is an additional property, not a group axiom. A Cayley table can establish closure, identity and inverses in a finite example, but associativity needs justification beyond a visual pattern.",
+        "The order of a finite group is its number of elements; an element’s order is the least positive power giving the identity. Lagrange’s theorem makes subgroup orders divide the group order, but divisibility alone does not prove a subset is a subgroup. An isomorphism is a bijection preserving the operation."
+      ],
+      "example": {
+        "q": "In the additive group of integers modulo 6, find the order of 2 and its generated subgroup.",
+        "steps": [
+          "The identity is 0.",
+          "2+2=4 and 2+2+2=0 modulo 6.",
+          "The order of 2 is 3.",
+          "Its generated subgroup is {0,2,4}.",
+          "The subgroup order 3 divides the group order 6."
+        ]
+      },
+      "practice": {
+        "q": "Find the orders of 1 and 3 in the additive group modulo 8.",
+        "answer": null,
+        "steps": [
+          "Repeatedly adding 1 reaches 0 after 8 steps.",
+          "For 3, 8×3=24≡0 modulo 8 and no smaller positive multiple is 0.",
+          "Both elements have order 8.",
+          "Each generates the entire group."
+        ]
+      },
+      "check": {
+        "q": "Find the order of 2 in the additive group modulo 6.",
+        "a": 3
+      }
+    },
+    {
+      "id": "fp2-reduction",
+      "module": "fp2",
+      "title": "Reduction formulae, arc length and surface area",
+      "refs": "2",
+      "notes": [
+        "Integration by parts can connect Iₙ to Iₙ₋₂ or another simpler member of a family. Keep boundary terms until they have been evaluated; a recurrence for definite integrals need not have the same boundary term as one for indefinite integrals.",
+        "Cartesian arc length is ∫√(1+y′²) dx. Surface area around the x-axis is 2π∫y√(1+y′²) dx when the radius is y≥0. Parametric and polar forms use the corresponding element of arc length. The radius factor distinguishes surface area from arc length."
+      ],
+      "example": {
+        "q": "Find the length of y=(2/3)x^(3/2) from x=0 to x=3.",
+        "steps": [
+          "y′=√x.",
+          "L=∫₀³√(1+x) dx.",
+          "L=[(2/3)(1+x)^(3/2)]₀³.",
+          "L=(2/3)(8−1)=14/3."
+        ]
+      },
+      "practice": {
+        "q": "If Iₙ=∫₀^(π/2)sinⁿx dx and Iₙ=(n−1)Iₙ₋₂/n, calculate I₄.",
+        "answer": null,
+        "steps": [
+          "I₀=π/2.",
+          "I₂=(1/2)I₀=π/4.",
+          "I₄=(3/4)I₂=3π/16.",
+          "The given recurrence is used only for n≥2."
+        ]
+      },
+      "check": {
+        "q": "If I₀=π/2 and I₂=I₀/2, find I₂/π.",
+        "a": 0.25
+      }
+    },
+    {
+      "id": "fp2-eigen",
+      "module": "fp2",
+      "title": "Eigenvalues, eigenvectors and diagonalisation",
+      "refs": "3.1–3.2",
+      "notes": [
+        "An eigenvector v is non-zero and satisfies Av=λv. Eigenvalues solve det(A−λI)=0; then solve (A−λI)v=0 for each eigenspace. In 3×3 work, repeated eigenvalues do not automatically provide enough independent eigenvectors for diagonalisation.",
+        "Put independent eigenvectors into the columns of P in the same order as eigenvalues in D, so A=PDP⁻¹. Real symmetric matrices admit orthogonal diagonalisation with a suitable orthonormal eigenbasis. Normalisation changes an eigenvector’s length, not its direction or eigenvalue."
+      ],
+      "example": {
+        "q": "Diagonalise A=[[2,1],[1,2]].",
+        "steps": [
+          "det(A−λI)=(2−λ)²−1=(λ−3)(λ−1).",
+          "For λ=3, choose v₁=(1,1).",
+          "For λ=1, choose v₂=(1,−1).",
+          "P=[[1,1],[1,−1]] and D=diag(3,1).",
+          "A=PDP⁻¹; normalised columns would give an orthogonal P."
+        ]
+      },
+      "practice": {
+        "q": "Find the eigenvalues and two independent eigenvectors of [[4,0],[0,−2]].",
+        "answer": null,
+        "steps": [
+          "The characteristic equation is (4−λ)(−2−λ)=0.",
+          "Eigenvalues are 4 and −2.",
+          "Corresponding eigenvectors include (1,0) and (0,1).",
+          "The matrix is already diagonal in this basis."
+        ]
+      },
+      "check": {
+        "q": "What is the larger eigenvalue of [[2,1],[1,2]]?",
+        "a": 3
+      }
+    },
+    {
+      "id": "fp2-cayley",
+      "module": "fp2",
+      "title": "Cayley–Hamilton and matrix powers",
+      "refs": "3.3",
+      "notes": [
+        "Cayley–Hamilton states that a square matrix satisfies its own characteristic polynomial. Replace the scalar variable by A and the constant term by a multiple of I. This gives recurrences for higher powers and can also express an inverse as a polynomial in A when the determinant is non-zero.",
+        "Check the sign convention used for the characteristic polynomial. Matrices generally do not commute, but powers of the same matrix do, so polynomial rearrangements in A are valid. Keep I in constant terms; subtracting a scalar from every entry is not matrix subtraction by a scalar multiple of I."
+      ],
+      "example": {
+        "q": "If A has characteristic polynomial λ²−5λ+6, express A³ in terms of A and I.",
+        "steps": [
+          "A²−5A+6I=0.",
+          "A³=5A²−6A.",
+          "Replace A² by 5A−6I.",
+          "A³=19A−30I."
+        ]
+      },
+      "practice": {
+        "q": "For the same nonsingular A, express A⁻¹ in terms of A and I.",
+        "answer": null,
+        "steps": [
+          "Multiply A²−5A+6I=0 by A⁻¹.",
+          "A−5I+6A⁻¹=0.",
+          "A⁻¹=(5I−A)/6.",
+          "The non-zero determinant 6 is consistent with invertibility."
+        ]
+      },
+      "check": {
+        "q": "If A²−5A+6I=0, find the coefficient of A in A³ expressed using only A and I.",
+        "a": 19
+      }
+    },
+    {
+      "id": "fp2-mapping",
+      "module": "fp2",
+      "title": "Complex mappings and transformed regions",
+      "refs": "4",
+      "notes": [
+        "A complex mapping w=f(z) transforms points and loci between two Argand planes. Write z=x+iy or invert the mapping in a useful form, substitute into the original locus and identify any excluded points. Fractional linear mappings can turn lines and circles into lines or circles.",
+        "The equation |z−a|=k|z−b| is an Apollonius locus, usually a circle when k≠1 and a perpendicular bisector when k=1. Argument inequalities select regions or angular sectors and require attention to branch boundaries and points where the relevant quotient is undefined."
+      ],
+      "example": {
+        "q": "Under w=1/z, find the image of the line Re(z)=1.",
+        "steps": [
+          "Let w=u+iv; then z=(u−iv)/(u²+v²).",
+          "Re(z)=u/(u²+v²)=1.",
+          "u²+v²=u, so (u−1/2)²+v²=1/4.",
+          "The image is that circle excluding w=0, since 1/z cannot be zero for finite z."
+        ]
+      },
+      "practice": {
+        "q": "Under w=z², find the image of z=iy with y real.",
+        "answer": null,
+        "steps": [
+          "w=(iy)²=−y².",
+          "The imaginary part is zero.",
+          "The real part is non-positive.",
+          "The image is the non-positive real axis, including zero."
+        ]
+      },
+      "check": {
+        "q": "Under w=z², what is Re(w) when z=2i?",
+        "a": -4
+      }
+    },
+    {
+      "id": "fp2-euclid",
+      "module": "fp2",
+      "title": "Euclidean algorithm, Bézout and congruences",
+      "refs": "5.1–5.3, 5.6",
+      "notes": [
+        "The division algorithm reduces the greatest-common-divisor problem to smaller remainders. Back-substitution expresses the gcd as an integer combination of the original numbers: Bézout’s identity. A multiplicative inverse of a modulo n exists exactly when gcd(a,n)=1.",
+        "A congruence ax≡b modulo n is solvable precisely when gcd(a,n) divides b. Dividing a congruence by a common factor changes the modulus, so ordinary cancellation without checking conditions can lose solutions. Give all residue classes required by the question."
+      ],
+      "example": {
+        "q": "Find an inverse of 7 modulo 26.",
+        "steps": [
+          "26=3×7+5; 7=1×5+2; 5=2×2+1.",
+          "1=5−2(7−5)=3×5−2×7.",
+          "1=3(26−3×7)−2×7=3×26−11×7.",
+          "Thus 7(−11)≡1 modulo 26.",
+          "The least non-negative inverse is 15."
+        ]
+      },
+      "practice": {
+        "q": "Solve 5x≡3 modulo 12.",
+        "answer": null,
+        "steps": [
+          "The inverse of 5 is 5 because 25≡1 modulo 12.",
+          "Multiply to get x≡15≡3 modulo 12.",
+          "Check 5×3=15≡3.",
+          "The solution is x≡3 (mod 12)."
+        ]
+      },
+      "check": {
+        "q": "Find gcd(26,7).",
+        "a": 1
+      }
+    },
+    {
+      "id": "fp2-count",
+      "module": "fp2",
+      "title": "Fermat, divisibility and combinatorial counting",
+      "refs": "5.4–5.7",
+      "notes": [
+        "For prime p and a not divisible by p, Fermat’s little theorem gives a^(p−1)≡1 modulo p. Reduce the exponent only after checking that condition. Divisibility tests use place-value congruences; for 11, alternating digit sums arise from 10≡−1 modulo 11.",
+        "Use permutations when positions or order matter and combinations when only membership matters. Complement counting is often simpler than listing overlaps; inclusion–exclusion avoids double-counting. State whether repetitions and leading zeroes are allowed before forming a product."
+      ],
+      "example": {
+        "q": "Find the least non-negative residue of 3²⁰ modulo 7 and count 3-person teams from 8 people.",
+        "steps": [
+          "3⁶≡1 modulo 7.",
+          "20=3×6+2, so 3²⁰≡3²≡2 modulo 7.",
+          "For a team, order does not matter.",
+          "The count is 8C3=56, rather than 8P3=336."
+        ]
+      },
+      "practice": {
+        "q": "How many length-3 digit strings contain at least one 7, if leading zeroes and repeats are allowed?",
+        "answer": 271,
+        "steps": [
+          "There are 10³=1000 total strings.",
+          "There are 9³=729 with no 7.",
+          "The complement count is 1000−729=271.",
+          "This counts strings, not necessarily three-digit integers."
+        ]
+      },
+      "check": {
+        "q": "Find the least non-negative residue of 3²⁰ modulo 7.",
+        "a": 2
+      }
+    },
+    {
+      "id": "fp2-recurrence",
+      "module": "fp2",
+      "title": "First- and second-order recurrences and induction",
+      "refs": "6",
+      "notes": [
+        "A linear recurrence combines a homogeneous solution with a particular solution. A constant equilibrium solves L=aL+b for uₙ₊₁=auₙ+b when a≠1. Subtracting that equilibrium reduces the recurrence to geometric form.",
+        "For a second-order recurrence, solve its characteristic equation and apply the two starting values. A repeated root needs a factor linear in n. Prove a proposed formula by checking the required initial cases and substituting it into the recurrence; a finite list of matching values is not a proof."
+      ],
+      "example": {
+        "q": "Solve uₙ₊₁=2uₙ+3 with u₀=1.",
+        "steps": [
+          "An equilibrium satisfies L=2L+3, giving L=−3.",
+          "Let vₙ=uₙ+3. Then vₙ₊₁=2vₙ.",
+          "v₀=4, so vₙ=4×2ⁿ.",
+          "uₙ=4×2ⁿ−3."
+        ]
+      },
+      "practice": {
+        "q": "Solve uₙ₊₂=3uₙ₊₁−2uₙ with u₀=0 and u₁=1.",
+        "answer": null,
+        "steps": [
+          "Characteristic roots satisfy r²−3r+2=0, so r=1,2.",
+          "uₙ=A+B2ⁿ.",
+          "A+B=0 and A+2B=1 give A=−1, B=1.",
+          "uₙ=2ⁿ−1.",
+          "Check the initial values and substitution into the recurrence."
+        ]
+      },
+      "check": {
+        "q": "If uₙ=2ⁿ−1, find u₄.",
+        "a": 15
+      }
+    },
+    {
+      "id": "fs1-discrete",
+      "module": "fs1",
+      "title": "Discrete distributions, expectation and variance",
+      "refs": "1",
+      "notes": [
+        "A discrete probability distribution assigns non-negative probabilities summing to one. Compute E(X)=Σxp(x) and Var(X)=E(X²)−E(X)²; square the outcomes in the first term, not the probabilities. A transformation changes both the possible values and their probabilities.",
+        "For Y=aX+b, the mean becomes aE(X)+b and the variance becomes a²Var(X). Adding a constant shifts every outcome without changing the spread. Independence is not needed for this single-variable transformation, but matters when combining different variables."
+      ],
+      "example": {
+        "q": "X takes 0,1,2 with probabilities 1/4,1/2,1/4. Find its mean and variance.",
+        "steps": [
+          "E(X)=0+1/2+2/4=1.",
+          "E(X²)=0+1/2+4/4=3/2.",
+          "Var(X)=3/2−1²=1/2.",
+          "For Y=3X−2, E(Y)=1 and Var(Y)=9/2."
+        ]
+      },
+      "practice": {
+        "q": "X takes 1,2,3 with probabilities 1/2,1/3,1/6. Find E(X) and Var(X).",
+        "answer": null,
+        "steps": [
+          "The probabilities sum to 1.",
+          "E(X)=1/2+2/3+3/6=5/3.",
+          "E(X²)=1/2+4/3+9/6=10/3.",
+          "Var(X)=10/3−25/9=5/9."
+        ]
+      },
+      "check": {
+        "q": "A variable takes 0,1,2 with probabilities 1/4,1/2,1/4. Find its mean.",
+        "a": 1
+      }
+    },
+    {
+      "id": "fs1-poisson",
+      "module": "fs1",
+      "title": "Poisson models and binomial approximation",
+      "refs": "2",
+      "notes": [
+        "A Poisson model counts events in a specified interval with constant average rate and independent occurrences. Its mean and variance are both λ, and P(X=k)=e⁻λ λᵏ/k!. Scale λ when changing the interval before evaluating a probability.",
+        "A Poisson approximation to Bin(n,p) uses λ=np when n is large and p is small. Check the context and approximation quality rather than treating a rule of thumb as a theorem. Independent Poisson counts add their rates; a difference of counts is not generally Poisson."
+      ],
+      "example": {
+        "q": "Calls arrive at a mean rate of 2 per hour. Under a Poisson model, find P(no calls in 30 minutes).",
+        "steps": [
+          "The half-hour rate is λ=1.",
+          "P(X=0)=e⁻¹×1⁰/0!=e⁻¹.",
+          "The probability is approximately 0.3679.",
+          "The model assumes the rate is stable and occurrences are independent."
+        ]
+      },
+      "practice": {
+        "q": "If X~Poisson(3), find P(X≤1).",
+        "answer": null,
+        "steps": [
+          "P(X≤1)=P(0)+P(1).",
+          "The sum is e⁻³+3e⁻³=4e⁻³.",
+          "This is approximately 0.1991.",
+          "Both values 0 and 1 are included."
+        ]
+      },
+      "check": {
+        "q": "A Poisson rate is 6 per hour. What is λ for 20 minutes?",
+        "a": 2
+      }
+    },
+    {
+      "id": "fs1-geometric",
+      "module": "fs1",
+      "title": "Geometric and negative binomial waiting times",
+      "refs": "3",
+      "notes": [
+        "With independent trials and success probability p, the geometric variable counting trials to the first success has support 1,2,… and P(X=k)=(1−p)^(k−1)p. Its mean is 1/p and variance (1−p)/p². State the counting convention before applying a formula.",
+        "For the trial number X of the rth success, P(X=k)=C(k−1,r−1)pʳ(1−p)^(k−r), k≥r. The final trial must be a success; the preceding k−1 trials contain r−1 successes. The mean and variance are r/p and r(1−p)/p²."
+      ],
+      "example": {
+        "q": "Success probability is 1/4. Find the probability that the first success is on trial 3 and the mean waiting time.",
+        "steps": [
+          "P(X=3)=(3/4)²(1/4)=9/64.",
+          "E(X)=1/p=4.",
+          "The variance is (3/4)/(1/4)²=12.",
+          "These counts include the successful trial."
+        ]
+      },
+      "practice": {
+        "q": "For independent fair trials with success probability 1/2, find the probability that the third success occurs on trial 5.",
+        "answer": 0.1875,
+        "steps": [
+          "Trial 5 is a success.",
+          "Choose 2 successes among the first 4 trials: C(4,2)=6.",
+          "Probability=6(1/2)³(1/2)²=6/32=3/16."
+        ]
+      },
+      "check": {
+        "q": "For a geometric waiting time counting the successful trial, p=0.2. Find E(X).",
+        "a": 5
+      }
+    },
+    {
+      "id": "fs1-tests",
+      "module": "fs1",
+      "title": "Hypothesis tests for discrete distributions",
+      "refs": "4",
+      "notes": [
+        "State a null model and an alternative before calculating a tail probability. A one-sided alternative chooses one tail; a two-sided alternative requires both directions to be handled using the specified testing convention. A p-value is calculated assuming the null hypothesis, not the probability that the null is true.",
+        "A critical region contains outcomes causing rejection, and its actual probability under the null is the test’s size. A discrete model may not permit an exact nominal size. Report the decision in context and distinguish insufficient evidence from proof of the null."
+      ],
+      "example": {
+        "q": "Under H₀, X~Poisson(1). For H₁: λ>1, assess an observed count of 4 at the 5% level.",
+        "steps": [
+          "The relevant tail is P(X≥4).",
+          "P(X≥4)=1−e⁻¹(1+1+1/2+1/6).",
+          "This is approximately 0.01899.",
+          "It is below 0.05, so reject H₀.",
+          "There is evidence of an increased mean count under the model assumptions."
+        ]
+      },
+      "practice": {
+        "q": "Under H₀, X~Bin(4,1/2). For H₁:p>1/2, assess X=4 at the 5% level.",
+        "answer": null,
+        "steps": [
+          "The upper tail is P(X≥4)=1/16=0.0625.",
+          "0.0625 exceeds 0.05.",
+          "Do not reject H₀ at 5%.",
+          "The maximum observed count does not automatically imply a significant result."
+        ]
+      },
+      "check": {
+        "q": "Under Bin(4,1/2), find P(X=4).",
+        "a": 0.0625
+      }
+    },
+    {
+      "id": "fs1-clt",
+      "module": "fs1",
+      "title": "The central limit theorem and sample means",
+      "refs": "5",
+      "notes": [
+        "For independent identically distributed observations with finite mean μ and variance σ², the sample mean has mean μ and variance σ²/n. The central limit theorem gives an approximate normal distribution for a sufficiently large sample, with the adequacy depending on the population’s shape.",
+        "The standard deviation of a sample mean is σ/√n, not σ/n. For a sum, multiply the mean by n and the variance by n. Check independence and whether a few extreme observations undermine a small-sample approximation. The theorem concerns the sampling distribution, not the shape of the original data."
+      ],
+      "example": {
+        "q": "A population has mean 50 and standard deviation 12. Approximate P(sample mean >54) for n=36 independent observations.",
+        "steps": [
+          "The sample mean is approximately N(50,4).",
+          "Its standard deviation is 12/6=2.",
+          "Standardise: z=(54−50)/2=2.",
+          "The upper-tail probability is approximately 0.0228."
+        ]
+      },
+      "practice": {
+        "q": "A population has variance 81. Find the standard deviation of the mean of 25 independent observations.",
+        "answer": 1.8,
+        "steps": [
+          "The sampling variance is 81/25.",
+          "The sampling standard deviation is 9/5=1.8.",
+          "The normal approximation, if used, needs an additional adequacy check."
+        ]
+      },
+      "check": {
+        "q": "If σ=12 and n=36, find the standard deviation of the sample mean.",
+        "a": 2
+      }
+    },
+    {
+      "id": "fs1-chi",
+      "module": "fs1",
+      "title": "Chi-squared goodness-of-fit and independence",
+      "refs": "6",
+      "notes": [
+        "The chi-squared statistic is Σ(O−E)²/E. Expected counts come from the null model, not from rounding observed proportions to convenient values. For independence in a contingency table, E=(row total×column total)/grand total.",
+        "Use suitable expected frequencies, combining categories where justified before testing. Degrees of freedom for a goodness-of-fit test are categories−1−parameters estimated from the data; for an r×c independence table they are (r−1)(c−1). Reject for sufficiently large values of the statistic and state the evidence in context."
+      ],
+      "example": {
+        "q": "Four equally likely categories have observed counts 18,22,16,24. Calculate the chi-squared statistic.",
+        "steps": [
+          "Total=80, so every expected count is 20.",
+          "Contributions are 4/20,4/20,16/20,16/20.",
+          "The statistic is 2.",
+          "There are 4−1=3 degrees of freedom if no parameters were estimated.",
+          "A test decision requires the chosen significance level and its critical value."
+        ]
+      },
+      "practice": {
+        "q": "A 2×3 contingency table has suitable expected counts. State its degrees of freedom and explain how each expected count is found.",
+        "answer": null,
+        "steps": [
+          "Degrees of freedom=(2−1)(3−1)=2.",
+          "Each expected count is row total times column total divided by grand total.",
+          "Use observed counts only in the numerator of each (O−E)²/E contribution.",
+          "The null hypothesis is independence of the two categorical variables."
+        ]
+      },
+      "check": {
+        "q": "A goodness-of-fit test has 5 categories and estimates no parameters. Find its degrees of freedom.",
+        "a": 4
+      }
+    },
+    {
+      "id": "fs1-pgf",
+      "module": "fs1",
+      "title": "Probability generating functions and sums",
+      "refs": "7",
+      "notes": [
+        "For a non-negative integer-valued variable, G(t)=E(tˣ)=Σpₖtᵏ. The coefficient of tᵏ is P(X=k), so the powers encode outcomes and the coefficients encode their probabilities. G(1)=1, G′(1)=E(X), and G″(1)=E[X(X−1)]. Therefore Var(X)=G″(1)+G′(1)−[G′(1)]².",
+        "Independent sums have a generating function equal to the product of the individual generating functions. This product rule depends on independence. Obtain probabilities from coefficients or derivatives at zero, not from substituting the outcome into G."
+      ],
+      "example": {
+        "q": "For G(t)=(1+2t+t²)/4, find the mean and variance.",
+        "steps": [
+          "G′(t)=(2+2t)/4, so G′(1)=1.",
+          "G″(t)=1/2, so G″(1)=1/2.",
+          "Variance=1/2+1−1²=1/2.",
+          "The coefficients are valid probabilities and G(1)=1."
+        ]
+      },
+      "practice": {
+        "q": "Independent X and Y have PGFs (1+t)/2 and (1+t²)/2. Find the distribution of X+Y.",
+        "answer": null,
+        "steps": [
+          "Multiply the PGFs: (1+t+t²+t³)/4.",
+          "The possible values are 0,1,2,3.",
+          "Each has probability 1/4.",
+          "Check that the probabilities sum to one."
+        ]
+      },
+      "check": {
+        "q": "What must a valid probability generating function equal at t=1?",
+        "a": 1
+      }
+    },
+    {
+      "id": "fs1-power",
+      "module": "fs1",
+      "title": "Size, Type I and Type II errors, and power",
+      "refs": "8",
+      "notes": [
+        "A Type I error rejects a true null hypothesis; its probability is the size of the test. A Type II error fails to reject a false null, and its probability depends on a specified alternative parameter value. Power at that alternative is one minus the Type II error probability.",
+        "Use the same fixed critical region when calculating size and power, but change the probability model to the null or specified alternative as appropriate. Increasing the sample size can improve power without increasing the nominal size. A high p-value is not evidence that the Type II error probability is small."
+      ],
+      "example": {
+        "q": "A test observes X~Bin(4,p) and rejects H₀:p=1/2 only if X=4. Find its size and power at p=0.8.",
+        "steps": [
+          "Size=P(X=4|p=1/2)=(1/2)⁴=0.0625.",
+          "Power at p=0.8 is P(X=4|p=0.8)=0.8⁴=0.4096.",
+          "The Type II error probability there is 1−0.4096=0.5904.",
+          "This is a 6.25% size test, not a 5% test."
+        ]
+      },
+      "practice": {
+        "q": "For the same rejection rule, find the power at p=0.9.",
+        "answer": 0.6561,
+        "steps": [
+          "Reject only at X=4.",
+          "Use the alternative probability p=0.9.",
+          "Power=0.9⁴=0.6561."
+        ]
+      },
+      "check": {
+        "q": "If a test has Type II error probability 0.3 at an alternative, what is its power there?",
+        "a": 0.7
+      }
+    },
+    {
+      "id": "fs2-regression",
+      "module": "fs2",
+      "title": "Least squares, residuals and regression inference",
+      "refs": "1",
+      "notes": [
+        "A least-squares line of y on x minimises the sum of squared vertical residuals. Its slope is Sxy/Sxx and it passes through (x̄,ȳ). The regression of x on y minimises different residuals and is not generally obtained by rearranging the first line.",
+        "Residual plots can reveal curvature or changing variability. Inference for a slope requires a suitable linear-error model, normally with independent errors of constant variance and normality for small-sample t procedures. Distinguish prediction within the observed range from unsupported extrapolation."
+      ],
+      "example": {
+        "q": "Given x̄=4, ȳ=9, Sxx=10 and Sxy=25, find the regression line and the residual at (5,13).",
+        "steps": [
+          "Slope b=25/10=2.5.",
+          "Intercept a=9−2.5×4=−1.",
+          "The fitted line is y=−1+2.5x.",
+          "At x=5 the fitted value is 11.5.",
+          "Residual=observed−fitted=13−11.5=1.5."
+        ]
+      },
+      "practice": {
+        "q": "Given x̄=2, ȳ=7, Sxx=8 and Sxy=12, find the regression of y on x.",
+        "answer": null,
+        "steps": [
+          "b=12/8=1.5.",
+          "a=7−1.5×2=4.",
+          "The line is y=4+1.5x.",
+          "It passes through (2,7)."
+        ]
+      },
+      "check": {
+        "q": "Given Sxy=25 and Sxx=10, find the slope of the least-squares line of y on x.",
+        "a": 2.5
+      }
+    },
+    {
+      "id": "fs2-continuous",
+      "module": "fs2",
+      "title": "Densities, distribution functions and continuous models",
+      "refs": "2",
+      "notes": [
+        "A density is non-negative and has total integral one. Probabilities are areas, so P(X=x)=0 for an individual value in a continuous model. A distribution function F(x)=P(X≤x) is non-decreasing and includes the appropriate constant pieces outside the support.",
+        "Moments are obtained by integrating x f(x) and x² f(x), and Var(X)=E(X²)−E(X)². Uniform and exponential models have specific support and assumptions. For Y=g(X), transform probability events or the CDF carefully; a non-monotonic mapping can have more than one inverse branch."
+      ],
+      "example": {
+        "q": "For f(x)=2x on 0≤x≤1 and zero elsewhere, find F(x) on the support and E(X).",
+        "steps": [
+          "The density integrates to [x²]₀¹=1.",
+          "For 0≤x≤1, F(x)=∫₀ˣ2t dt=x².",
+          "F(x)=0 below 0 and F(x)=1 above 1.",
+          "E(X)=∫₀¹2x² dx=2/3."
+        ]
+      },
+      "practice": {
+        "q": "For the same density, find Var(X) and P(X>1/2).",
+        "answer": null,
+        "steps": [
+          "E(X²)=∫₀¹2x³ dx=1/2.",
+          "Variance=1/2−(2/3)²=1/18.",
+          "P(X>1/2)=1−F(1/2)=1−1/4=3/4.",
+          "A point endpoint has zero probability."
+        ]
+      },
+      "check": {
+        "q": "For f(x)=2x on [0,1], find F(1/2).",
+        "a": 0.25
+      }
+    },
+    {
+      "id": "fs2-correlation",
+      "module": "fs2",
+      "title": "Product moment, rank correlation and tests",
+      "refs": "3",
+      "notes": [
+        "The product moment correlation coefficient measures linear association using centred products; Spearman’s coefficient measures monotonic association through ranks. With no ties, Spearman’s formula is 1−6Σd²/[n(n²−1)]. With tied observations use appropriate average ranks and the required method.",
+        "A significance test needs the correct null model, alternative, sample size and critical value or p-value. Statistical association does not establish causation. Population bivariate normal assumptions matter for standard small-sample inference about Pearson correlation, and a scatter plot can reveal a misleading outlier."
+      ],
+      "example": {
+        "q": "For four untied paired ranks, Σd²=2. Find Spearman’s coefficient.",
+        "steps": [
+          "n=4, so n(n²−1)=4×15=60.",
+          "rₛ=1−6×2/60.",
+          "rₛ=0.8.",
+          "This indicates positive rank association, not proof of a causal relationship."
+        ]
+      },
+      "practice": {
+        "q": "For five untied paired ranks, Σd²=4. Calculate Spearman’s coefficient.",
+        "answer": 0.8,
+        "steps": [
+          "Denominator=5(25−1)=120.",
+          "rₛ=1−24/120=0.8.",
+          "A significance conclusion needs a specified test and critical value."
+        ]
+      },
+      "check": {
+        "q": "For n=4 untied ranks with Σd²=2, find Spearman correlation.",
+        "a": 0.8
+      }
+    },
+    {
+      "id": "fs2-combinations",
+      "module": "fs2",
+      "title": "Linear combinations of random variables",
+      "refs": "4",
+      "notes": [
+        "Expectation is linear whether or not variables are independent. Variance includes covariance: Var(aX+bY)=a²Var(X)+b²Var(Y)+2abCov(X,Y). For independent variables the covariance term is zero; subtracting variables still adds their variances in that case.",
+        "Independent normal variables have normal linear combinations. For other populations, an exact normal conclusion needs justification or an adequate approximation. State independence explicitly when using a sum of variances, and use standard deviations only after calculating the variance."
+      ],
+      "example": {
+        "q": "Independent X~N(10,4) and Y~N(3,1). Find the distribution of 2X−Y.",
+        "steps": [
+          "Mean=2×10−3=17.",
+          "Variance=2²×4+(−1)²×1=17.",
+          "The combination is normal.",
+          "Therefore 2X−Y~N(17,17), where the second parameter is variance."
+        ]
+      },
+      "practice": {
+        "q": "X and Y have variances 9 and 4 and covariance 2. Find Var(X−2Y).",
+        "answer": 17,
+        "steps": [
+          "Use 1²×9+(−2)²×4+2×1×(−2)×2.",
+          "The result is 9+16−8=17.",
+          "Ignoring covariance would give the incorrect value 25."
+        ]
+      },
+      "check": {
+        "q": "Independent X and Y have variances 4 and 1. Find Var(2X−Y).",
+        "a": 17
+      }
+    },
+    {
+      "id": "fs2-normal-ci",
+      "module": "fs2",
+      "title": "Normal means, confidence intervals and two-sample tests",
+      "refs": "5",
+      "notes": [
+        "For independent observations from a normal population with known variance, standardise a sample mean using σ/√n. A two-sided 95% confidence interval is x̄±1.96σ/√n. Confidence describes the long-run coverage of the procedure, not a posterior probability assigned to a fixed population mean.",
+        "For two independent means, the variance of their difference is σ₁²/n₁+σ₂²/n₂. Large-sample approximations may replace unknown variances by sample estimates when justified. Do not use an independent-samples formula for paired observations from the same individuals."
+      ],
+      "example": {
+        "q": "A normal population has known σ=6. A sample of 36 has mean 20. Find a 95% interval for μ.",
+        "steps": [
+          "Standard error=6/√36=1.",
+          "Margin=1.96×1=1.96.",
+          "The interval is (18.04,21.96).",
+          "This procedure has 95% coverage under the stated model."
+        ]
+      },
+      "practice": {
+        "q": "Independent means have sample sizes 25 and 16, with known population variances 9 and 4. Find the standard error of their difference.",
+        "answer": null,
+        "steps": [
+          "Variance=9/25+4/16=0.36+0.25=0.61.",
+          "The standard error is √0.61≈0.7810.",
+          "Both samples must be independent for this calculation.",
+          "Use this standard error with the appropriate normal critical value."
+        ]
+      },
+      "check": {
+        "q": "If known σ=6 and n=36, find the normal-theory standard error.",
+        "a": 1
+      }
+    },
+    {
+      "id": "fs2-variance",
+      "module": "fs2",
+      "title": "Inference for variances and variance ratios",
+      "refs": "6",
+      "notes": [
+        "For a random sample of size n from a normal population, (n−1)S²/σ² has a chi-squared distribution with n−1 degrees of freedom when S² uses denominator n−1. Rearrange the pivot carefully to form variance confidence limits; reciprocals reverse the critical-value order.",
+        "The ratio of two independent sample variances from normal populations can be tested with an F distribution. Preserve the numerator and denominator degrees of freedom associated with the chosen ratio. These exact procedures depend strongly on normality and independence."
+      ],
+      "example": {
+        "q": "For n=10 and S²=10, test H₀:σ²=4 against σ²>4 at 5%, using the supplied critical value 16.919.",
+        "steps": [
+          "Statistic=(10−1)×10/4=22.5.",
+          "Under H₀ it is χ² with 9 degrees of freedom.",
+          "The upper-tail critical value is 16.919.",
+          "22.5 exceeds 16.919, so reject H₀.",
+          "There is evidence of a larger variance under the normal model."
+        ]
+      },
+      "practice": {
+        "q": "Independent normal samples of sizes 8 and 11 have sample variances 12 and 4. Give the F statistic and its degrees of freedom for their ratio.",
+        "answer": null,
+        "steps": [
+          "Use S₁²/S₂²=12/4=3.",
+          "Numerator degrees of freedom=8−1=7.",
+          "Denominator degrees of freedom=11−1=10.",
+          "Under equal population variances, the statistic has F(7,10)."
+        ]
+      },
+      "check": {
+        "q": "For a normal sample of n=10, what are the degrees of freedom of the variance chi-squared pivot?",
+        "a": 9
+      }
+    },
+    {
+      "id": "fs2-t",
+      "module": "fs2",
+      "title": "Student t, paired tests and pooled variances",
+      "refs": "7",
+      "notes": [
+        "When a normal population variance is unknown, a one-sample mean statistic uses t=(x̄−μ₀)/(S/√n) with n−1 degrees of freedom. A paired test applies this procedure to the within-pair differences; the pairs, rather than all individual observations, form the independent sample.",
+        "A pooled two-sample t procedure assumes independent normal populations with equal variances. Pool using degrees-of-freedom weights, not a simple average unless sample sizes agree. Match the tail of the critical value to the alternative and keep a non-rejection conclusion appropriately cautious."
+      ],
+      "example": {
+        "q": "A normal sample of n=9 has mean 12 and S=3. Test μ=10 against μ≠10 at 5%, using critical value 2.306.",
+        "steps": [
+          "Standard error=3/√9=1.",
+          "t=(12−10)/1=2, with 8 degrees of freedom.",
+          "|2|<2.306, so do not reject H₀.",
+          "There is insufficient evidence of a difference at 5%; this does not prove μ=10."
+        ]
+      },
+      "practice": {
+        "q": "Ten paired differences have mean 2 and standard deviation 3. Calculate the test statistic for a zero population mean difference.",
+        "answer": null,
+        "steps": [
+          "The standard error is 3/√10.",
+          "t=2/(3/√10)=2√10/3≈2.108.",
+          "Use 9 degrees of freedom.",
+          "The analysis is on paired differences, not 20 independent measurements."
+        ]
+      },
+      "check": {
+        "q": "A one-sample t test uses 9 independent observations. Find its degrees of freedom.",
+        "a": 8
+      }
+    },
+    {
+      "id": "fm1-impulse",
+      "module": "fm1",
+      "title": "Momentum, impulse and vector change",
+      "refs": "1",
+      "notes": [
+        "Momentum is the vector mv, and impulse equals the change in momentum. Draw or state the positive direction before subtracting velocities. A force–time graph gives impulse as signed area; for a variable force use its time integral.",
+        "In an isolated collision, internal impulses cancel and total momentum is conserved over the short impact. Kinetic energy need not be conserved. In vector problems, apply the impulse–momentum relation component by component and report the impulse direction, not only its magnitude."
+      ],
+      "example": {
+        "q": "A 0.5 kg particle changes velocity from (4,−2) to (−2,6) m/s. Find the impulse.",
+        "steps": [
+          "Velocity change=(−2−4,6−(−2))=(−6,8).",
+          "Impulse=0.5(−6,8)=(−3,4) N s.",
+          "Magnitude=√(9+16)=5 N s.",
+          "The vector specifies the impulse direction."
+        ]
+      },
+      "practice": {
+        "q": "A 2 kg particle moving at +3 m/s rebounds at −1 m/s. Find its impulse.",
+        "answer": -8,
+        "steps": [
+          "Change in velocity=−1−3=−4 m/s.",
+          "Impulse=2×(−4)=−8 N s.",
+          "The impulse acts opposite to the original positive direction."
+        ]
+      },
+      "check": {
+        "q": "A 0.5 kg particle has velocity change (−6,8) m/s. Find impulse magnitude in N s.",
+        "a": 5
+      }
+    },
+    {
+      "id": "fm1-energy",
+      "module": "fm1",
+      "title": "Work, energy and power",
+      "refs": "2",
+      "notes": [
+        "Work by a constant force is the scalar product of force and displacement. For a variable force along a line, work is ∫F dx. The work–energy relation accounts for all relevant forces: a gain in kinetic energy is not necessarily equal to the work by the driving force alone.",
+        "Instantaneous power is F·v. A constant-power model therefore gives driving force P/v away from zero speed and may be unrealistic at rest. Include changes in gravitational potential energy and work against resistance with consistent signs."
+      ],
+      "example": {
+        "q": "A 2 kg particle speeds from 3 to 5 m/s while a resistance does 8 J of negative work. Find the work by the driving force.",
+        "steps": [
+          "Change in kinetic energy=(1/2)×2×(25−9)=16 J.",
+          "Net work=driving work−8.",
+          "Driving work−8=16.",
+          "Driving work=24 J."
+        ]
+      },
+      "practice": {
+        "q": "A force F(x)=3x² N acts along a displacement from x=0 to x=2 m. Find its work.",
+        "answer": 8,
+        "steps": [
+          "Work=∫₀²3x² dx.",
+          "The antiderivative is x³.",
+          "Work=8 J."
+        ]
+      },
+      "check": {
+        "q": "Find the kinetic energy increase for 2 kg changing speed from 3 to 5 m/s, in joules.",
+        "a": 16
+      }
+    },
+    {
+      "id": "fm1-elastic",
+      "module": "fm1",
+      "title": "Elastic strings, springs and energy",
+      "refs": "3",
+      "notes": [
+        "For a light elastic string of natural length l and modulus λ, tension is λx/l when extension x>0. A string is slack when compressed, whereas an ideal spring can push as well as pull. Elastic energy stored at extension x is λx²/(2l).",
+        "Choose the energy reference for gravitational potential and account for any slack stage before the string becomes taut. At a turning point the instantaneous speed is zero, but acceleration need not be zero. Check whether the calculated extension lies in the physical regime assumed."
+      ],
+      "example": {
+        "q": "A string has natural length 2 m and modulus 40 N. Find tension and elastic energy at extension 0.3 m.",
+        "steps": [
+          "Tension=40×0.3/2=6 N.",
+          "Elastic energy=40×0.3²/(2×2).",
+          "The energy is 0.9 J.",
+          "The total length is 2.3 m; extension is not the total length."
+        ]
+      },
+      "practice": {
+        "q": "An elastic spring has natural length 0.5 m and modulus 30 N. Find the energy stored when stretched to length 0.7 m.",
+        "answer": 1.2,
+        "steps": [
+          "Extension=0.7−0.5=0.2 m.",
+          "Energy=30×0.2²/(2×0.5).",
+          "Energy=1.2 J."
+        ]
+      },
+      "check": {
+        "q": "For natural length 2 m, modulus 40 N and extension 0.3 m, find string tension in newtons.",
+        "a": 6
+      }
+    },
+    {
+      "id": "fm1-direct",
+      "module": "fm1",
+      "title": "Direct collisions and Newton’s law of restitution",
+      "refs": "4",
+      "notes": [
+        "For a direct collision use momentum conservation together with speed of separation=e×speed of approach. Write a signed velocity equation consistent with the ordering of the particles; using unsigned speeds too early can conceal a rebound.",
+        "The restitution coefficient satisfies 0≤e≤1 for the usual model. For successive collisions, finish the first event, update positions and velocities and check whether the next proposed collision can actually occur. Kinetic energy loss is non-negative in the ordinary two-particle model."
+      ],
+      "example": {
+        "q": "A 2 kg particle at 3 m/s strikes a stationary 1 kg particle. The coefficient of restitution is 1/2. Find velocities after impact.",
+        "steps": [
+          "Momentum: 2v₁+v₂=6.",
+          "Restitution: v₂−v₁=(1/2)(3−0)=1.5.",
+          "Substitute v₂=v₁+1.5 into momentum.",
+          "3v₁=4.5 gives v₁=1.5 and v₂=3 m/s.",
+          "The particles separate since v₂>v₁."
+        ]
+      },
+      "practice": {
+        "q": "Two equal masses collide directly. Initial velocities are 4 and 0 m/s and e=1/2. Find the final velocities.",
+        "answer": null,
+        "steps": [
+          "Momentum gives v₁+v₂=4.",
+          "Restitution gives v₂−v₁=2.",
+          "Solve to get v₁=1 and v₂=3 m/s.",
+          "Check momentum and speed of separation."
+        ]
+      },
+      "check": {
+        "q": "Equal masses collide with u₁=4, u₂=0 and e=1/2. Find the speed of separation.",
+        "a": 2
+      }
+    },
+    {
+      "id": "fm1-oblique",
+      "module": "fm1",
+      "title": "Oblique impacts and successive rebounds",
+      "refs": "5",
+      "notes": [
+        "For impact with a smooth fixed plane, resolve velocity normal and parallel to the plane. The parallel component is unchanged; the normal component reverses and is multiplied by e. Recombine the components to obtain speed and angle after impact.",
+        "An impulsive force from a smooth surface acts normally. The energy loss arises from the normal component, not the whole incident speed. For successive impacts, use the new direction and check the geometry before applying the next normal–tangential decomposition."
+      ],
+      "example": {
+        "q": "A particle has velocity (3,−4) m/s and strikes the horizontal smooth line y=0. Let e=1/2. Find the rebound velocity.",
+        "steps": [
+          "The tangential component is 3.",
+          "The incident normal component is −4.",
+          "The outgoing normal component is −e(−4)=2.",
+          "The new velocity is (3,2) m/s.",
+          "Its speed is √13 m/s."
+        ]
+      },
+      "practice": {
+        "q": "A particle with velocity (−6,8) strikes the vertical smooth line x=0 with e=1/3. Find the rebound velocity and speed.",
+        "answer": null,
+        "steps": [
+          "The normal x-component reverses and scales: −(1/3)(−6)=2.",
+          "The parallel y-component remains 8.",
+          "The velocity is (2,8) m/s.",
+          "The speed is √68=2√17 m/s."
+        ]
+      },
+      "check": {
+        "q": "A normal velocity component −4 rebounds from a smooth fixed wall with e=1/2. Find the outgoing normal component.",
+        "a": 2
+      }
+    },
+    {
+      "id": "fm2-circular",
+      "module": "fm2",
+      "title": "Uniform and vertical circular motion",
+      "refs": "1",
+      "notes": [
+        "Angular speed ω and tangential speed satisfy v=rω. The radial acceleration is v²/r towards the centre, so resolve forces in that inward direction rather than introducing a separate physical “centripetal force”. Gravity’s radial component changes around a vertical circle.",
+        "Combine energy conservation with the radial equation when speed varies with height. A string requires non-negative tension and a surface contact requires a non-negative normal reaction. The limiting loss-of-contact condition is found by setting that force to zero, then checking where it occurs."
+      ],
+      "example": {
+        "q": "A 0.5 kg particle moves on a horizontal smooth table in a circle of radius 2 m at speed 4 m/s, held by a string. Find tension.",
+        "steps": [
+          "Radial acceleration=v²/r=16/2=8 m/s².",
+          "The string supplies the horizontal radial force.",
+          "T=ma=0.5×8=4 N."
+        ]
+      },
+      "practice": {
+        "q": "A particle on a light string completes a vertical circle of radius r. State the least speed at the top for a taut-string model.",
+        "answer": null,
+        "steps": [
+          "At the top, inward forces give T+mg=mv²/r.",
+          "The limiting taut condition is T=0.",
+          "Then v²=gr, so v=√(gr).",
+          "Other positions must also satisfy the physical constraints."
+        ]
+      },
+      "check": {
+        "q": "Find radial acceleration for speed 4 m/s and radius 2 m, in m/s².",
+        "a": 8
+      }
+    },
+    {
+      "id": "fm2-centres",
+      "module": "fm2",
+      "title": "Centres of mass of particles, rods and laminae",
+      "refs": "2, 3.1",
+      "notes": [
+        "A centre of mass is a mass-weighted position: x̄=Σmᵢxᵢ/Σmᵢ. For a continuous body replace the sums by integrals with the appropriate density and area or length element. Symmetry can establish one coordinate, but only if the mass distribution has that symmetry.",
+        "For composite laminae, treat a removed region as negative mass at its own centre. Distinguish the geometric centre from the centre of mass of a non-uniform body. When integrating a rod, include its linear density in both the mass integral and the first moment."
+      ],
+      "example": {
+        "q": "A rod occupies 0≤x≤2 with linear density ρ(x)=kx, k>0. Find its centre of mass.",
+        "steps": [
+          "Mass M=∫₀²kx dx=2k.",
+          "First moment=∫₀²kx² dx=8k/3.",
+          "x̄=(8k/3)/(2k)=4/3.",
+          "The centre lies towards the denser right end."
+        ]
+      },
+      "practice": {
+        "q": "Particles of masses 2,3 and 5 kg lie at x=0,2 and 4 m. Find their centre of mass.",
+        "answer": 2.6,
+        "steps": [
+          "Total mass=10 kg.",
+          "First moment=2×0+3×2+5×4=26.",
+          "x̄=26/10=2.6 m."
+        ]
+      },
+      "check": {
+        "q": "Find the centre-of-mass x-coordinate of equal masses at x=2 and x=8.",
+        "a": 5
+      }
+    },
+    {
+      "id": "fm2-equilibrium",
+      "module": "fm2",
+      "title": "Rigid-body equilibrium, sliding and toppling",
+      "refs": "2.1, 3.2–3.3",
+      "notes": [
+        "A rigid body in equilibrium has zero resultant force and zero resultant moment. Choose a pivot that eliminates unknown forces where possible. At impending sliding use the limiting friction law F=μR; at impending toppling the resultant contact force acts through an edge.",
+        "Compare the conditions for both possible failures. A body does not necessarily topple just because a toppling angle has been calculated: it may slide first. The centre-of-mass projection must remain within the support base for static stability."
+      ],
+      "example": {
+        "q": "A uniform rectangular block has base width 0.6 m and height 0.8 m. Find the tilt angle at impending toppling on a rough plane, assuming no sliding.",
+        "steps": [
+          "The centre is 0.3 m horizontally and 0.4 m vertically from the lower edge.",
+          "At toppling, the weight line passes through that edge.",
+          "tanθ=0.3/0.4=3/4.",
+          "θ≈36.9°.",
+          "The no-sliding assumption must be checked against friction if μ is supplied."
+        ]
+      },
+      "practice": {
+        "q": "A uniform block has base 0.4 m and height 1 m. Give the no-sliding toppling angle condition and the minimum μ to reach it without earlier sliding.",
+        "answer": null,
+        "steps": [
+          "tanθ=(0.4/2)/(1/2)=0.4.",
+          "θ=arctan0.4≈21.8°.",
+          "The limiting sliding condition is tanθ=μ.",
+          "Require μ≥0.4 to avoid sliding before the toppling angle; equality is simultaneous."
+        ]
+      },
+      "check": {
+        "q": "A block has base 0.6 and height 0.8. Find tanθ at toppling, assuming no sliding.",
+        "a": 0.75
+      }
+    },
+    {
+      "id": "fm2-dynamics",
+      "module": "fm2",
+      "title": "Variable resistance and simple harmonic motion",
+      "refs": "4",
+      "notes": [
+        "Write the equation of motion with an explicit positive direction. If resistance depends on velocity, acceleration may be written dv/dt or v dv/dx according to the independent variable. A terminal velocity solves the zero-acceleration equation, but the full solution determines how it is approached.",
+        "Simple harmonic motion satisfies x″=−ω²x relative to an equilibrium position. Its period is 2π/ω and v²=ω²(A²−x²). The minus sign indicates restoring acceleration towards equilibrium. A spring system may require a shift from natural length to equilibrium extension before this form appears."
+      ],
+      "example": {
+        "q": "A particle satisfies x″=−9x, with x(0)=2 and x′(0)=0. Find x and the period.",
+        "steps": [
+          "ω=3.",
+          "The initial conditions select x=2cos3t.",
+          "The amplitude is 2.",
+          "The period is 2π/3.",
+          "Velocity is −6sin3t, consistent with rest initially."
+        ]
+      },
+      "practice": {
+        "q": "A falling body obeys dv/dt=10−2v with v(0)=0. Find v(t) and terminal velocity.",
+        "answer": null,
+        "steps": [
+          "The equilibrium speed satisfies 10−2v=0, so v=5.",
+          "Solve the linear equation to obtain v=5+Ce^(−2t).",
+          "At t=0, C=−5.",
+          "v(t)=5(1−e^(−2t)), approaching 5 as t increases."
+        ]
+      },
+      "check": {
+        "q": "If x″=−9x, what is the period divided by π?",
+        "a": 0.6666666666666666
+      }
+    },
+    {
+      "id": "fm2-kinematics",
+      "module": "fm2",
+      "title": "Vector kinematics and projectiles",
+      "refs": "5",
+      "notes": [
+        "Differentiate a vector position to obtain velocity and then acceleration; integrate with separate constants for each component. A force depending on time changes velocity through its time integral. Speed is the magnitude of velocity and is not obtained by adding its components.",
+        "For a projectile, resolve the initial velocity horizontally and vertically, apply the landing-height condition and select the physically relevant positive time. In three dimensions the horizontal projection can have two components, while gravity acts vertically. Check whether resistance is explicitly ignored and which vertical origin was chosen."
+      ],
+      "example": {
+        "q": "A particle has r(t)=(t²,3t,4−t²) m. Find velocity, acceleration and speed at t=1.",
+        "steps": [
+          "v(t)=(2t,3,−2t).",
+          "a(t)=(2,0,−2).",
+          "v(1)=(2,3,−2).",
+          "The speed is √(4+9+4)=√17 m/s."
+        ]
+      },
+      "practice": {
+        "q": "A projectile starts at ground level with velocity (6,8) m/s in a vertical plane. With g=10 m/s² and no resistance, find flight time and horizontal range.",
+        "answer": null,
+        "steps": [
+          "Vertical displacement is y=8t−5t².",
+          "Landing at y=0 gives t=0 or t=8/5.",
+          "The flight time is 1.6 s.",
+          "Horizontal range=6×1.6=9.6 m."
+        ]
+      },
+      "check": {
+        "q": "For r(t)=(t²,3t,4−t²), find the y-component of velocity.",
+        "a": 3
+      }
+    },
+    {
+      "id": "d1-algorithms",
+      "module": "d1",
+      "title": "Sorting, packing and graph terminology",
+      "refs": "1",
+      "notes": [
+        "An algorithm is a finite, unambiguous sequence of steps. State the version of a sorting or bin-packing algorithm, apply its tie-breaking rule consistently and show intermediate passes. An algorithm’s order describes how work grows with input size, not a fixed execution time.",
+        "A graph has vertices and edges; distinguish a path, cycle, tree and spanning tree. Planarity concerns whether a crossing-free drawing exists, not whether the current drawing has crossings. First-fit decreasing requires sorting before packing, and a feasible packing is not automatically optimal."
+      ],
+      "example": {
+        "q": "Use first-fit decreasing to pack items 6,5,4,3,2 into bins of capacity 10.",
+        "steps": [
+          "Sort: 6,5,4,3,2.",
+          "Place 6 in bin 1 and 5 in bin 2.",
+          "Place 4 in bin 1, now full.",
+          "Place 3 and then 2 in bin 2, now full.",
+          "Two bins are used; the total size is 20, so two is also a lower bound and the packing is optimal."
+        ]
+      },
+      "practice": {
+        "q": "Use first-fit decreasing for items 8,7,3,2 with capacity 10.",
+        "answer": null,
+        "steps": [
+          "Sort: 8,7,3,2.",
+          "Bin 1 starts with 8; bin 2 starts with 7.",
+          "3 joins 7; 2 joins 8.",
+          "Two bins suffice and total size 20 proves optimality."
+        ]
+      },
+      "check": {
+        "q": "Items total 20 and bin capacity is 10. What is the volume-based lower bound on bin count?",
+        "a": 2
+      }
+    },
+    {
+      "id": "d1-graph",
+      "module": "d1",
+      "title": "Minimum spanning trees and shortest paths",
+      "refs": "2",
+      "notes": [
+        "Kruskal’s algorithm adds eligible edges in increasing weight order without creating a cycle. Prim’s algorithm grows one connected tree. A minimum spanning tree connects every vertex with minimum total weight; it does not minimise every journey from a chosen origin.",
+        "Dijkstra’s algorithm permanently labels the smallest tentative distance and requires non-negative edge weights. Floyd’s algorithm updates all-pairs distances by allowing intermediate vertices in a stated order. Record predecessors or route information as well as distances so the actual path can be recovered."
+      ],
+      "example": {
+        "q": "An undirected graph has AB=2, AC=5, BC=1, BD=4, CD=2. Find an MST and the shortest A–D route.",
+        "steps": [
+          "Kruskal selects BC=1, AB=2 and CD=2 without a cycle.",
+          "The MST total is 5.",
+          "For the A–D journey, A–B–C–D has length 2+1+2=5.",
+          "A–B–D has length 6 and A–C–D has length 7.",
+          "The shortest route is A–B–C–D of length 5."
+        ]
+      },
+      "practice": {
+        "q": "Why can a minimum spanning tree fail to contain a shortest route between a particular pair of vertices?",
+        "answer": null,
+        "steps": [
+          "An MST optimises total connection cost for all vertices.",
+          "A shortest path optimises one endpoint-to-endpoint journey.",
+          "Removing a cycle can discard a shortcut useful for that journey.",
+          "The two optimisation objectives are different."
+        ]
+      },
+      "check": {
+        "q": "How many edges does a spanning tree on 7 vertices have?",
+        "a": 6
+      }
+    },
+    {
+      "id": "d1-route",
+      "module": "d1",
+      "title": "Route inspection and travelling-salesperson bounds",
+      "refs": "3",
+      "notes": [
+        "A connected undirected graph has an Eulerian circuit when every vertex has even degree. Route inspection duplicates paths to pair odd vertices at minimum additional cost, then finds a closed traversal of every original edge. When there are more than two odd vertices, compare complete pairings rather than greedily selecting one cheap pair.",
+        "A travelling-salesperson tour visits each vertex and returns to the start; it need not traverse every edge. Nearest-neighbour tours give upper bounds. A minimum-spanning-tree construction after deleting a vertex and adding its two cheapest incident edges can give a lower bound for a tour. Distinguish a proven optimum from matching or non-matching bounds."
+      ],
+      "example": {
+        "q": "A connected network has total edge weight 40 and exactly two odd vertices P and Q. Their shortest connecting path has weight 7. Find the shortest closed route-inspection length.",
+        "steps": [
+          "Both odd degrees must be made even.",
+          "Duplicate a shortest P–Q path.",
+          "The added cost is 7.",
+          "The closed route length is 40+7=47."
+        ]
+      },
+      "practice": {
+        "q": "A route-inspection network has edge total 60 and four odd vertices. The three complete-pairing costs are 12,15 and 9. Find the minimum closed route length.",
+        "answer": 69,
+        "steps": [
+          "Choose the least complete pairing cost, 9.",
+          "Add this duplicated-path cost to the original edge total.",
+          "The minimum length is 69."
+        ]
+      },
+      "check": {
+        "q": "A route-inspection graph has edge total 40 and just two odd vertices with shortest connecting distance 7. Find the shortest closed tour length.",
+        "a": 47
+      }
+    },
+    {
+      "id": "d1-critical",
+      "module": "d1",
+      "title": "Critical paths, floats and resource scheduling",
+      "refs": "4",
+      "notes": [
+        "In an activity-on-arc model, arrows represent activities and vertices represent events. Dummy activities express precedence without consuming time or resources. A forward pass uses maxima to find earliest event times; a backward pass uses minima to find latest event times.",
+        "Total float for an activity from i to j is latest(j)−earliest(i)−duration. A critical path has zero total float throughout and determines the minimum project completion time under the precedence model. Resource limits can increase this completion time, so a critical-path calculation is not itself a feasible staff schedule."
+      ],
+      "example": {
+        "q": "Activities A and B start together and take 3 and 5 days. C takes 4 days after A. D takes 2 days after both B and C. Find project duration.",
+        "steps": [
+          "A finishes at 3 and B at 5.",
+          "C finishes at 3+4=7.",
+          "D starts at max(5,7)=7.",
+          "The project finishes at 9.",
+          "A–C–D is critical; B has 2 days of total float."
+        ]
+      },
+      "practice": {
+        "q": "A takes 4 days; B takes 3 days after A; C takes 6 days after A. D takes 2 days after both B and C. Find the duration and critical path.",
+        "answer": null,
+        "steps": [
+          "A finishes at 4.",
+          "B finishes at 7 and C at 10.",
+          "D runs from day 10 to day 12.",
+          "Duration=12 days; A–C–D is critical."
+        ]
+      },
+      "check": {
+        "q": "An activity from event i to j has earliest(i)=3, latest(j)=10 and duration 4. Find total float.",
+        "a": 3
+      }
+    },
+    {
+      "id": "d1-lp",
+      "module": "d1",
+      "title": "Formulating and solving linear programmes graphically",
+      "refs": "5.1–5.2",
+      "notes": [
+        "Define decision variables with units, translate each resource limit into an inequality and specify non-negativity. A linear objective has parallel level lines. In a bounded feasible polygon, an optimum occurs at a vertex, or along an edge when the objective is parallel to it.",
+        "Continuous and integer solutions are different problems. Rounding a continuous optimum may violate constraints or lose the best integer choice. Check unboundedness and infeasibility rather than assuming every diagram has one optimal corner."
+      ],
+      "example": {
+        "q": "Maximise 3x+2y subject to x+y≤4, x≤2 and x,y≥0.",
+        "steps": [
+          "The feasible vertices are (0,0),(2,0),(2,2),(0,4).",
+          "Objective values are 0,6,10,8.",
+          "The maximum is 10 at (2,2).",
+          "Both x+y≤4 and x≤2 are active there."
+        ]
+      },
+      "practice": {
+        "q": "Maximise 2x+3y subject to x+y≤5, x≤3, y≤4 and x,y≥0.",
+        "answer": null,
+        "steps": [
+          "Feasible corner candidates include (0,0),(3,0),(3,2),(1,4),(0,4).",
+          "Objective values are 0,6,12,14,12.",
+          "The maximum is 14 at (1,4).",
+          "Check every listed point against the inequalities."
+        ]
+      },
+      "check": {
+        "q": "Evaluate objective 3x+2y at (2,2).",
+        "a": 10
+      }
+    },
+    {
+      "id": "d1-simplex",
+      "module": "d1",
+      "title": "Simplex pivots and the two-stage method",
+      "refs": "5.3–5.4",
+      "notes": [
+        "The simplex method moves between basic feasible solutions. Introduce slack variables for ≤ constraints and follow one consistent objective-row convention. A positive pivot column uses the smallest eligible non-negative ratio to retain feasibility; zero or negative pivot entries do not enter that ratio test.",
+        "Artificial variables provide a starting basis when ordinary slacks do not. In phase I minimise their sum; a positive optimal artificial sum proves infeasibility. If the minimum is zero, remove artificial variables appropriately and restore the original objective for phase II. A pivot improving an objective is not proof of optimality until the stopping criterion is met."
+      ],
+      "example": {
+        "q": "For maximise 3x+2y with x+y≤4 and x≤2, explain the first pivot from the slack basis.",
+        "steps": [
+          "Use x+y+s₁=4 and x+s₂=2.",
+          "With x entering, eligible ratios are 4/1=4 and 2/1=2.",
+          "The second row leaves; pivot there to obtain x=2 at y=0.",
+          "The basis remains feasible. Further improvement can reach x=2,y=2 and objective 10."
+        ]
+      },
+      "practice": {
+        "q": "A phase-I simplex calculation minimising the sum of artificial variables finishes at value 3. What does this imply?",
+        "answer": null,
+        "steps": [
+          "Artificial variables would all need to be zero for the original constraints to hold.",
+          "Their minimum sum is positive.",
+          "The original linear programme is infeasible.",
+          "It is not appropriate to proceed to an ordinary phase-II optimum."
+        ]
+      },
+      "check": {
+        "q": "For entering column entries 1,2 and right-hand sides 6,8, find the minimum eligible ratio.",
+        "a": 4
+      }
+    },
+    {
+      "id": "d2-transport",
+      "module": "d2",
+      "title": "Transportation and stepping-stone improvements",
+      "refs": "1",
+      "notes": [
+        "A transportation table allocates supplies to meet demands at minimum total unit cost. Balance the totals, adding an appropriate dummy source or destination if necessary. The north-west corner method constructs a feasible allocation without consulting costs, so it does not establish optimality.",
+        "A stepping-stone loop alternates additions and subtractions through occupied cells. Its signed unit cost gives the improvement per unit moved; the smallest allocation on a subtracting corner limits the move. Degeneracy requires care with the basis so valid loops and optimality tests remain possible."
+      ],
+      "example": {
+        "q": "Supplies are 20,30; demands are 25,25; costs are [[2,5],[4,1]]. Find the north-west allocation and test its only unused cell.",
+        "steps": [
+          "Allocate x₁₁=20, x₂₁=5, x₂₂=25.",
+          "Cost=20×2+5×4+25×1=85.",
+          "Introducing x₁₂ changes the cost per unit by 5−2+4−1=6.",
+          "The change is positive, so no cost reduction is possible through this loop.",
+          "This allocation is optimal for this 2×2 problem."
+        ]
+      },
+      "practice": {
+        "q": "Use supplies 20,30 and demands 25,25 with costs [[4,1],[2,5]]. Improve the north-west allocation.",
+        "answer": null,
+        "steps": [
+          "The north-west cost is 20×4+5×2+25×5=215.",
+          "The unused-cell loop changes cost by 1−4+2−5=−6 per unit.",
+          "Move 20 units around the loop.",
+          "The new allocations are x₁₂=20, x₂₁=25, x₂₂=5.",
+          "The cost is 20+50+25=95."
+        ]
+      },
+      "check": {
+        "q": "Supplies are 20 and 30, and demands are 25 and 25. What is the total supply?",
+        "a": 50
+      }
+    },
+    {
+      "id": "d2-assignment",
+      "module": "d2",
+      "title": "Hungarian allocation and linear programming models",
+      "refs": "2",
+      "notes": [
+        "An assignment problem chooses one task per worker and one worker per task. In the Hungarian method for minimisation, reduce rows first and then columns. Cover all zeroes with the minimum number of lines; if too few independent zeroes exist, adjust the uncovered entries and doubly covered entries correctly.",
+        "For a maximum-profit problem, convert to a consistent minimisation table before applying the algorithm. Add dummy rows or columns when appropriate and interpret them in context. An assignment LP uses binary decision variables with row and column sums equal to one; do not confuse a table of reduced costs with the original total cost."
+      ],
+      "example": {
+        "q": "Minimise assignment cost for [[4,1,3],[2,0,5],[3,2,2]].",
+        "steps": [
+          "Row reduction gives [[3,0,2],[2,0,5],[1,0,0]].",
+          "Column reduction gives [[2,0,2],[1,0,5],[0,0,0]].",
+          "Cover zeroes by column 2 and row 3. The smallest uncovered entry is 1.",
+          "After adjustment the table is [[1,0,1],[0,0,4],[0,1,0]].",
+          "Choose row 1→column 2, row 2→column 1, row 3→column 3.",
+          "The original cost is 1+2+2=5."
+        ]
+      },
+      "practice": {
+        "q": "Find the minimum assignment cost for [[4,1],[2,5]].",
+        "answer": 3,
+        "steps": [
+          "The diagonal assignment costs 4+5=9.",
+          "The off-diagonal assignment costs 1+2=3.",
+          "The minimum is 3, using worker 1→task 2 and worker 2→task 1."
+        ]
+      },
+      "check": {
+        "q": "For costs [[4,1],[2,5]], find the cost of the off-diagonal assignment.",
+        "a": 3
+      }
+    },
+    {
+      "id": "d2-flow",
+      "module": "d2",
+      "title": "Maximum flow, minimum cuts and restricted networks",
+      "refs": "3",
+      "notes": [
+        "A feasible flow respects every arc capacity and conservation at intermediate vertices. Augment along a source-to-sink route in the residual network, whose backward arcs allow previous choices to be revised. A saturated-looking forward network alone does not prove maximality.",
+        "A cut separates source from sink and its directed capacity is the sum of forward arcs crossing that separation. The max-flow min-cut theorem proves optimality when a feasible flow matches a cut capacity. Multiple sources, vertex restrictions and lower bounds require appropriate network transformations before applying the standard algorithm."
+      ],
+      "example": {
+        "q": "A network has arcs s→a capacity 4, a→t capacity 3, s→b capacity 2 and b→t capacity 5. Find maximum flow.",
+        "steps": [
+          "Send 3 along s–a–t.",
+          "Send 2 along s–b–t.",
+          "The feasible total is 5.",
+          "The cut with source side {s,a} has capacity 3+2=5.",
+          "Matching flow and cut proves a maximum of 5."
+        ]
+      },
+      "practice": {
+        "q": "A feasible network flow has value 12 and a source–sink cut has capacity 12. What can be concluded?",
+        "answer": null,
+        "steps": [
+          "Every feasible flow is at most the capacity of every source–sink cut.",
+          "The flow attains that bound.",
+          "Its value 12 is maximal and the cut is minimal.",
+          "Both feasibility and the directed cut calculation are essential."
+        ]
+      },
+      "check": {
+        "q": "A feasible flow of value 5 matches a cut capacity of 5. Find maximum flow.",
+        "a": 5
+      }
+    },
+    {
+      "id": "d2-dynamic",
+      "module": "d2",
+      "title": "Dynamic programming and Bellman recursions",
+      "refs": "4",
+      "notes": [
+        "A staged optimisation problem uses states that contain all information needed for future choices. Define a value function for the best remaining cost or reward. Work backwards from the final stage, choosing the minimum or maximum over feasible next decisions.",
+        "Record the decision attaining each value as well as the value itself, then trace a route forwards. A greedy choice based only on the next edge can fail because the remaining cost differs by destination. Avoid mixing a minimisation recurrence with a maximisation terminal condition."
+      ],
+      "example": {
+        "q": "From S choose A at cost 2 or B at cost 5. From A to T costs 8; from B to T costs 1. Find the cheapest route.",
+        "steps": [
+          "At the final state, V(T)=0.",
+          "V(A)=8 and V(B)=1.",
+          "V(S)=min(2+8,5+1)=6.",
+          "Choose S–B–T, even though its first edge costs more."
+        ]
+      },
+      "practice": {
+        "q": "S→A costs 4, S→B costs 1, A→T costs 2 and B→T costs 7. Use a backward recurrence.",
+        "answer": null,
+        "steps": [
+          "V(T)=0, V(A)=2 and V(B)=7.",
+          "V(S)=min(4+2,1+7)=6.",
+          "The optimal route is S–A–T.",
+          "A locally cheapest first edge would be misleading."
+        ]
+      },
+      "check": {
+        "q": "Two candidate route costs are 2+8 and 5+1. Find their minimum.",
+        "a": 6
+      }
+    },
+    {
+      "id": "d2-games",
+      "module": "d2",
+      "title": "Zero-sum games, dominance and mixed strategies",
+      "refs": "5",
+      "notes": [
+        "A payoff table must specify whose gain is shown. The row player maximises and the column player minimises that payoff in a zero-sum model. If maximin equals minimax, a saddle point gives an optimal pure strategy. Dominated strategies can be removed only with the correct inequality direction.",
+        "For a 2×2 game without a saddle point, make the opponent indifferent between the relevant pure responses to find a mixed strategy. Check that the probabilities lie between zero and one. Larger games may be solved graphically or with a linear-programming formulation, with probabilities summing to one."
+      ],
+      "example": {
+        "q": "The row player’s payoffs are [[3,0],[1,2]]. Find optimal mixing probabilities and game value.",
+        "steps": [
+          "Row minima are 0,1; column maxima are 3,2, so there is no saddle point.",
+          "If row 1 is used with probability p, column payoffs are 1+2p and 2−2p.",
+          "Equating gives p=1/4 and value 3/2.",
+          "If column 1 is used with probability q, row payoffs are 3q and 2−q.",
+          "Equating gives q=1/2, confirming value 3/2."
+        ]
+      },
+      "practice": {
+        "q": "Find the mixed strategy for the row player in the game [[2,0],[0,4]].",
+        "answer": null,
+        "steps": [
+          "If row 1 has probability p, the two column responses give 2p and 4−4p.",
+          "Equate: 6p=4, so p=2/3.",
+          "Use row 2 with probability 1/3.",
+          "The value is 4/3."
+        ]
+      },
+      "check": {
+        "q": "For payoffs [[3,0],[1,2]], solve 1+2p=2−2p for row mixing probability p.",
+        "a": 0.25
+      }
+    },
+    {
+      "id": "d2-recurrence",
+      "module": "d2",
+      "title": "Recurrence models and long-run behaviour",
+      "refs": "6",
+      "notes": [
+        "A recurrence specifies the timing of an update. In a population or savings model, multiplying before adding is different from adding before multiplying. Write the update in words and identify the initial index before solving the algebraic recurrence.",
+        "For uₙ₊₁=auₙ+b, an equilibrium is b/(1−a) when a≠1. Deviations multiply by a each step, so |a|<1 gives convergence, while |a|>1 generally gives growing deviations. A formal limit must also be consistent with any physical restrictions of the model."
+      ],
+      "example": {
+        "q": "Solve uₙ₊₁=0.8uₙ+10 with u₀=0 and find its limit.",
+        "steps": [
+          "Equilibrium L=0.8L+10 gives L=50.",
+          "Let vₙ=uₙ−50, so vₙ₊₁=0.8vₙ.",
+          "v₀=−50.",
+          "uₙ=50−50(0.8)ⁿ.",
+          "Since |0.8|<1, uₙ tends to 50."
+        ]
+      },
+      "practice": {
+        "q": "A quantity obeys uₙ₊₁=0.5uₙ+6 with u₀=4. Find uₙ and its limit.",
+        "answer": null,
+        "steps": [
+          "The equilibrium is 12.",
+          "uₙ−12=(4−12)(0.5)ⁿ.",
+          "uₙ=12−8(0.5)ⁿ.",
+          "The limit is 12."
+        ]
+      },
+      "check": {
+        "q": "Find the equilibrium L satisfying L=0.8L+10.",
+        "a": 50
+      }
+    },
+    {
+      "id": "d2-decision",
+      "module": "d2",
+      "title": "Decision trees, conditional information and expected value",
+      "refs": "7",
+      "notes": [
+        "A decision tree separates decision nodes from chance nodes. Work backwards: average at a chance node using conditional probabilities and select the best expected value at a decision node. Subtract costs at the stage where they occur; do not count them twice.",
+        "Expected value is a model-based long-run criterion, not a guarantee for one outcome. The expected value of perfect information compares the best decision in each known state with the best current decision. For imperfect sample information, use the correct updated conditional probabilities before choosing an action."
+      ],
+      "example": {
+        "q": "A fictional product earns 100 units in a good market and loses 40 in a bad market. P(good)=0.6. Not launching gives 0. Find the expected value of perfect information.",
+        "steps": [
+          "Launch EV=0.6×100+0.4×(−40)=44.",
+          "Without information, choose launch with EV 44.",
+          "With perfect information, launch only in a good market.",
+          "Perfect-information EV=0.6×100=60.",
+          "The value of perfect information is 60−44=16 units."
+        ]
+      },
+      "practice": {
+        "q": "A fictional launch gains 50 units with probability 0.7 and loses 20 otherwise. Not launching gives 0. Find the expected value of perfect information.",
+        "answer": 6,
+        "steps": [
+          "Launch EV=0.7×50−0.3×20=29.",
+          "With perfect information, act only in the favourable state: EV=35.",
+          "The improvement is 35−29=6 units."
+        ]
+      },
+      "check": {
+        "q": "Find the expected value of 100 with probability 0.6 and −40 otherwise.",
+        "a": 44
+      }
+    }
+  ],
+  "papers": [
+    {
+      "id": "fm-core-paper-1",
+      "module": "core",
+      "title": "Core Pure revision paper 1",
+      "minutes": 90,
+      "marks": 75,
+      "kind": "core-paper",
+      "lessons": [
+        "cp-induction",
+        "cp-complex",
+        "cp-argand",
+        "cp-exponential",
+        "cp-demoivre",
+        "cp-matrix",
+        "cp-transform",
+        "cp-systems",
+        "cp-roots",
+        "cp-series",
+        "cp-maclaurin",
+        "cp-improper",
+        "cp-inverse-calculus",
+        "cp-vector-lines",
+        "cp-planes",
+        "cp-polar",
+        "cp-hyperbolic",
+        "cp-de-first"
+      ],
+      "reuse": "Questions are drawn from the lesson practice bank; use them for consolidation, not an unseen mock."
+    },
+    {
+      "id": "fm-core-paper-2",
+      "module": "core",
+      "title": "Core Pure revision paper 2",
+      "minutes": 90,
+      "marks": 75,
+      "kind": "core-paper",
+      "lessons": [
+        "cp-coupled",
+        "cp-de-second",
+        "cp-de-first",
+        "cp-hyperbolic",
+        "cp-polar",
+        "cp-planes",
+        "cp-vector-lines",
+        "cp-inverse-calculus",
+        "cp-improper",
+        "cp-maclaurin",
+        "cp-series",
+        "cp-roots",
+        "cp-systems",
+        "cp-transform",
+        "cp-matrix",
+        "cp-exponential",
+        "cp-argand",
+        "cp-complex"
+      ],
+      "reuse": "Questions are drawn from the lesson practice bank; use them for consolidation, not an unseen mock."
+    },
+    {
+      "id": "fm-fp1-assessment",
+      "module": "fp1",
+      "title": "Further Pure Mathematics 1 · module assessment",
+      "minutes": 37,
+      "marks": 31,
+      "kind": "module-assessment",
+      "lessons": [
+        "fp1-tformula",
+        "fp1-taylor",
+        "fp1-leibniz",
+        "fp1-weierstrass",
+        "fp1-de-series",
+        "fp1-conics",
+        "fp1-cross",
+        "fp1-numerical"
+      ],
+      "reuse": "Short original revision assessment using the module lesson practice bank. This is not a full 75-mark examination paper."
+    },
+    {
+      "id": "fm-fp2-assessment",
+      "module": "fp2",
+      "title": "Further Pure Mathematics 2 · module assessment",
+      "minutes": 40,
+      "marks": 33,
+      "kind": "module-assessment",
+      "lessons": [
+        "fp2-groups",
+        "fp2-reduction",
+        "fp2-eigen",
+        "fp2-cayley",
+        "fp2-mapping",
+        "fp2-euclid",
+        "fp2-count",
+        "fp2-recurrence"
+      ],
+      "reuse": "Short original revision assessment using the module lesson practice bank. This is not a full 75-mark examination paper."
+    },
+    {
+      "id": "fm-fs1-assessment",
+      "module": "fs1",
+      "title": "Further Statistics 1 · module assessment",
+      "minutes": 35,
+      "marks": 29,
+      "kind": "module-assessment",
+      "lessons": [
+        "fs1-discrete",
+        "fs1-poisson",
+        "fs1-geometric",
+        "fs1-tests",
+        "fs1-clt",
+        "fs1-chi",
+        "fs1-pgf",
+        "fs1-power"
+      ],
+      "reuse": "Short original revision assessment using the module lesson practice bank. This is not a full 75-mark examination paper."
+    },
+    {
+      "id": "fm-fs2-assessment",
+      "module": "fs2",
+      "title": "Further Statistics 2 · module assessment",
+      "minutes": 31,
+      "marks": 26,
+      "kind": "module-assessment",
+      "lessons": [
+        "fs2-regression",
+        "fs2-continuous",
+        "fs2-correlation",
+        "fs2-combinations",
+        "fs2-normal-ci",
+        "fs2-variance",
+        "fs2-t"
+      ],
+      "reuse": "Short original revision assessment using the module lesson practice bank. This is not a full 75-mark examination paper."
+    },
+    {
+      "id": "fm-fm1-assessment",
+      "module": "fm1",
+      "title": "Further Mechanics 1 · module assessment",
+      "minutes": 20,
+      "marks": 17,
+      "kind": "module-assessment",
+      "lessons": [
+        "fm1-impulse",
+        "fm1-energy",
+        "fm1-elastic",
+        "fm1-direct",
+        "fm1-oblique"
+      ],
+      "reuse": "Short original revision assessment using the module lesson practice bank. This is not a full 75-mark examination paper."
+    },
+    {
+      "id": "fm-fm2-assessment",
+      "module": "fm2",
+      "title": "Further Mechanics 2 · module assessment",
+      "minutes": 23,
+      "marks": 19,
+      "kind": "module-assessment",
+      "lessons": [
+        "fm2-circular",
+        "fm2-centres",
+        "fm2-equilibrium",
+        "fm2-dynamics",
+        "fm2-kinematics"
+      ],
+      "reuse": "Short original revision assessment using the module lesson practice bank. This is not a full 75-mark examination paper."
+    },
+    {
+      "id": "fm-d1-assessment",
+      "module": "d1",
+      "title": "Decision Mathematics 1 · module assessment",
+      "minutes": 28,
+      "marks": 23,
+      "kind": "module-assessment",
+      "lessons": [
+        "d1-algorithms",
+        "d1-graph",
+        "d1-route",
+        "d1-critical",
+        "d1-lp",
+        "d1-simplex"
+      ],
+      "reuse": "Short original revision assessment using the module lesson practice bank. This is not a full 75-mark examination paper."
+    },
+    {
+      "id": "fm-d2-assessment",
+      "module": "d2",
+      "title": "Decision Mathematics 2 · module assessment",
+      "minutes": 32,
+      "marks": 27,
+      "kind": "module-assessment",
+      "lessons": [
+        "d2-transport",
+        "d2-assignment",
+        "d2-flow",
+        "d2-dynamic",
+        "d2-games",
+        "d2-recurrence",
+        "d2-decision"
+      ],
+      "reuse": "Short original revision assessment using the module lesson practice bank. This is not a full 75-mark examination paper."
+    }
+  ]
+}
