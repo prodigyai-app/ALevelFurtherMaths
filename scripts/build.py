@@ -3,6 +3,7 @@ import json
 from content import LESSONS,MODULES
 from checks import CHECKS
 from deep_core import DEEP
+import deep_fp1_fs1
 P=Path(__file__).resolve().parents[1]
 for lesson in LESSONS:
  assert lesson['id'] in CHECKS,lesson['id']
