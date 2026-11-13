@@ -2517,6 +2517,18 @@
   ],
   "papers": [
     {
+      "swap": {
+        "cp-argand": {
+          "q": "Describe the locus |z − (3 + i)| = |z + 1 − i| and find where it crosses the real axis.",
+          "answer": null,
+          "steps": [
+            "The points are equally far from 3 + i and −1 + i.",
+            "The two centres share y = 1, so the locus is a perpendicular bisector through their midpoint (1,1).",
+            "It is the vertical line x = 1.",
+            "It crosses the real axis at z = 1."
+          ]
+        }
+      },
       "id": "fm-core-paper-1",
       "module": "core",
       "title": "Core Pure revision paper 1",
@@ -2546,6 +2558,18 @@
       "reuse": "Questions are drawn from the lesson practice bank; use them for consolidation, not an unseen mock."
     },
     {
+      "swap": {
+        "cp-argand": {
+          "q": "Describe the locus |z + 3 − 2i| = 5 and find the real numbers z that lie on it.",
+          "answer": null,
+          "steps": [
+            "The centre is (−3,2) and the radius is 5.",
+            "On the real axis y = 0, so (x + 3)² + 4 = 25.",
+            "Then (x + 3)² = 21.",
+            "x = −3 ± √21, approximately 1.58 and −7.58."
+          ]
+        }
+      },
       "id": "fm-core-paper-2",
       "module": "core",
       "title": "Core Pure revision paper 2",

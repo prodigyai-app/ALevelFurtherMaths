@@ -22,8 +22,12 @@ def subset(items,target):
  return dp[target]
 core=[l for l in LESSONS if l['module']=='core']
 papers=[]
+# The lesson cp-argand keeps the circle-locus question; each core paper replaces it with a different locus
+# question (same number of steps, so the 75 marks are unchanged) instead of repeating the lesson's.
+SWAPS=[{'cp-argand':dict(q='Describe the locus |z − (3 + i)| = |z + 1 − i| and find where it crosses the real axis.',answer=None,steps=['The points are equally far from 3 + i and −1 + i.','The two centres share y = 1, so the locus is a perpendicular bisector through their midpoint (1,1).','It is the vertical line x = 1.','It crosses the real axis at z = 1.'])},
+ {'cp-argand':dict(q='Describe the locus |z + 3 − 2i| = 5 and find the real numbers z that lie on it.',answer=None,steps=['The centre is (−3,2) and the radius is 5.','On the real axis y = 0, so (x + 3)² + 4 = 25.','Then (x + 3)² = 21.','x = −3 ± √21, approximately 1.58 and −7.58.'])}]
 for i,ordered in enumerate([core,list(reversed(core))],1):
- selected=subset(ordered,75);papers.append(dict(id='fm-core-paper-'+str(i),module='core',title='Core Pure revision paper '+str(i),minutes=90,marks=75,kind='core-paper',lessons=[l['id']for l in selected],reuse='Questions are drawn from the lesson practice bank; use them for consolidation, not an unseen mock.'))
+ selected=subset(ordered,75);papers.append(dict(swap=SWAPS[i-1],id='fm-core-paper-'+str(i),module='core',title='Core Pure revision paper '+str(i),minutes=90,marks=75,kind='core-paper',lessons=[l['id']for l in selected],reuse='Questions are drawn from the lesson practice bank; use them for consolidation, not an unseen mock.'))
 for key,title,code in MODULES[1:]:
  selected=[l for l in LESSONS if l['module']==key];marks=sum(len(l['practice']['steps'])for l in selected)
  papers.append(dict(id='fm-'+key+'-assessment',module=key,title=title+' · module assessment',minutes=round(marks*1.2),marks=marks,kind='module-assessment',lessons=[l['id']for l in selected],reuse='Short original revision assessment using the module lesson practice bank. This is not a full 75-mark examination paper.'))
