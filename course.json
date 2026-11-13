@@ -9380,6 +9380,167 @@
       "check": {
         "q": "Given Sxy=25 and Sxx=10, find the slope of the least-squares line of y on x.",
         "a": 2.5
+      },
+      "deep": {
+        "tip": "Compute Sxx and Sxy from the summary statistics first; then b = Sxy/Sxx and a = ȳ − bx̄, because the regression line always passes through (x̄, ȳ). A residual is observed minus predicted; the residual sum of squares is Syy − Sxy²/Sxx, and a pattern in the residuals suggests that a linear model is unsuitable.",
+        "examples": [
+          {
+            "title": "A regression line from summary statistics",
+            "q": "For 8 pairs, Σx = 40, Σy = 96, Σx² = 240 and Σxy = 520. Find the regression line of y on x.",
+            "steps": [
+              "Sxx = 240 − 40²/8 = 40 and Sxy = 520 − 40 × 96/8 = 40.",
+              "b = Sxy/Sxx = 1.",
+              "a = ȳ − bx̄ = 12 − 5 = 7.",
+              "y = 7 + x."
+            ]
+          },
+          {
+            "title": "Residual sum of squares",
+            "q": "For the same data, Syy = 50. Find the residual sum of squares and comment.",
+            "steps": [
+              "RSS = Syy − Sxy²/Sxx.",
+              "= 50 − 40²/40.",
+              "= 10.",
+              "The line explains 40 of the 50 units of variation in y."
+            ]
+          }
+        ],
+        "fills": [
+          {
+            "q": "Sxy = 30 and Sxx = 12.",
+            "lines": [
+              "b = [[2.5]]"
+            ]
+          },
+          {
+            "q": "Observed y = 14 and predicted y = 11.5.",
+            "lines": [
+              "residual = [[2.5]]"
+            ]
+          },
+          {
+            "q": "x̄ = 3, ȳ = 10 and b = 2.",
+            "lines": [
+              "a = [[4]]"
+            ]
+          }
+        ],
+        "exam": [
+          {
+            "stem": "<p>For 10 pairs of values: Σx = 55, Σy = 320, Σx² = 385, Σxy = 1953 and Σy² = 10 720.</p>",
+            "parts": [
+              {
+                "q": "Find Sxx and Sxy.",
+                "m": 2,
+                "ms": [
+                  [
+                    "B1",
+                    "Sxx = 82.5"
+                  ],
+                  [
+                    "B1",
+                    "Sxy = 193"
+                  ]
+                ]
+              },
+              {
+                "q": "Find the equation of the regression line of y on x.",
+                "m": 3,
+                "ms": [
+                  [
+                    "M1",
+                    "b = 193/82.5 = 2.339"
+                  ],
+                  [
+                    "M1",
+                    "a = 32 − 2.339 × 5.5"
+                  ],
+                  [
+                    "A1",
+                    "y = 19.13 + 2.339x"
+                  ]
+                ]
+              },
+              {
+                "q": "Estimate y when x = 7.",
+                "m": 1,
+                "ms": [
+                  [
+                    "B1",
+                    "35.5"
+                  ]
+                ],
+                "ans": {
+                  "a": 35.5090909091,
+                  "tol": 0.002,
+                  "unit": ""
+                }
+              },
+              {
+                "q": "Find the residual sum of squares.",
+                "m": 2,
+                "ms": [
+                  [
+                    "M1",
+                    "Syy = 480 and RSS = Syy − Sxy²/Sxx"
+                  ],
+                  [
+                    "A1",
+                    "28.5"
+                  ]
+                ],
+                "ans": {
+                  "a": 28.496969697,
+                  "tol": 0.003,
+                  "unit": ""
+                }
+              }
+            ]
+          },
+          {
+            "stem": "<p>A residual plot for a linear regression model shows the residuals forming a clear U-shaped curve.</p>",
+            "parts": [
+              {
+                "q": "Explain what this suggests about the model.",
+                "m": 2,
+                "ms": [
+                  [
+                    "B1",
+                    "the residuals are not randomly scattered"
+                  ],
+                  [
+                    "B1",
+                    "a non-linear model would be more suitable"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "stem": "<p>The regression line of y on x is y = 3.2 + 1.5x.</p>",
+            "parts": [
+              {
+                "q": "Find the residual for the data point (6, 18).",
+                "m": 2,
+                "ms": [
+                  [
+                    "M1",
+                    "predicted value 3.2 + 1.5 × 6 = 12.2"
+                  ],
+                  [
+                    "A1",
+                    "5.8"
+                  ]
+                ],
+                "ans": {
+                  "a": 5.8,
+                  "tol": 0.001,
+                  "unit": ""
+                }
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -9413,6 +9574,218 @@
       "check": {
         "q": "For f(x)=2x on [0,1], find F(1/2).",
         "a": 0.25
+      },
+      "deep": {
+        "tip": "Use ∫f(x) dx = 1 over the support to find any constant, and remember that probabilities are areas, so P(X = a) = 0. Move between f and F by integrating and differentiating; the median m satisfies F(m) = ½, the mode is where f is greatest, and Var(X) = E(X²) − [E(X)]².",
+        "examples": [
+          {
+            "title": "Finding a constant, the mean and the variance",
+            "q": "X has density f(x) = kx(2 − x) for 0 ≤ x ≤ 2. Find k, E(X) and Var(X).",
+            "steps": [
+              "k∫ (2x − x²) dx from 0 to 2 = k(4 − 8/3) = 4k/3 = 1, so k = ¾.",
+              "The density is symmetric about x = 1, so E(X) = 1.",
+              "E(X²) = ¾∫ (2x³ − x⁴) dx = ¾(8 − 32/5) = 1.2.",
+              "Var(X) = 1.2 − 1² = 0.2."
+            ]
+          },
+          {
+            "title": "A median from the distribution function",
+            "q": "X has density f(x) = 3x²/8 for 0 ≤ x ≤ 2. Find the median.",
+            "steps": [
+              "F(x) = x³/8 for 0 ≤ x ≤ 2.",
+              "Median m: m³/8 = ½.",
+              "m³ = 4.",
+              "m = ∛4 = 1.587."
+            ]
+          },
+          {
+            "title": "A continuous uniform distribution",
+            "q": "X ~ U[2, 8]. Find E(X), Var(X) and P(X > 6.5).",
+            "steps": [
+              "E(X) = (2 + 8)/2 = 5.",
+              "Var(X) = (8 − 2)²/12 = 3.",
+              "P(X > 6.5) = (8 − 6.5)/6 = 0.25."
+            ]
+          }
+        ],
+        "fills": [
+          {
+            "q": "X ~ U[0, 10].",
+            "lines": [
+              "E(X) = [[5]]"
+            ]
+          },
+          {
+            "q": "F(x) = x² for 0 ≤ x ≤ 1.",
+            "lines": [
+              "P(X ≤ 0.5) = [[0.25]]"
+            ]
+          },
+          {
+            "q": "f(x) = k for 0 ≤ x ≤ 4.",
+            "lines": [
+              "k = [[0.25]]"
+            ]
+          }
+        ],
+        "exam": [
+          {
+            "stem": "<p>X has probability density function f(x) = k(x + 1) for 0 ≤ x ≤ 2, and 0 otherwise.</p>",
+            "parts": [
+              {
+                "q": "Find the value of k.",
+                "m": 2,
+                "ms": [
+                  [
+                    "M1",
+                    "k∫ (x + 1) dx from 0 to 2 = 4k"
+                  ],
+                  [
+                    "A1",
+                    "k = ¼"
+                  ]
+                ],
+                "ans": {
+                  "a": 0.25,
+                  "tol": 0.001,
+                  "unit": ""
+                }
+              },
+              {
+                "q": "Find the cumulative distribution function F(x) for 0 ≤ x ≤ 2.",
+                "m": 2,
+                "ms": [
+                  [
+                    "M1",
+                    "integrates from 0 to x"
+                  ],
+                  [
+                    "A1",
+                    "F(x) = (x² + 2x)/8"
+                  ]
+                ]
+              },
+              {
+                "q": "Find the median of X, giving your answer to 3 significant figures.",
+                "m": 3,
+                "ms": [
+                  [
+                    "M1",
+                    "(m² + 2m)/8 = ½"
+                  ],
+                  [
+                    "M1",
+                    "m² + 2m − 4 = 0"
+                  ],
+                  [
+                    "A1",
+                    "m = −1 + √5 = 1.24"
+                  ]
+                ],
+                "ans": {
+                  "a": 1.2360679775,
+                  "tol": 0.003,
+                  "unit": ""
+                }
+              },
+              {
+                "q": "Find E(X).",
+                "m": 2,
+                "ms": [
+                  [
+                    "M1",
+                    "¼∫ x(x + 1) dx from 0 to 2"
+                  ],
+                  [
+                    "A1",
+                    "7/6"
+                  ]
+                ],
+                "ans": {
+                  "a": 1.1666666667,
+                  "tol": 0.001,
+                  "unit": ""
+                }
+              }
+            ]
+          },
+          {
+            "stem": "<p>X has distribution function F(x) = 0 for x &lt; 1, F(x) = (x − 1)²/9 for 1 ≤ x ≤ 4, and F(x) = 1 for x &gt; 4.</p>",
+            "parts": [
+              {
+                "q": "Find P(2 &lt; X &lt; 3).",
+                "m": 2,
+                "ms": [
+                  [
+                    "M1",
+                    "F(3) − F(2)"
+                  ],
+                  [
+                    "A1",
+                    "⅓"
+                  ]
+                ],
+                "ans": {
+                  "a": 0.3333333333,
+                  "tol": 0.001,
+                  "unit": ""
+                }
+              },
+              {
+                "q": "Find the probability density function of X.",
+                "m": 2,
+                "ms": [
+                  [
+                    "M1",
+                    "differentiates F"
+                  ],
+                  [
+                    "A1",
+                    "f(x) = 2(x − 1)/9 for 1 ≤ x ≤ 4, and 0 otherwise"
+                  ]
+                ]
+              },
+              {
+                "q": "Write down the mode of X.",
+                "m": 1,
+                "ms": [
+                  [
+                    "B1",
+                    "4"
+                  ]
+                ],
+                "ans": {
+                  "a": 4.0,
+                  "tol": 0.001,
+                  "unit": ""
+                }
+              }
+            ]
+          },
+          {
+            "stem": "",
+            "parts": [
+              {
+                "q": "X ~ U[a, b] has mean 6 and variance 3. Find a and b.",
+                "m": 3,
+                "ms": [
+                  [
+                    "M1",
+                    "(a + b)/2 = 6"
+                  ],
+                  [
+                    "M1",
+                    "(b − a)²/12 = 3, so b − a = 6"
+                  ],
+                  [
+                    "A1",
+                    "a = 3, b = 9"
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -9445,6 +9818,164 @@
       "check": {
         "q": "For n=4 untied ranks with Σd²=2, find Spearman correlation.",
         "a": 0.8
+      },
+      "deep": {
+        "tip": "Use the product moment coefficient r = Sxy/√(SxxSyy) for a linear relationship between bivariate normal data, and Spearman’s rank coefficient when the data are ranks or the relationship is monotonic but not linear. In a test, compare the coefficient with the critical value for the sample size, tail and significance level, and state the conclusion in context.",
+        "examples": [
+          {
+            "title": "Product moment correlation",
+            "q": "For a set of data, Sxx = 40, Syy = 90 and Sxy = 54. Find the product moment correlation coefficient.",
+            "steps": [
+              "r = Sxy/√(Sxx Syy).",
+              "= 54/√3600.",
+              "= 54/60 = 0.9."
+            ]
+          },
+          {
+            "title": "Spearman’s rank coefficient",
+            "q": "Two judges rank 6 entries and Σd² = 8. Find Spearman’s rank correlation coefficient.",
+            "steps": [
+              "r_s = 1 − 6Σd²/[n(n² − 1)].",
+              "= 1 − 48/(6 × 35).",
+              "= 0.771."
+            ]
+          },
+          {
+            "title": "A test for positive correlation",
+            "q": "For a sample of 10 pairs, r = 0.6. Test at the 5% level whether there is positive correlation in the population.",
+            "steps": [
+              "H₀: ρ = 0, H₁: ρ > 0.",
+              "The 5% one-tailed critical value for n = 10 is 0.5494.",
+              "0.6 > 0.5494, so reject H₀.",
+              "There is evidence of positive correlation."
+            ]
+          }
+        ],
+        "fills": [
+          {
+            "q": "n = 5 and Σd² = 4.",
+            "lines": [
+              "r_s = [[0.8]]"
+            ]
+          },
+          {
+            "q": "Perfect negative linear correlation.",
+            "lines": [
+              "r = [[-1]]"
+            ]
+          },
+          {
+            "q": "Spearman’s formula.",
+            "lines": [
+              "r_s = 1 − [[6]]Σd²/[n(n² − 1)]"
+            ]
+          }
+        ],
+        "exam": [
+          {
+            "stem": "<p>For 12 pairs of data, Sxx = 125, Syy = 80 and Sxy = −85.</p>",
+            "parts": [
+              {
+                "q": "Calculate the product moment correlation coefficient.",
+                "m": 2,
+                "ms": [
+                  [
+                    "M1",
+                    "−85/√(125 × 80)"
+                  ],
+                  [
+                    "A1",
+                    "−0.85"
+                  ]
+                ],
+                "ans": {
+                  "a": -0.85,
+                  "tol": 0.001,
+                  "unit": ""
+                }
+              },
+              {
+                "q": "Test, at the 1% level, whether there is negative correlation in the population. The critical value is −0.6581.",
+                "m": 3,
+                "ms": [
+                  [
+                    "B1",
+                    "H₀: ρ = 0, H₁: ρ &lt; 0"
+                  ],
+                  [
+                    "M1",
+                    "compares −0.85 with −0.6581"
+                  ],
+                  [
+                    "A1",
+                    "reject H₀: evidence of negative correlation"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "stem": "<p>Two judges rank six photographs. Judge A ranks them 1, 2, 3, 4, 5, 6 and Judge B ranks the same photographs 2, 1, 3, 4, 6, 5.</p>",
+            "parts": [
+              {
+                "q": "Calculate Spearman’s rank correlation coefficient.",
+                "m": 3,
+                "ms": [
+                  [
+                    "M1",
+                    "Σd² = 4"
+                  ],
+                  [
+                    "M1",
+                    "1 − 6 × 4/(6 × 35)"
+                  ],
+                  [
+                    "A1",
+                    "0.886"
+                  ]
+                ],
+                "ans": {
+                  "a": 0.8857142857,
+                  "tol": 0.002,
+                  "unit": ""
+                }
+              },
+              {
+                "q": "Test, at the 5% level, whether the judges agree. The critical value is 0.8286.",
+                "m": 2,
+                "ms": [
+                  [
+                    "B1",
+                    "H₀: ρ = 0, H₁: ρ &gt; 0"
+                  ],
+                  [
+                    "A1",
+                    "0.886 &gt; 0.8286: reject H₀; evidence of agreement"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "stem": "",
+            "parts": [
+              {
+                "q": "Give two situations in which Spearman’s rank correlation coefficient is more appropriate than the product moment correlation coefficient.",
+                "m": 2,
+                "ms": [
+                  [
+                    "B1",
+                    "the data are given as ranks or cannot be measured on a scale"
+                  ],
+                  [
+                    "B1",
+                    "the relationship is monotonic but not linear, or the data are not bivariate normal"
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -9477,6 +10008,167 @@
       "check": {
         "q": "Independent X and Y have variances 4 and 1. Find Var(2X−Y).",
         "a": 17
+      },
+      "deep": {
+        "tip": "Write the mean and the variance of the combination separately: E(aX + bY) = aE(X) + bE(Y), and for independent variables Var(aX + bY) = a²Var(X) + b²Var(Y), so the variances add even when the variables are subtracted. Distinguish 3X (one value tripled, variance 9σ²) from X₁ + X₂ + X₃ (three independent values, variance 3σ²).",
+        "examples": [
+          {
+            "title": "Comparing two normal variables",
+            "q": "X ~ N(50, 9) and Y ~ N(40, 16) are independent. Find P(X > Y).",
+            "steps": [
+              "X − Y ~ N(50 − 40, 9 + 16) = N(10, 25).",
+              "P(X > Y) = P(X − Y > 0).",
+              "z = (0 − 10)/5 = −2.",
+              "P(Z > −2) = 0.9772."
+            ]
+          },
+          {
+            "title": "A total of several values",
+            "q": "Apples have masses N(120, 10²) grams, independently. Find the probability that 5 apples have a total mass over 620 g.",
+            "steps": [
+              "Total T ~ N(5 × 120, 5 × 100) = N(600, 500).",
+              "z = (620 − 600)/√500 = 0.894.",
+              "P(T > 620) = 0.1855."
+            ]
+          },
+          {
+            "title": "Multiples and sums",
+            "q": "X has variance σ². Compare Var(3X) with Var(X₁ + X₂ + X₃), where the Xᵢ are independent copies of X.",
+            "steps": [
+              "Var(3X) = 3²σ² = 9σ².",
+              "Var(X₁ + X₂ + X₃) = σ² + σ² + σ² = 3σ².",
+              "Tripling one value is more variable than adding three independent values."
+            ]
+          }
+        ],
+        "fills": [
+          {
+            "q": "Independent X and Y with Var(X) = 4 and Var(Y) = 9.",
+            "lines": [
+              "Var(X + Y) = [[13]]"
+            ]
+          },
+          {
+            "q": "E(X) = 5 and E(Y) = 4.",
+            "lines": [
+              "E(3X − 2Y) = [[7]]"
+            ]
+          },
+          {
+            "q": "Var(X) = 3.",
+            "lines": [
+              "Var(2X) = [[12]]"
+            ]
+          }
+        ],
+        "exam": [
+          {
+            "stem": "<p>A ~ N(30, 2²) and B ~ N(25, 1.5²) are independent.</p>",
+            "parts": [
+              {
+                "q": "Find P(A − B &gt; 4).",
+                "m": 3,
+                "ms": [
+                  [
+                    "M1",
+                    "A − B ~ N(5, 6.25)"
+                  ],
+                  [
+                    "M1",
+                    "standardises: z = −0.4"
+                  ],
+                  [
+                    "A1",
+                    "0.6554"
+                  ]
+                ],
+                "ans": {
+                  "a": 0.6554217416,
+                  "tol": 0.001,
+                  "unit": ""
+                }
+              },
+              {
+                "q": "Find P(A &gt; 2B − 18).",
+                "m": 4,
+                "ms": [
+                  [
+                    "M1",
+                    "considers A − 2B"
+                  ],
+                  [
+                    "M1",
+                    "mean −20, variance 4 + 4 × 2.25 = 13"
+                  ],
+                  [
+                    "M1",
+                    "P(A − 2B &gt; −18): z = 2/√13"
+                  ],
+                  [
+                    "A1",
+                    "0.2895"
+                  ]
+                ],
+                "ans": {
+                  "a": 0.289549871,
+                  "tol": 0.001,
+                  "unit": ""
+                }
+              }
+            ]
+          },
+          {
+            "stem": "",
+            "parts": [
+              {
+                "q": "X₁, X₂, X₃ and X₄ are independent, each with distribution N(15, 4). Find the probability that their total is less than 58.",
+                "m": 3,
+                "ms": [
+                  [
+                    "M1",
+                    "total ~ N(60, 16)"
+                  ],
+                  [
+                    "M1",
+                    "z = (58 − 60)/4"
+                  ],
+                  [
+                    "A1",
+                    "0.3085"
+                  ]
+                ],
+                "ans": {
+                  "a": 0.3085375387,
+                  "tol": 0.001,
+                  "unit": ""
+                }
+              }
+            ]
+          },
+          {
+            "stem": "<p>X and Y are independent with E(X) = 3, Var(X) = 2, E(Y) = −1 and Var(Y) = 5.</p>",
+            "parts": [
+              {
+                "q": "Find E(2X − 3Y + 1) and Var(2X − 3Y + 1).",
+                "m": 3,
+                "ms": [
+                  [
+                    "B1",
+                    "mean 10"
+                  ],
+                  [
+                    "M1",
+                    "4 × 2 + 9 × 5"
+                  ],
+                  [
+                    "A1",
+                    "variance 53"
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -9510,6 +10202,155 @@
       "check": {
         "q": "If known σ=6 and n=36, find the normal-theory standard error.",
         "a": 1
+      },
+      "deep": {
+        "tip": "Find the standard error before anything else: σ/√n for one mean, √(σ₁²/n₁ + σ₂²/n₂) for a difference of independent means. A confidence interval is estimate ± z × standard error; a test compares (estimate − hypothesised value)/standard error with a critical value. If the population is not normal, a large sample lets you use the central limit theorem.",
+        "examples": [
+          {
+            "title": "A 99% confidence interval",
+            "q": "A normal population has σ = 4. A sample of 25 has mean 52.3. Find a 99% confidence interval for μ.",
+            "steps": [
+              "Standard error = 4/√25 = 0.8.",
+              "For 99%, z = 2.5758.",
+              "52.3 ± 2.5758 × 0.8 = 52.3 ± 2.06.",
+              "(50.24, 54.36)."
+            ]
+          },
+          {
+            "title": "Comparing two means",
+            "q": "Sample A: n = 40, mean 31.2, σ² = 16. Sample B: n = 50, mean 29.5, σ² = 25. Test at the 5% level whether μ_A > μ_B.",
+            "steps": [
+              "H₀: μ_A = μ_B, H₁: μ_A > μ_B.",
+              "Standard error = √(16/40 + 25/50) = 0.9487.",
+              "z = (31.2 − 29.5)/0.9487 = 1.792.",
+              "1.792 > 1.6449: reject H₀; evidence that the mean of A is greater."
+            ]
+          }
+        ],
+        "fills": [
+          {
+            "q": "σ = 6 and n = 36.",
+            "lines": [
+              "standard error = [[1]]"
+            ]
+          },
+          {
+            "q": "A 95% confidence interval.",
+            "lines": [
+              "z = [[1.96]]"
+            ]
+          },
+          {
+            "q": "Standard error 2 with a 95% interval.",
+            "lines": [
+              "width = 2 × 1.96 × 2 = [[7.84]]"
+            ]
+          }
+        ],
+        "exam": [
+          {
+            "stem": "<p>The masses of packets are normally distributed with standard deviation 2.5 g. A random sample of 50 packets has mean mass 101.4 g.</p>",
+            "parts": [
+              {
+                "q": "Find a 95% confidence interval for the mean mass.",
+                "m": 3,
+                "ms": [
+                  [
+                    "M1",
+                    "standard error 2.5/√50"
+                  ],
+                  [
+                    "M1",
+                    "101.4 ± 1.96 × 0.354"
+                  ],
+                  [
+                    "A1",
+                    "(100.71, 102.09)"
+                  ]
+                ]
+              },
+              {
+                "q": "The manufacturer claims the mean mass is 100 g. Comment on this claim.",
+                "m": 1,
+                "ms": [
+                  [
+                    "B1",
+                    "100 lies outside the interval, so the evidence suggests the mean is not 100 g"
+                  ]
+                ]
+              },
+              {
+                "q": "Find the smallest sample size for which the width of a 95% interval is at most 1 g.",
+                "m": 3,
+                "ms": [
+                  [
+                    "M1",
+                    "2 × 1.96 × 2.5/√n ≤ 1"
+                  ],
+                  [
+                    "M1",
+                    "√n ≥ 9.8"
+                  ],
+                  [
+                    "A1",
+                    "n = 97"
+                  ]
+                ],
+                "ans": {
+                  "a": 97.0,
+                  "tol": 0.001,
+                  "unit": ""
+                }
+              }
+            ]
+          },
+          {
+            "stem": "<p>Group A: 60 observations with mean 12.4 from a population with variance 9. Group B: 40 observations with mean 11.1 from a population with variance 6.25.</p>",
+            "parts": [
+              {
+                "q": "Test, at the 5% level, whether the population means differ.",
+                "m": 5,
+                "ms": [
+                  [
+                    "B1",
+                    "H₀: μ_A = μ_B, H₁: μ_A ≠ μ_B"
+                  ],
+                  [
+                    "M1",
+                    "standard error √(9/60 + 6.25/40) = 0.553"
+                  ],
+                  [
+                    "M1",
+                    "z = 1.3/0.553"
+                  ],
+                  [
+                    "A1",
+                    "2.35"
+                  ],
+                  [
+                    "A1",
+                    "2.35 &gt; 1.96: reject H₀; the means differ"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "stem": "",
+            "parts": [
+              {
+                "q": "Explain why the central limit theorem allows a normal distribution to be used for a sample mean even when the population is not known to be normal.",
+                "m": 1,
+                "ms": [
+                  [
+                    "B1",
+                    "for a large sample the sample mean is approximately normally distributed, whatever the population distribution"
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -9544,6 +10385,158 @@
       "check": {
         "q": "For a normal sample of n=10, what are the degrees of freedom of the variance chi-squared pivot?",
         "a": 9
+      },
+      "deep": {
+        "tip": "For one variance, (n − 1)S²/σ² has a χ² distribution with n − 1 degrees of freedom, so tests and confidence intervals both come from χ² tables; note that the interval is not symmetric. To compare two variances, put the larger sample variance on top of the F ratio and use degrees of freedom (numerator n − 1, denominator n − 1) in that order.",
+        "examples": [
+          {
+            "title": "A test for a variance",
+            "q": "A sample of 12 from a normal population has s² = 2.9. Test at the 5% level whether σ² > 1.5.",
+            "steps": [
+              "H₀: σ² = 1.5, H₁: σ² > 1.5.",
+              "Test statistic (n − 1)s²/σ² = 11 × 2.9/1.5 = 21.27.",
+              "χ²₁₁ upper 5% value = 19.675.",
+              "21.27 > 19.675: reject H₀; evidence that the variance exceeds 1.5."
+            ]
+          },
+          {
+            "title": "A confidence interval for a variance",
+            "q": "A sample of 10 from a normal population has s² = 4.2. Find a 95% confidence interval for σ².",
+            "steps": [
+              "χ²₉ percentage points: 2.700 and 19.023.",
+              "Lower limit 9 × 4.2/19.023 = 1.99.",
+              "Upper limit 9 × 4.2/2.700 = 14.0.",
+              "The interval is (1.99, 14.0)."
+            ]
+          },
+          {
+            "title": "An F-test",
+            "q": "Samples of sizes 9 and 13 have variances 8.4 and 3.1. Test at the 5% level whether the first population has the larger variance.",
+            "steps": [
+              "H₀: σ₁² = σ₂², H₁: σ₁² > σ₂².",
+              "F = 8.4/3.1 = 2.710 with (8, 12) degrees of freedom.",
+              "Critical value F₈,₁₂(5%) = 2.849.",
+              "2.710 < 2.849: do not reject H₀."
+            ]
+          }
+        ],
+        "fills": [
+          {
+            "q": "A test for a variance with n = 15.",
+            "lines": [
+              "degrees of freedom = [[14]]"
+            ]
+          },
+          {
+            "q": "An F-test with sample sizes 7 (numerator) and 10.",
+            "lines": [
+              "degrees of freedom ([[6]], [[9]])"
+            ]
+          },
+          {
+            "q": "n = 5, s² = 8 and σ² = 4.",
+            "lines": [
+              "(n − 1)s²/σ² = [[8]]"
+            ]
+          }
+        ],
+        "exam": [
+          {
+            "stem": "<p>A sample of 16 observations from a normal population has s² = 0.81.</p>",
+            "parts": [
+              {
+                "q": "Test, at the 5% level, whether the population variance differs from 0.5.",
+                "m": 5,
+                "ms": [
+                  [
+                    "B1",
+                    "H₀: σ² = 0.5, H₁: σ² ≠ 0.5"
+                  ],
+                  [
+                    "M1",
+                    "statistic 15 × 0.81/0.5"
+                  ],
+                  [
+                    "A1",
+                    "24.3"
+                  ],
+                  [
+                    "B1",
+                    "critical values 6.262 and 27.488"
+                  ],
+                  [
+                    "A1",
+                    "do not reject H₀: no evidence that the variance differs from 0.5"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "stem": "<p>Two independent samples from normal populations: sample 1 has n = 8 and s² = 14.2; sample 2 has n = 10 and s² = 5.1.</p>",
+            "parts": [
+              {
+                "q": "Test, at the 10% level, whether the population variances differ.",
+                "m": 4,
+                "ms": [
+                  [
+                    "M1",
+                    "F = 14.2/5.1 = 2.78"
+                  ],
+                  [
+                    "B1",
+                    "(7, 9) degrees of freedom"
+                  ],
+                  [
+                    "B1",
+                    "critical value 3.293 for 5% in the upper tail"
+                  ],
+                  [
+                    "A1",
+                    "do not reject H₀: no evidence that the variances differ"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "stem": "",
+            "parts": [
+              {
+                "q": "A sample of 20 from a normal population has standard deviation 3.4. Find a 95% confidence interval for the population standard deviation.",
+                "m": 4,
+                "ms": [
+                  [
+                    "M1",
+                    "19 × 3.4²/χ² values 32.852 and 8.907"
+                  ],
+                  [
+                    "A1",
+                    "interval for σ²: (6.69, 24.7)"
+                  ],
+                  [
+                    "M1",
+                    "takes square roots"
+                  ],
+                  [
+                    "A1",
+                    "(2.59, 4.97)"
+                  ]
+                ]
+              },
+              {
+                "q": "Explain why this interval is not symmetric about 3.4.",
+                "m": 1,
+                "ms": [
+                  [
+                    "B1",
+                    "the χ² distribution is not symmetric (it is positively skewed)"
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -9577,6 +10570,146 @@
       "check": {
         "q": "A one-sample t test uses 9 independent observations. Find its degrees of freedom.",
         "a": 8
+      },
+      "deep": {
+        "tip": "Use the t-distribution when the population is normal but its variance is estimated from the sample. A one-sample or paired test has n − 1 degrees of freedom; a two-sample test with a pooled variance has n₁ + n₂ − 2. For paired data, work with the differences as a single sample.",
+        "examples": [
+          {
+            "title": "A one-sample t-test",
+            "q": "A sample of 8 from a normal population has mean 14.6 and s = 1.8. Test at the 5% level whether μ > 13.",
+            "steps": [
+              "H₀: μ = 13, H₁: μ > 13.",
+              "t = (14.6 − 13)/(1.8/√8) = 2.514.",
+              "t₇ upper 5% value = 1.895.",
+              "2.514 > 1.895: reject H₀; evidence that the mean exceeds 13."
+            ]
+          },
+          {
+            "title": "A t confidence interval",
+            "q": "A sample of 12 from a normal population has mean 48.2 and s = 5.1. Find a 95% confidence interval for μ.",
+            "steps": [
+              "t₁₁ value for 95% = 2.201.",
+              "Standard error 5.1/√12 = 1.472.",
+              "48.2 ± 2.201 × 1.472 = 48.2 ± 3.24.",
+              "(44.96, 51.44)."
+            ]
+          },
+          {
+            "title": "A pooled two-sample test",
+            "q": "Sample 1: n = 6, mean 20.5, s² = 4.0. Sample 2: n = 8, mean 18.1, s² = 5.2. Assuming normal populations with equal variances, test at the 5% level whether μ₁ > μ₂.",
+            "steps": [
+              "Pooled s² = (5 × 4.0 + 7 × 5.2)/12 = 4.7.",
+              "t = 2.4/√(4.7(1/6 + 1/8)) = 2.05.",
+              "t₁₂ upper 5% value = 1.782.",
+              "2.05 > 1.782: reject H₀; evidence that μ₁ > μ₂."
+            ]
+          }
+        ],
+        "fills": [
+          {
+            "q": "A one-sample t-test with n = 15.",
+            "lines": [
+              "degrees of freedom = [[14]]"
+            ]
+          },
+          {
+            "q": "A pooled test with n₁ = 6 and n₂ = 8.",
+            "lines": [
+              "degrees of freedom = [[12]]"
+            ]
+          },
+          {
+            "q": "s = 4 and n = 16.",
+            "lines": [
+              "estimated standard error = [[1]]"
+            ]
+          }
+        ],
+        "exam": [
+          {
+            "stem": "<p>Eight students each sit two tests. The differences (second − first) have mean 1.75 and standard deviation 2.05.</p>",
+            "parts": [
+              {
+                "q": "Test, at the 5% level, whether scores on the second test are higher on average.",
+                "m": 5,
+                "ms": [
+                  [
+                    "B1",
+                    "H₀: μ_d = 0, H₁: μ_d &gt; 0"
+                  ],
+                  [
+                    "M1",
+                    "t = 1.75/(2.05/√8)"
+                  ],
+                  [
+                    "A1",
+                    "2.41"
+                  ],
+                  [
+                    "B1",
+                    "critical value t₇ = 1.895"
+                  ],
+                  [
+                    "A1",
+                    "reject H₀: evidence that scores are higher on the second test"
+                  ]
+                ]
+              },
+              {
+                "q": "State an assumption needed for this test.",
+                "m": 1,
+                "ms": [
+                  [
+                    "B1",
+                    "the differences are normally distributed"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "stem": "",
+            "parts": [
+              {
+                "q": "A sample of 10 from a normal population has mean 72.4 and standard deviation 6.3. Find a 90% confidence interval for the population mean.",
+                "m": 3,
+                "ms": [
+                  [
+                    "B1",
+                    "t₉ = 1.833"
+                  ],
+                  [
+                    "M1",
+                    "72.4 ± 1.833 × 6.3/√10"
+                  ],
+                  [
+                    "A1",
+                    "(68.75, 76.05)"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "stem": "",
+            "parts": [
+              {
+                "q": "State the assumptions needed for a two-sample t-test using a pooled variance.",
+                "m": 2,
+                "ms": [
+                  [
+                    "B1",
+                    "both populations are normally distributed"
+                  ],
+                  [
+                    "B1",
+                    "the population variances are equal and the samples are independent"
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -10708,6 +11841,170 @@
       "check": {
         "q": "Find radial acceleration for speed 4 m/s and radius 2 m, in m/s².",
         "a": 8
+      },
+      "deep": {
+        "tip": "Mark the centre of the circle and resolve towards it: the resultant inward force equals mv²/r = mrω². In a vertical circle, energy links the speeds at different heights; a string stays taut while the tension is positive, whereas a particle on a rigid rod or inside a tube only needs speed at the top.",
+        "examples": [
+          {
+            "title": "A conical pendulum",
+            "q": "A particle of mass 0.2 kg on a string of length 0.5 m moves in a horizontal circle with the string at 30° to the vertical. Find the tension and the angular speed.",
+            "steps": [
+              "Vertically: T cos 30° = 0.2g, so T = 2.263 N.",
+              "Radius r = 0.5 sin 30° = 0.25 m.",
+              "Horizontally: T sin 30° = 0.2 × 0.25ω².",
+              "ω² = 22.6, so ω = 4.76 rad s⁻¹."
+            ]
+          },
+          {
+            "title": "A vertical circle",
+            "q": "A particle of mass 0.5 kg on a string of length 0.8 m is moving in a vertical circle. Its speed at the lowest point is 7 m s⁻¹. Find its speed and the tension at the highest point.",
+            "steps": [
+              "Energy: v² = 7² − 2g(1.6) = 17.64.",
+              "v = 4.2 m s⁻¹.",
+              "At the top: T + 0.5g = 0.5 × 17.64/0.8.",
+              "T = 6.125 N; positive, so the string is taut."
+            ]
+          },
+          {
+            "title": "A banked track",
+            "q": "A car travels round a smooth track banked at 20° in a horizontal circle of radius 50 m. Find the speed at which there is no tendency to slip.",
+            "steps": [
+              "Vertically: R cos 20° = mg.",
+              "Horizontally: R sin 20° = mv²/50.",
+              "Dividing: v² = 50g tan 20° = 178.3.",
+              "v = 13.4 m s⁻¹."
+            ]
+          }
+        ],
+        "fills": [
+          {
+            "q": "ω = 3 rad s⁻¹ and r = 2 m.",
+            "lines": [
+              "v = [[6]] m s⁻¹"
+            ]
+          },
+          {
+            "q": "v = 4 m s⁻¹ and r = 2 m.",
+            "lines": [
+              "acceleration towards the centre = [[8]] m s⁻²"
+            ]
+          },
+          {
+            "q": "2 revolutions per second.",
+            "lines": [
+              "ω = [[4]]π rad s⁻¹"
+            ]
+          }
+        ],
+        "exam": [
+          {
+            "stem": "",
+            "parts": [
+              {
+                "q": "A car moves on a horizontal circular track of radius 60 m. The coefficient of friction between the tyres and the track is 0.5. Find the greatest speed at which the car can travel without slipping.",
+                "m": 3,
+                "ms": [
+                  [
+                    "M1",
+                    "friction provides the central force: μmg = mv²/60"
+                  ],
+                  [
+                    "M1",
+                    "v² = 0.5 × 9.8 × 60"
+                  ],
+                  [
+                    "A1",
+                    "17.1 m s⁻¹"
+                  ]
+                ],
+                "ans": {
+                  "a": 17.1464281995,
+                  "tol": 0.003,
+                  "unit": "m s⁻¹"
+                }
+              }
+            ]
+          },
+          {
+            "stem": "<p>A particle is released from rest at the top of a smooth fixed sphere of radius a and slides down its outside surface.</p>",
+            "parts": [
+              {
+                "q": "Find the angle between the radius to the particle and the upward vertical when it leaves the surface.",
+                "m": 5,
+                "ms": [
+                  [
+                    "M1",
+                    "energy: v² = 2ga(1 − cos θ)"
+                  ],
+                  [
+                    "M1",
+                    "radial equation: mg cos θ − R = mv²/a"
+                  ],
+                  [
+                    "M1",
+                    "sets R = 0"
+                  ],
+                  [
+                    "A1",
+                    "cos θ = ⅔"
+                  ],
+                  [
+                    "A1",
+                    "θ = 48.2°"
+                  ]
+                ],
+                "ans": {
+                  "a": 48.2,
+                  "tol": 0.003,
+                  "unit": "°"
+                }
+              }
+            ]
+          },
+          {
+            "stem": "<p>A particle of mass 0.3 kg is attached to a string of length 1.2 m whose other end is fixed. It moves in a horizontal circle with angular speed 4 rad s⁻¹.</p>",
+            "parts": [
+              {
+                "q": "Find the tension in the string.",
+                "m": 2,
+                "ms": [
+                  [
+                    "M1",
+                    "T sin θ = m(l sin θ)ω², so T = mlω²"
+                  ],
+                  [
+                    "A1",
+                    "5.76 N"
+                  ]
+                ],
+                "ans": {
+                  "a": 5.76,
+                  "tol": 0.001,
+                  "unit": "N"
+                }
+              },
+              {
+                "q": "Find the angle between the string and the vertical.",
+                "m": 2,
+                "ms": [
+                  [
+                    "M1",
+                    "T cos θ = mg"
+                  ],
+                  [
+                    "A1",
+                    "cos θ = 0.510, θ = 59.3°"
+                  ]
+                ],
+                "ans": {
+                  "a": 59.3,
+                  "tol": 0.003,
+                  "unit": "°"
+                }
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -10740,6 +12037,163 @@
       "check": {
         "q": "Find the centre-of-mass x-coordinate of equal masses at x=2 and x=8.",
         "a": 5
+      },
+      "deep": {
+        "tip": "Split a composite body into simple parts, list each part’s mass (or area) and centre in a table, and take moments about a chosen axis; a removed part contributes a negative mass. For a region under a curve, use x̄ = ∫xy dx/∫y dx and ȳ = ½∫y² dx/∫y dx. A suspended body hangs with its centre of mass vertically below the point of suspension.",
+        "examples": [
+          {
+            "title": "A composite lamina",
+            "q": "An L-shaped lamina is made from a 6 × 2 rectangle along the x-axis (0 ≤ x ≤ 6, 0 ≤ y ≤ 2) and a 2 × 4 rectangle on top (0 ≤ x ≤ 2, 2 ≤ y ≤ 6). Find its centre of mass.",
+            "steps": [
+              "Areas 12 and 8, with centres (3, 1) and (1, 4).",
+              "x̄ = (12 × 3 + 8 × 1)/20 = 2.2.",
+              "ȳ = (12 × 1 + 8 × 4)/20 = 2.2.",
+              "The centre of mass is (2.2, 2.2)."
+            ]
+          },
+          {
+            "title": "A region under a curve",
+            "q": "Find the centre of mass of the uniform lamina bounded by y = x², the x-axis and x = 2.",
+            "steps": [
+              "Area = ∫ x² dx from 0 to 2 = 8/3.",
+              "x̄ = ∫ x³ dx/(8/3) = 4/(8/3) = 1.5.",
+              "ȳ = ½∫ x⁴ dx/(8/3) = 3.2/(8/3) = 1.2.",
+              "The centre of mass is (1.5, 1.2)."
+            ]
+          },
+          {
+            "title": "Hanging freely",
+            "q": "The L-shaped lamina in the first example is suspended from the origin. Find the angle between the edge along the x-axis and the vertical.",
+            "steps": [
+              "The centre of mass (2.2, 2.2) hangs vertically below the origin.",
+              "The angle between the x-axis edge and the line to the centre of mass has tan θ = 2.2/2.2.",
+              "θ = 45°."
+            ]
+          }
+        ],
+        "fills": [
+          {
+            "q": "Particles of 2 kg at x = 0 and 6 kg at x = 4.",
+            "lines": [
+              "x̄ = [[3]]"
+            ]
+          },
+          {
+            "q": "A uniform rod from x = 0 to x = 8.",
+            "lines": [
+              "x̄ = [[4]]"
+            ]
+          },
+          {
+            "q": "A triangle with vertices (0, 0), (6, 0) and (0, 3).",
+            "lines": [
+              "x̄ = [[2]]"
+            ]
+          }
+        ],
+        "exam": [
+          {
+            "stem": "<p>A uniform square lamina OABC has side 4 cm, with O at the origin and A at (4, 0). A square of side 2 cm in the corner 2 ≤ x ≤ 4, 2 ≤ y ≤ 4 is removed.</p>",
+            "parts": [
+              {
+                "q": "Show that the centre of mass of the remaining lamina is at (5/3, 5/3).",
+                "m": 3,
+                "ms": [
+                  [
+                    "M1",
+                    "areas 16 and −4 with centres (2, 2) and (3, 3)"
+                  ],
+                  [
+                    "M1",
+                    "moments: (16 × 2 − 4 × 3)/12"
+                  ],
+                  [
+                    "A1",
+                    "5/3 for both coordinates by symmetry"
+                  ]
+                ]
+              },
+              {
+                "q": "The lamina is suspended from A and hangs in equilibrium. Find the angle between OA and the vertical.",
+                "m": 3,
+                "ms": [
+                  [
+                    "M1",
+                    "horizontal and vertical distances from A: 7/3 and 5/3"
+                  ],
+                  [
+                    "M1",
+                    "tan θ = (5/3)/(7/3)"
+                  ],
+                  [
+                    "A1",
+                    "35.5°"
+                  ]
+                ],
+                "ans": {
+                  "a": 35.5,
+                  "tol": 0.003,
+                  "unit": "°"
+                }
+              }
+            ]
+          },
+          {
+            "stem": "<p>R is the region bounded by y = √x, the x-axis and the line x = 4.</p>",
+            "parts": [
+              {
+                "q": "Find the coordinates of the centre of mass of a uniform lamina occupying R.",
+                "m": 5,
+                "ms": [
+                  [
+                    "M1",
+                    "area 16/3"
+                  ],
+                  [
+                    "M1",
+                    "∫ x√x dx = 64/5"
+                  ],
+                  [
+                    "A1",
+                    "x̄ = 2.4"
+                  ],
+                  [
+                    "M1",
+                    "½∫ x dx = 4"
+                  ],
+                  [
+                    "A1",
+                    "ȳ = 0.75"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "stem": "",
+            "parts": [
+              {
+                "q": "A uniform rod AB of length 2 m and mass 3 kg has particles of mass 1 kg at A and 2 kg at B. Find the distance of the centre of mass from A.",
+                "m": 2,
+                "ms": [
+                  [
+                    "M1",
+                    "(3 × 1 + 1 × 0 + 2 × 2)/6"
+                  ],
+                  [
+                    "A1",
+                    "7/6 m"
+                  ]
+                ],
+                "ans": {
+                  "a": 1.1666666667,
+                  "tol": 0.001,
+                  "unit": "m"
+                }
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -10774,6 +12228,153 @@
       "check": {
         "q": "A block has base 0.6 and height 0.8. Find tanθ at toppling, assuming no sliding.",
         "a": 0.75
+      },
+      "deep": {
+        "tip": "Draw every force and take moments about a point that removes unknown forces, then resolve in two perpendicular directions. In limiting equilibrium friction equals μR, acting to oppose the impending motion. For a block on a slope, compare the angle for sliding (tan α = μ) with the angle for toppling (the weight’s line of action passes through the lower edge).",
+        "examples": [
+          {
+            "title": "A ladder against a smooth wall",
+            "q": "A uniform ladder of length 5 m and mass 20 kg rests against a smooth vertical wall at 60° to rough horizontal ground. It is about to slip. Find the coefficient of friction.",
+            "steps": [
+              "Moments about the foot: S × 5 sin 60° = 20g × 2.5 cos 60°.",
+              "S = 56.6 N.",
+              "Resolving: F = S and R = 20g = 196 N.",
+              "μ = F/R = 56.6/196 = 0.289 (exactly 1/(2√3))."
+            ]
+          },
+          {
+            "title": "Slide or topple?",
+            "q": "A uniform block with base 0.5 m and height 1.2 m stands on a rough plane (μ = 0.6) whose angle is slowly increased. Does it slide or topple first?",
+            "steps": [
+              "It would slide when tan α = μ = 0.6, at α = 31.0°.",
+              "It would topple when tan α = 0.5/1.2, at α = 22.6°.",
+              "22.6° < 31.0°, so the block topples first."
+            ]
+          }
+        ],
+        "fills": [
+          {
+            "q": "A force of 30 N at a perpendicular distance of 0.4 m.",
+            "lines": [
+              "moment = [[12]] N m"
+            ]
+          },
+          {
+            "q": "μ = 0.3 and R = 50 N.",
+            "lines": [
+              "limiting friction = [[15]] N"
+            ]
+          },
+          {
+            "q": "A block of width 0.3 m and height 0.6 m.",
+            "lines": [
+              "topples when tan α = [[0.5]]"
+            ]
+          }
+        ],
+        "exam": [
+          {
+            "stem": "<p>A uniform ladder of length 4 m and mass 12 kg rests with its foot on rough horizontal ground and its top against a smooth vertical wall. The coefficient of friction is 0.4, and the ladder makes an angle α with the ground.</p>",
+            "parts": [
+              {
+                "q": "Find the least value of tan α for which the ladder can rest in equilibrium.",
+                "m": 5,
+                "ms": [
+                  [
+                    "M1",
+                    "moments about the foot: S × 4 sin α = 12g × 2 cos α"
+                  ],
+                  [
+                    "M1",
+                    "R = 12g and F = S"
+                  ],
+                  [
+                    "M1",
+                    "limiting: F = 0.4R"
+                  ],
+                  [
+                    "A1",
+                    "tan α = 1.25"
+                  ],
+                  [
+                    "A1",
+                    "α = 51.3°"
+                  ]
+                ],
+                "ans": {
+                  "a": 1.25,
+                  "tol": 0.001,
+                  "unit": ""
+                }
+              },
+              {
+                "q": "State how you have used the fact that the wall is smooth.",
+                "m": 1,
+                "ms": [
+                  [
+                    "B1",
+                    "the reaction at the wall is perpendicular to the wall: there is no friction there"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "stem": "<p>A uniform rod AB of length 3 m and mass 10 kg is hinged to a vertical wall at A. It is held horizontal by a light string from B to the point C on the wall 2 m vertically above A.</p>",
+            "parts": [
+              {
+                "q": "Find the tension in the string.",
+                "m": 4,
+                "ms": [
+                  [
+                    "M1",
+                    "moments about A"
+                  ],
+                  [
+                    "M1",
+                    "perpendicular distance from A to BC: 3 × 2/√13"
+                  ],
+                  [
+                    "A1",
+                    "T × 6/√13 = 10g × 1.5"
+                  ],
+                  [
+                    "A1",
+                    "88.3 N"
+                  ]
+                ],
+                "ans": {
+                  "a": 88.3360062489,
+                  "tol": 0.003,
+                  "unit": "N"
+                }
+              }
+            ]
+          },
+          {
+            "stem": "",
+            "parts": [
+              {
+                "q": "A uniform cube rests on a rough plane with coefficient of friction 0.8. The angle of the plane is slowly increased. Determine whether the cube slides or topples first.",
+                "m": 3,
+                "ms": [
+                  [
+                    "B1",
+                    "slides when tan α = 0.8"
+                  ],
+                  [
+                    "B1",
+                    "topples when tan α = 1 (45°)"
+                  ],
+                  [
+                    "B1",
+                    "0.8 &lt; 1, so it slides first"
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -10808,6 +12409,202 @@
       "check": {
         "q": "If x″=−9x, what is the period divided by π?",
         "a": 0.6666666666666666
+      },
+      "deep": {
+        "tip": "Write Newton’s second law with the right form of acceleration: dv/dt for force as a function of time, v dv/dx for force as a function of displacement, and separate the variables. For simple harmonic motion, identify ω from ẍ = −ω²x, then use v² = ω²(a² − x²), maximum speed aω, and period 2π/ω.",
+        "examples": [
+          {
+            "title": "A force varying with time",
+            "q": "A particle of mass 2 kg starts from rest at the origin and is acted on by a force of 6t N. Find its velocity and displacement at t = 2.",
+            "steps": [
+              "a = 6t/2 = 3t.",
+              "v = 1.5t² (v = 0 at t = 0), so v(2) = 6 m s⁻¹.",
+              "x = 0.5t³, so x(2) = 4 m."
+            ]
+          },
+          {
+            "title": "Resistance proportional to v²",
+            "q": "A boat of mass 200 kg cuts its engine at 10 m s⁻¹. The resistance is 8v² N. Find how far it travels before its speed halves.",
+            "steps": [
+              "200v dv/dx = −8v², so dv/v = −0.04 dx.",
+              "ln v = −0.04x + ln 10, so v = 10e^(−0.04x).",
+              "v = 5 when e^(−0.04x) = ½.",
+              "x = ln 2/0.04 = 17.3 m."
+            ]
+          },
+          {
+            "title": "Simple harmonic motion",
+            "q": "A particle moves with simple harmonic motion of amplitude 0.5 m and period π s. Find its maximum speed and its speed 0.3 m from the centre.",
+            "steps": [
+              "Period 2π/ω = π, so ω = 2.",
+              "Maximum speed aω = 1 m s⁻¹.",
+              "v² = ω²(a² − x²) = 4(0.25 − 0.09).",
+              "v = 0.8 m s⁻¹."
+            ]
+          }
+        ],
+        "fills": [
+          {
+            "q": "SHM with ω = 3 and amplitude 2 m.",
+            "lines": [
+              "maximum speed = [[6]] m s⁻¹"
+            ]
+          },
+          {
+            "q": "SHM with ω = 4.",
+            "lines": [
+              "period = π/[[2]] s"
+            ]
+          },
+          {
+            "q": "ẍ = −25x at x = 0.2 m.",
+            "lines": [
+              "|acceleration| = [[5]] m s⁻²"
+            ]
+          }
+        ],
+        "exam": [
+          {
+            "stem": "<p>A particle of mass 0.5 kg moves in a straight line. At time t seconds the resultant force on it is (4 − 2t) N. It starts from rest at the origin.</p>",
+            "parts": [
+              {
+                "q": "Find the greatest speed of the particle in the first 4 seconds.",
+                "m": 3,
+                "ms": [
+                  [
+                    "M1",
+                    "a = 8 − 4t"
+                  ],
+                  [
+                    "M1",
+                    "v = 8t − 2t²"
+                  ],
+                  [
+                    "A1",
+                    "greatest at t = 2: 8 m s⁻¹"
+                  ]
+                ],
+                "ans": {
+                  "a": 8.0,
+                  "tol": 0.001,
+                  "unit": "m s⁻¹"
+                }
+              },
+              {
+                "q": "Find the distance travelled before the particle next comes to rest.",
+                "m": 2,
+                "ms": [
+                  [
+                    "M1",
+                    "v = 0 at t = 4"
+                  ],
+                  [
+                    "A1",
+                    "x = 4t² − ⅔t³ = 21.3 m"
+                  ]
+                ],
+                "ans": {
+                  "a": 21.3333333333,
+                  "tol": 0.002,
+                  "unit": "m"
+                }
+              }
+            ]
+          },
+          {
+            "stem": "<p>A particle moves with simple harmonic motion. Its maximum speed is 3 m s⁻¹ and its maximum acceleration is 12 m s⁻².</p>",
+            "parts": [
+              {
+                "q": "Find the amplitude and the period of the motion.",
+                "m": 4,
+                "ms": [
+                  [
+                    "M1",
+                    "aω = 3 and aω² = 12"
+                  ],
+                  [
+                    "A1",
+                    "ω = 4"
+                  ],
+                  [
+                    "A1",
+                    "a = 0.75 m"
+                  ],
+                  [
+                    "A1",
+                    "period π/2 s"
+                  ]
+                ]
+              },
+              {
+                "q": "Find the time taken to move from the centre to a point 0.375 m from the centre.",
+                "m": 2,
+                "ms": [
+                  [
+                    "M1",
+                    "0.375 = 0.75 sin 4t"
+                  ],
+                  [
+                    "A1",
+                    "t = π/24 = 0.131 s"
+                  ]
+                ],
+                "ans": {
+                  "a": 0.1308996939,
+                  "tol": 0.003,
+                  "unit": "s"
+                }
+              }
+            ]
+          },
+          {
+            "stem": "<p>A car moving at 20 m s⁻¹ freewheels so that its deceleration is 0.1v m s⁻².</p>",
+            "parts": [
+              {
+                "q": "Find the time taken for its speed to fall to 5 m s⁻¹.",
+                "m": 3,
+                "ms": [
+                  [
+                    "M1",
+                    "separates: ∫ dv/v = −0.1∫ dt"
+                  ],
+                  [
+                    "A1",
+                    "v = 20e^(−0.1t)"
+                  ],
+                  [
+                    "A1",
+                    "t = 10 ln 4 = 13.9 s"
+                  ]
+                ],
+                "ans": {
+                  "a": 13.8629436112,
+                  "tol": 0.003,
+                  "unit": "s"
+                }
+              },
+              {
+                "q": "Find the distance travelled in this time.",
+                "m": 2,
+                "ms": [
+                  [
+                    "M1",
+                    "x = ∫ 20e^(−0.1t) dt = 200(1 − e^(−0.1t))"
+                  ],
+                  [
+                    "A1",
+                    "150 m"
+                  ]
+                ],
+                "ans": {
+                  "a": 150.0,
+                  "tol": 0.001,
+                  "unit": "m"
+                }
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -10841,6 +12638,205 @@
       "check": {
         "q": "For r(t)=(t²,3t,4−t²), find the y-component of velocity.",
         "a": 3
+      },
+      "deep": {
+        "tip": "Treat horizontal and vertical motion separately: the horizontal component of velocity is constant, while the vertical motion has acceleration g downwards. For vector kinematics, differentiate r to get v and a, and integrate the other way, using the initial position or velocity to find each constant vector.",
+        "examples": [
+          {
+            "title": "A projectile from the ground",
+            "q": "A ball is projected from level ground at 25 m s⁻¹ at 40° above the horizontal. Find the time of flight, the range and the greatest height.",
+            "steps": [
+              "Vertical: 0 = 25 sin 40° t − 4.9t², so t = 3.28 s.",
+              "Range = 25 cos 40° × 3.28 = 62.8 m.",
+              "Greatest height = (25 sin 40°)²/(2g) = 13.2 m."
+            ]
+          },
+          {
+            "title": "Integrating a velocity vector",
+            "q": "A particle has velocity v = 3t²i + (4 − 2t)j and is at (i + 2j) when t = 0. Find its position when it is moving parallel to i.",
+            "steps": [
+              "r = (t³ + 1)i + (4t − t² + 2)j, using the initial position.",
+              "Parallel to i when the j-component of velocity is 0: 4 − 2t = 0.",
+              "t = 2.",
+              "r = 9i + 6j."
+            ]
+          },
+          {
+            "title": "Horizontal projection from a cliff",
+            "q": "A stone is thrown horizontally at 15 m s⁻¹ from a cliff 40 m high. Find how far from the foot of the cliff it lands.",
+            "steps": [
+              "Vertical: 40 = 4.9t², so t = 2.857 s.",
+              "Horizontal distance = 15 × 2.857.",
+              "42.9 m."
+            ]
+          }
+        ],
+        "fills": [
+          {
+            "q": "v = 2t i + 3j.",
+            "lines": [
+              "a = [[2]]i"
+            ]
+          },
+          {
+            "q": "Vertical component of the initial velocity 9.8 m s⁻¹.",
+            "lines": [
+              "time of flight on level ground = [[2]] s"
+            ]
+          },
+          {
+            "q": "Horizontal velocity 10 m s⁻¹ for 3 s.",
+            "lines": [
+              "horizontal distance = [[30]] m"
+            ]
+          }
+        ],
+        "exam": [
+          {
+            "stem": "<p>A ball is projected from level ground at 20 m s⁻¹ at an angle α above the horizontal, where tan α = ¾.</p>",
+            "parts": [
+              {
+                "q": "Find the time of flight.",
+                "m": 2,
+                "ms": [
+                  [
+                    "M1",
+                    "0 = 12t − 4.9t²"
+                  ],
+                  [
+                    "A1",
+                    "2.45 s"
+                  ]
+                ],
+                "ans": {
+                  "a": 2.4489795918,
+                  "tol": 0.003,
+                  "unit": "s"
+                }
+              },
+              {
+                "q": "Find the horizontal range.",
+                "m": 2,
+                "ms": [
+                  [
+                    "M1",
+                    "16 × 2.449"
+                  ],
+                  [
+                    "A1",
+                    "39.2 m"
+                  ]
+                ],
+                "ans": {
+                  "a": 39.1836734694,
+                  "tol": 0.003,
+                  "unit": "m"
+                }
+              },
+              {
+                "q": "Find the length of time for which the ball is more than 5 m above the ground.",
+                "m": 4,
+                "ms": [
+                  [
+                    "M1",
+                    "12t − 4.9t² = 5"
+                  ],
+                  [
+                    "M1",
+                    "solves 4.9t² − 12t + 5 = 0"
+                  ],
+                  [
+                    "A1",
+                    "t = 0.532 and t = 1.917"
+                  ],
+                  [
+                    "A1",
+                    "1.38 s"
+                  ]
+                ],
+                "ans": {
+                  "a": 1.3841489761,
+                  "tol": 0.003,
+                  "unit": "s"
+                }
+              }
+            ]
+          },
+          {
+            "stem": "<p>A particle moves with velocity v = (6t − 4)i + 3t²j m s⁻¹.</p>",
+            "parts": [
+              {
+                "q": "Find the magnitude of its acceleration when t = 1.",
+                "m": 2,
+                "ms": [
+                  [
+                    "M1",
+                    "a = 6i + 6tj"
+                  ],
+                  [
+                    "A1",
+                    "6√2 = 8.49 m s⁻²"
+                  ]
+                ],
+                "ans": {
+                  "a": 8.4852813742,
+                  "tol": 0.002,
+                  "unit": ""
+                }
+              },
+              {
+                "q": "Find its displacement from t = 0 to t = 2.",
+                "m": 3,
+                "ms": [
+                  [
+                    "M1",
+                    "integrates: (3t² − 4t)i + t³j"
+                  ],
+                  [
+                    "M1",
+                    "substitutes the limits"
+                  ],
+                  [
+                    "A1",
+                    "4i + 8j m"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "stem": "",
+            "parts": [
+              {
+                "q": "A stone is projected from the top of a cliff 20 m above the sea, at 30 m s⁻¹ at 30° above the horizontal. Find the horizontal distance from the foot of the cliff to where it lands.",
+                "m": 4,
+                "ms": [
+                  [
+                    "M1",
+                    "−20 = 15t − 4.9t²"
+                  ],
+                  [
+                    "M1",
+                    "solves the quadratic and takes the positive root"
+                  ],
+                  [
+                    "A1",
+                    "t = 4.065"
+                  ],
+                  [
+                    "A1",
+                    "106 m"
+                  ]
+                ],
+                "ans": {
+                  "a": 105.6183851665,
+                  "tol": 0.003,
+                  "unit": "m"
+                }
+              }
+            ]
+          }
+        ]
       }
     },
     {

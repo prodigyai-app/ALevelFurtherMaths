@@ -62,4 +62,14 @@ Object.assign(window.FURTHER_FIGS,{
    g+=text(110,60,'10 m s⁻¹',{small:true,a:'end'})+text(250,92,'5 along, 4.33 away',{small:true,acc:true,a:'start'});
    return fig(svg(360,170,g,{label:'Sphere rebounding from a smooth wall'}),'The component along the wall (5) is unchanged; the component away from the wall is e × 8.66 = 4.33.',{notAccurate:true,max:380});},
 });
+
+Object.assign(window.FURTHER_FIGS,{
+ 'fs2-continuous:1':()=>G({w:360,h:220,x:[-0.3,2.4],y:[0,0.9],xstep:0.5,xlabEvery:2,ystep:0.25,ylabEvery:2,xl:'x',yl:'f(x)'},A=>A.shadeBetween(x=>0.75*x*(2-x),()=>0,0,2,'mf-fill')+A.fn(x=>0.75*x*(2-x),'mf-acc',0,2)+line(A.X(1),A.Y(0),A.X(1),A.Y(0.75),'mf-ink mf-dash')+text(A.X(1.05),A.Y(0.82),'E(X) = 1',{small:true,a:'start'}),'f(x) = ¾x(2 − x) on [0, 2]','The total shaded area is 1; the symmetry about x = 1 gives the mean.'),
+ 'fs2-combinations:1':()=>{const pdf=x=>Math.exp(-(((x-10)/5)**2)/2),top=1.15;return G({w:380,h:210,x:[-8,28],y:[0,top],xstep:5,xlabEvery:2,ylab:false,ystep:top,padL:16,xl:'X − Y'},A=>A.shadeBetween(pdf,()=>0,0,28)+A.fn(pdf,'mf-ink')+line(A.X(0),A.Y(0),A.X(0),A.Y(pdf(0)),'mf-ink mf-dash')+text(A.X(17),A.Y(0.75),'P(X − Y > 0)',{small:true,acc:true,a:'start'}),'X − Y ~ N(10, 25)','The variances add even though Y is subtracted.');},
+ 'fm2-circular:1':()=>{const O=[180,24],L=150,a=Math.PI/6,P=[O[0]+L*Math.sin(a),O[1]+L*Math.cos(a)];let g=line(120,24,240,24)+line(O[0],O[1],O[0],P[1]+10,'mf-thin')+line(O[0],O[1],P[0],P[1])+`<ellipse cx="${O[0]}" cy="${P[1].toFixed(1)}" rx="${(L*Math.sin(a)).toFixed(1)}" ry="14" class="mf-ink mf-dash"/>`+dot(P[0],P[1],'mf-dota',6);
+   g+=arrow(P[0],P[1],P[0]-(P[0]-O[0])*0.45,P[1]-(P[1]-O[1])*0.45)+text(P[0]-28,P[1]-62,'T',{acc:true,small:true})+arrow(P[0],P[1],P[0],P[1]+50,'mf-ink')+text(P[0]+8,P[1]+44,'0.2g',{small:true,a:'start'})+angle(O,[O[0],O[1]+50],P,30,'30°',{small:true})+text(O[0]+36,P[1]+5,'r',{italic:true,small:true});
+   return fig(svg(360,210,g,{label:'Conical pendulum'}),'Resolve vertically for T, then use the horizontal component of T as the central force.',{notAccurate:true,max:380});},
+ 'fm2-centres:1':()=>G({...sq([-0.5,7],[-0.5,6.6],300),xl:'x',yl:'y'},A=>region(A,[[0,0],[6,0],[6,2],[2,2],[2,6],[0,6]],'mf-fill2')+poly([[0,0],[6,0],[6,2],[2,2],[2,6],[0,6]].map(([x,y])=>[A.X(x),A.Y(y)]))+A.point(2.2,2.2,'G (2.2, 2.2)',{acc:true,dx:8,dy:-6})+A.point(3,1,'')+A.point(1,4,''),'The L-shaped lamina and its centre of mass G','G lies on the line joining the centres (3, 1) and (1, 4) of the two rectangles; here it is just outside the lamina itself.'),
+ 'fm2-kinematics':()=>G({w:380,h:236,x:[0,10.5],y:[0,4.2],xstep:2,ystep:1,xl:'x (m)',xlBelow:true,padB:46,yl:'y (m)'},A=>A.fn(x=>8*x/6-5*x*x/36,'mf-acc',0,9.6)+A.point(9.6,0,'range 9.6 m',{dx:-6,dy:-10,a:'end'})+A.point(4.8,3.2,'max 3.2 m',{dx:0,dy:-10,a:'middle'}),'Path of the projectile with initial velocity (6, 8) m s⁻¹','With g = 10, the flight lasts 1.6 s and the horizontal speed stays 6 m s⁻¹.'),
+});
 })();
