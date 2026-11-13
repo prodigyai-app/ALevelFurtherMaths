@@ -15312,21 +15312,102 @@
   ],
   "papers": [
     {
-      "swap": {
-        "cp-argand": {
-          "q": "Describe the locus |z − (3 + i)| = |z + 1 − i| and find where it crosses the real axis.",
-          "answer": null,
-          "steps": [
-            "The points are equally far from 3 + i and −1 + i.",
-            "The two centres share y = 1, so the locus is a perpendicular bisector through their midpoint (1,1).",
-            "It is the vertical line x = 1.",
-            "It crosses the real axis at z = 1."
-          ]
-        }
-      },
       "id": "fm-core-paper-1",
       "module": "core",
       "title": "Core Pure revision paper 1",
+      "minutes": 90,
+      "marks": 75,
+      "kind": "core-paper",
+      "lessons": [
+        "cp-induction",
+        "cp-complex",
+        "cp-argand",
+        "cp-exponential",
+        "cp-demoivre",
+        "cp-transform",
+        "cp-systems",
+        "cp-roots",
+        "cp-maclaurin",
+        "cp-improper",
+        "cp-inverse-calculus",
+        "cp-vector-lines",
+        "cp-planes",
+        "cp-polar",
+        "cp-hyperbolic",
+        "cp-de-second"
+      ],
+      "items": [
+        {
+          "lesson": "cp-induction",
+          "q": 1
+        },
+        {
+          "lesson": "cp-complex",
+          "q": 1
+        },
+        {
+          "lesson": "cp-argand",
+          "q": 1
+        },
+        {
+          "lesson": "cp-exponential",
+          "q": 1
+        },
+        {
+          "lesson": "cp-demoivre",
+          "q": 1
+        },
+        {
+          "lesson": "cp-transform",
+          "q": 1
+        },
+        {
+          "lesson": "cp-systems",
+          "q": 1
+        },
+        {
+          "lesson": "cp-roots",
+          "q": 1
+        },
+        {
+          "lesson": "cp-maclaurin",
+          "q": 1
+        },
+        {
+          "lesson": "cp-improper",
+          "q": 1
+        },
+        {
+          "lesson": "cp-inverse-calculus",
+          "q": 1
+        },
+        {
+          "lesson": "cp-vector-lines",
+          "q": 1
+        },
+        {
+          "lesson": "cp-planes",
+          "q": 1
+        },
+        {
+          "lesson": "cp-polar",
+          "q": 1
+        },
+        {
+          "lesson": "cp-hyperbolic",
+          "q": 1
+        },
+        {
+          "lesson": "cp-de-second",
+          "q": 1
+        }
+      ],
+      "reuse": "Multi-part questions drawn from the Core Pure lesson question bank; Papers 1 and 2 share no questions. Use them for timed consolidation."
+    },
+    {
+      "id": "fm-core-paper-2",
+      "module": "core",
+      "title": "Core Pure revision paper 2",
       "minutes": 90,
       "marks": 75,
       "kind": "core-paper",
@@ -15348,57 +15429,90 @@
         "cp-planes",
         "cp-polar",
         "cp-hyperbolic",
-        "cp-de-first"
+        "cp-coupled"
       ],
-      "reuse": "Questions are drawn from the lesson practice bank; use them for consolidation, not an unseen mock."
-    },
-    {
-      "swap": {
-        "cp-argand": {
-          "q": "Describe the locus |z + 3 − 2i| = 5 and find the real numbers z that lie on it.",
-          "answer": null,
-          "steps": [
-            "The centre is (−3,2) and the radius is 5.",
-            "On the real axis y = 0, so (x + 3)² + 4 = 25.",
-            "Then (x + 3)² = 21.",
-            "x = −3 ± √21, approximately 1.58 and −7.58."
-          ]
+      "items": [
+        {
+          "lesson": "cp-induction",
+          "q": 2
+        },
+        {
+          "lesson": "cp-complex",
+          "q": 2
+        },
+        {
+          "lesson": "cp-argand",
+          "q": 2
+        },
+        {
+          "lesson": "cp-exponential",
+          "q": 2
+        },
+        {
+          "lesson": "cp-demoivre",
+          "q": 2
+        },
+        {
+          "lesson": "cp-matrix",
+          "q": 2
+        },
+        {
+          "lesson": "cp-transform",
+          "q": 2
+        },
+        {
+          "lesson": "cp-systems",
+          "q": 2
+        },
+        {
+          "lesson": "cp-roots",
+          "q": 2
+        },
+        {
+          "lesson": "cp-series",
+          "q": 2
+        },
+        {
+          "lesson": "cp-maclaurin",
+          "q": 2
+        },
+        {
+          "lesson": "cp-improper",
+          "q": 0
+        },
+        {
+          "lesson": "cp-inverse-calculus",
+          "q": 2
+        },
+        {
+          "lesson": "cp-vector-lines",
+          "q": 2
+        },
+        {
+          "lesson": "cp-planes",
+          "q": 2
+        },
+        {
+          "lesson": "cp-polar",
+          "q": 2
+        },
+        {
+          "lesson": "cp-hyperbolic",
+          "q": 2
+        },
+        {
+          "lesson": "cp-coupled",
+          "q": 2
         }
-      },
-      "id": "fm-core-paper-2",
-      "module": "core",
-      "title": "Core Pure revision paper 2",
-      "minutes": 90,
-      "marks": 75,
-      "kind": "core-paper",
-      "lessons": [
-        "cp-coupled",
-        "cp-de-second",
-        "cp-de-first",
-        "cp-hyperbolic",
-        "cp-polar",
-        "cp-planes",
-        "cp-vector-lines",
-        "cp-inverse-calculus",
-        "cp-improper",
-        "cp-maclaurin",
-        "cp-series",
-        "cp-roots",
-        "cp-systems",
-        "cp-transform",
-        "cp-matrix",
-        "cp-exponential",
-        "cp-argand",
-        "cp-complex"
       ],
-      "reuse": "Questions are drawn from the lesson practice bank; use them for consolidation, not an unseen mock."
+      "reuse": "Multi-part questions drawn from the Core Pure lesson question bank; Papers 1 and 2 share no questions. Use them for timed consolidation."
     },
     {
       "id": "fm-fp1-assessment",
       "module": "fp1",
       "title": "Further Pure Mathematics 1 · module assessment",
-      "minutes": 37,
-      "marks": 31,
+      "minutes": 59,
+      "marks": 49,
       "kind": "module-assessment",
       "lessons": [
         "fp1-tformula",
@@ -15410,14 +15524,48 @@
         "fp1-cross",
         "fp1-numerical"
       ],
-      "reuse": "Short original revision assessment using the module lesson practice bank. This is not a full 75-mark examination paper."
+      "items": [
+        {
+          "lesson": "fp1-tformula",
+          "q": 0
+        },
+        {
+          "lesson": "fp1-taylor",
+          "q": 0
+        },
+        {
+          "lesson": "fp1-leibniz",
+          "q": 0
+        },
+        {
+          "lesson": "fp1-weierstrass",
+          "q": 0
+        },
+        {
+          "lesson": "fp1-de-series",
+          "q": 0
+        },
+        {
+          "lesson": "fp1-conics",
+          "q": 0
+        },
+        {
+          "lesson": "fp1-cross",
+          "q": 0
+        },
+        {
+          "lesson": "fp1-numerical",
+          "q": 0
+        }
+      ],
+      "reuse": "Short original revision assessment using one multi-part question from each lesson. This is not a full 75-mark examination paper."
     },
     {
       "id": "fm-fp2-assessment",
       "module": "fp2",
       "title": "Further Pure Mathematics 2 · module assessment",
-      "minutes": 40,
-      "marks": 33,
+      "minutes": 61,
+      "marks": 51,
       "kind": "module-assessment",
       "lessons": [
         "fp2-groups",
@@ -15429,14 +15577,48 @@
         "fp2-count",
         "fp2-recurrence"
       ],
-      "reuse": "Short original revision assessment using the module lesson practice bank. This is not a full 75-mark examination paper."
+      "items": [
+        {
+          "lesson": "fp2-groups",
+          "q": 0
+        },
+        {
+          "lesson": "fp2-reduction",
+          "q": 0
+        },
+        {
+          "lesson": "fp2-eigen",
+          "q": 0
+        },
+        {
+          "lesson": "fp2-cayley",
+          "q": 0
+        },
+        {
+          "lesson": "fp2-mapping",
+          "q": 0
+        },
+        {
+          "lesson": "fp2-euclid",
+          "q": 0
+        },
+        {
+          "lesson": "fp2-count",
+          "q": 0
+        },
+        {
+          "lesson": "fp2-recurrence",
+          "q": 0
+        }
+      ],
+      "reuse": "Short original revision assessment using one multi-part question from each lesson. This is not a full 75-mark examination paper."
     },
     {
       "id": "fm-fs1-assessment",
       "module": "fs1",
       "title": "Further Statistics 1 · module assessment",
-      "minutes": 35,
-      "marks": 29,
+      "minutes": 62,
+      "marks": 52,
       "kind": "module-assessment",
       "lessons": [
         "fs1-discrete",
@@ -15448,14 +15630,48 @@
         "fs1-pgf",
         "fs1-power"
       ],
-      "reuse": "Short original revision assessment using the module lesson practice bank. This is not a full 75-mark examination paper."
+      "items": [
+        {
+          "lesson": "fs1-discrete",
+          "q": 0
+        },
+        {
+          "lesson": "fs1-poisson",
+          "q": 0
+        },
+        {
+          "lesson": "fs1-geometric",
+          "q": 0
+        },
+        {
+          "lesson": "fs1-tests",
+          "q": 0
+        },
+        {
+          "lesson": "fs1-clt",
+          "q": 0
+        },
+        {
+          "lesson": "fs1-chi",
+          "q": 0
+        },
+        {
+          "lesson": "fs1-pgf",
+          "q": 0
+        },
+        {
+          "lesson": "fs1-power",
+          "q": 0
+        }
+      ],
+      "reuse": "Short original revision assessment using one multi-part question from each lesson. This is not a full 75-mark examination paper."
     },
     {
       "id": "fm-fs2-assessment",
       "module": "fs2",
       "title": "Further Statistics 2 · module assessment",
-      "minutes": 31,
-      "marks": 26,
+      "minutes": 56,
+      "marks": 47,
       "kind": "module-assessment",
       "lessons": [
         "fs2-regression",
@@ -15466,14 +15682,44 @@
         "fs2-variance",
         "fs2-t"
       ],
-      "reuse": "Short original revision assessment using the module lesson practice bank. This is not a full 75-mark examination paper."
+      "items": [
+        {
+          "lesson": "fs2-regression",
+          "q": 0
+        },
+        {
+          "lesson": "fs2-continuous",
+          "q": 0
+        },
+        {
+          "lesson": "fs2-correlation",
+          "q": 0
+        },
+        {
+          "lesson": "fs2-combinations",
+          "q": 0
+        },
+        {
+          "lesson": "fs2-normal-ci",
+          "q": 0
+        },
+        {
+          "lesson": "fs2-variance",
+          "q": 0
+        },
+        {
+          "lesson": "fs2-t",
+          "q": 0
+        }
+      ],
+      "reuse": "Short original revision assessment using one multi-part question from each lesson. This is not a full 75-mark examination paper."
     },
     {
       "id": "fm-fm1-assessment",
       "module": "fm1",
       "title": "Further Mechanics 1 · module assessment",
-      "minutes": 20,
-      "marks": 17,
+      "minutes": 37,
+      "marks": 31,
       "kind": "module-assessment",
       "lessons": [
         "fm1-impulse",
@@ -15482,14 +15728,36 @@
         "fm1-direct",
         "fm1-oblique"
       ],
-      "reuse": "Short original revision assessment using the module lesson practice bank. This is not a full 75-mark examination paper."
+      "items": [
+        {
+          "lesson": "fm1-impulse",
+          "q": 0
+        },
+        {
+          "lesson": "fm1-energy",
+          "q": 0
+        },
+        {
+          "lesson": "fm1-elastic",
+          "q": 0
+        },
+        {
+          "lesson": "fm1-direct",
+          "q": 0
+        },
+        {
+          "lesson": "fm1-oblique",
+          "q": 0
+        }
+      ],
+      "reuse": "Short original revision assessment using one multi-part question from each lesson. This is not a full 75-mark examination paper."
     },
     {
       "id": "fm-fm2-assessment",
       "module": "fm2",
       "title": "Further Mechanics 2 · module assessment",
-      "minutes": 23,
-      "marks": 19,
+      "minutes": 34,
+      "marks": 28,
       "kind": "module-assessment",
       "lessons": [
         "fm2-circular",
@@ -15498,14 +15766,36 @@
         "fm2-dynamics",
         "fm2-kinematics"
       ],
-      "reuse": "Short original revision assessment using the module lesson practice bank. This is not a full 75-mark examination paper."
+      "items": [
+        {
+          "lesson": "fm2-circular",
+          "q": 0
+        },
+        {
+          "lesson": "fm2-centres",
+          "q": 0
+        },
+        {
+          "lesson": "fm2-equilibrium",
+          "q": 0
+        },
+        {
+          "lesson": "fm2-dynamics",
+          "q": 0
+        },
+        {
+          "lesson": "fm2-kinematics",
+          "q": 0
+        }
+      ],
+      "reuse": "Short original revision assessment using one multi-part question from each lesson. This is not a full 75-mark examination paper."
     },
     {
       "id": "fm-d1-assessment",
       "module": "d1",
       "title": "Decision Mathematics 1 · module assessment",
-      "minutes": 28,
-      "marks": 23,
+      "minutes": 52,
+      "marks": 43,
       "kind": "module-assessment",
       "lessons": [
         "d1-algorithms",
@@ -15515,14 +15805,40 @@
         "d1-lp",
         "d1-simplex"
       ],
-      "reuse": "Short original revision assessment using the module lesson practice bank. This is not a full 75-mark examination paper."
+      "items": [
+        {
+          "lesson": "d1-algorithms",
+          "q": 0
+        },
+        {
+          "lesson": "d1-graph",
+          "q": 0
+        },
+        {
+          "lesson": "d1-route",
+          "q": 0
+        },
+        {
+          "lesson": "d1-critical",
+          "q": 0
+        },
+        {
+          "lesson": "d1-lp",
+          "q": 0
+        },
+        {
+          "lesson": "d1-simplex",
+          "q": 0
+        }
+      ],
+      "reuse": "Short original revision assessment using one multi-part question from each lesson. This is not a full 75-mark examination paper."
     },
     {
       "id": "fm-d2-assessment",
       "module": "d2",
       "title": "Decision Mathematics 2 · module assessment",
-      "minutes": 32,
-      "marks": 27,
+      "minutes": 53,
+      "marks": 44,
       "kind": "module-assessment",
       "lessons": [
         "d2-transport",
@@ -15533,7 +15849,37 @@
         "d2-recurrence",
         "d2-decision"
       ],
-      "reuse": "Short original revision assessment using the module lesson practice bank. This is not a full 75-mark examination paper."
+      "items": [
+        {
+          "lesson": "d2-transport",
+          "q": 0
+        },
+        {
+          "lesson": "d2-assignment",
+          "q": 0
+        },
+        {
+          "lesson": "d2-flow",
+          "q": 0
+        },
+        {
+          "lesson": "d2-dynamic",
+          "q": 0
+        },
+        {
+          "lesson": "d2-games",
+          "q": 0
+        },
+        {
+          "lesson": "d2-recurrence",
+          "q": 0
+        },
+        {
+          "lesson": "d2-decision",
+          "q": 0
+        }
+      ],
+      "reuse": "Short original revision assessment using one multi-part question from each lesson. This is not a full 75-mark examination paper."
     }
   ]
 }

@@ -28,15 +28,31 @@ def subset(items,target):
  return dp[target]
 core=[l for l in LESSONS if l['module']=='core']
 papers=[]
-# The lesson cp-argand keeps the circle-locus question; each core paper replaces it with a different locus
-# question (same number of steps, so the 75 marks are unchanged) instead of repeating the lesson's.
-SWAPS=[{'cp-argand':dict(q='Describe the locus |z − (3 + i)| = |z + 1 − i| and find where it crosses the real axis.',answer=None,steps=['The points are equally far from 3 + i and −1 + i.','The two centres share y = 1, so the locus is a perpendicular bisector through their midpoint (1,1).','It is the vertical line x = 1.','It crosses the real axis at z = 1.'])},
- {'cp-argand':dict(q='Describe the locus |z + 3 − 2i| = 5 and find the real numbers z that lie on it.',answer=None,steps=['The centre is (−3,2) and the radius is 5.','On the real axis y = 0, so (x + 3)² + 4 = 25.','Then (x + 3)² = 21.','x = −3 ± √21, approximately 1.58 and −7.58.'])}]
-for i,ordered in enumerate([core,list(reversed(core))],1):
- selected=subset(ordered,75);papers.append(dict(swap=SWAPS[i-1],id='fm-core-paper-'+str(i),module='core',title='Core Pure revision paper '+str(i),minutes=90,marks=75,kind='core-paper',lessons=[l['id']for l in selected],reuse='Questions are drawn from the lesson practice bank; use them for consolidation, not an unseen mock.'))
+# Revision papers draw on the multi-part exam questions written for each lesson. The two Core Pure
+# papers use different questions (never the same question twice) and each totals exactly 75 marks.
+qm=lambda q:sum(p['m'] for p in q['parts'])
+def pick(lessons,target,allowed):
+ """choose at most one allowed question per lesson, total exactly target, covering as many lessons as possible"""
+ best={0:[]}
+ for l in lessons:
+  nxt=dict(best)
+  for total,chosen in best.items():
+   for k in allowed(l):
+    t=total+qm(l['deep']['exam'][k])
+    if t<=target and (t not in nxt or len(nxt[t])<len(chosen)+1):nxt[t]=chosen+[(l['id'],k)]
+  best=nxt
+ assert target in best,target
+ return best[target]
+core=[l for l in LESSONS if l['module']=='core']
+p1=pick(core,75,lambda l:[1]);used=set(p1)
+p2=pick(core,75,lambda l:[k for k in (2,0) if (l['id'],k) not in used])
+assert not set(p1)&set(p2)
+papers=[]
+for i,items in enumerate([p1,p2],1):
+ papers.append(dict(id='fm-core-paper-'+str(i),module='core',title='Core Pure revision paper '+str(i),minutes=90,marks=75,kind='core-paper',lessons=[a for a,_ in items],items=[dict(lesson=a,q=k)for a,k in items],reuse='Multi-part questions drawn from the Core Pure lesson question bank; Papers 1 and 2 share no questions. Use them for timed consolidation.'))
 for key,title,code in MODULES[1:]:
- selected=[l for l in LESSONS if l['module']==key];marks=sum(len(l['practice']['steps'])for l in selected)
- papers.append(dict(id='fm-'+key+'-assessment',module=key,title=title+' · module assessment',minutes=round(marks*1.2),marks=marks,kind='module-assessment',lessons=[l['id']for l in selected],reuse='Short original revision assessment using the module lesson practice bank. This is not a full 75-mark examination paper.'))
+ selected=[l for l in LESSONS if l['module']==key];items=[(l['id'],0) for l in selected];marks=sum(qm(l['deep']['exam'][0]) for l in selected)
+ papers.append(dict(id='fm-'+key+'-assessment',module=key,title=title+' · module assessment',minutes=round(marks*1.2),marks=marks,kind='module-assessment',lessons=[a for a,_ in items],items=[dict(lesson=a,q=k)for a,k in items],reuse='Short original revision assessment using one multi-part question from each lesson. This is not a full 75-mark examination paper.'))
 data=dict(board='Pearson Edexcel',qualification='9FM0',checked='2026-10-23',modules=[dict(id=k,title=t,code=c)for k,t,c in MODULES],lessons=LESSONS,papers=papers)
 (P/'course.json').write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding='utf-8');(P/'further-data.js').write_text('window.FURTHER_COURSE='+json.dumps(data,ensure_ascii=False)+';\n',encoding='utf-8')
 print(len(LESSONS),'lessons built')
