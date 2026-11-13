@@ -12871,6 +12871,171 @@
       "check": {
         "q": "Items total 20 and bin capacity is 10. What is the volume-based lower bound on bin count?",
         "a": 2
+      },
+      "deep": {
+        "tip": "Carry out an algorithm exactly as stated and record each pass or comparison, because the marks are for the working as well as the result. For bin packing, find the lower bound (total ÷ capacity, rounded up) first, so you can tell whether a packing is optimal; for a binary search, use the middle position rounded up, and halve the list each time.",
+        "examples": [
+          {
+            "title": "A bubble sort",
+            "q": "Use a bubble sort to arrange 7, 3, 9, 4, 6 in ascending order, showing the result of each pass.",
+            "steps": [
+              "Pass 1: swap 7 and 3; keep 7, 9; swap 9 and 4; swap 9 and 6. Result 3, 7, 4, 6, 9.",
+              "Pass 2: swap 7 and 4; swap 7 and 6. Result 3, 4, 6, 7, 9.",
+              "Pass 3: no swaps, so the algorithm stops.",
+              "Sorted list: 3, 4, 6, 7, 9."
+            ]
+          },
+          {
+            "title": "First-fit and first-fit decreasing",
+            "q": "Pack items 5, 7, 3, 4, 6, 2, 3 into bins of capacity 10 using first-fit and first-fit decreasing.",
+            "steps": [
+              "Lower bound = 30 ÷ 10 = 3 bins.",
+              "First-fit: [5, 3, 2], [7, 3], [4, 6].",
+              "First-fit decreasing on 7, 6, 5, 4, 3, 3, 2: [7, 3], [6, 4], [5, 3, 2].",
+              "Both use 3 bins, equal to the lower bound, so both packings are optimal."
+            ]
+          },
+          {
+            "title": "A binary search",
+            "q": "Use a binary search to locate 37 in the list 4, 9, 15, 21, 28, 33, 37, 42, 50.",
+            "steps": [
+              "Middle of positions 1–9 is 5: 28. 37 > 28, so keep positions 6–9.",
+              "Middle of 6–9 is 7.5, rounded up to 8: 42. 37 < 42, so keep 6–7.",
+              "Middle of 6–7 is 6.5, rounded up to 7: 37.",
+              "37 is found at position 7 after 3 iterations."
+            ]
+          }
+        ],
+        "fills": [
+          {
+            "q": "Items with total 47 and bins of capacity 10.",
+            "lines": [
+              "lower bound = [[5]] bins"
+            ]
+          },
+          {
+            "q": "A bubble sort of 6 items.",
+            "lines": [
+              "the greatest number of passes needed = [[5]]"
+            ]
+          },
+          {
+            "q": "A binary search of 15 items.",
+            "lines": [
+              "the first middle position = [[8]]"
+            ]
+          }
+        ],
+        "exam": [
+          {
+            "stem": "<p>Items of sizes 8, 4, 7, 3, 6, 5, 2, 5 are to be packed into bins of capacity 12.</p>",
+            "parts": [
+              {
+                "q": "Find a lower bound for the number of bins.",
+                "m": 2,
+                "ms": [
+                  [
+                    "M1",
+                    "40 ÷ 12 = 3.33…"
+                  ],
+                  [
+                    "A1",
+                    "4"
+                  ]
+                ],
+                "ans": {
+                  "a": 4.0,
+                  "tol": 0.001,
+                  "unit": ""
+                }
+              },
+              {
+                "q": "Use the first-fit decreasing algorithm to pack the items.",
+                "m": 3,
+                "ms": [
+                  [
+                    "M1",
+                    "sorts into decreasing order: 8, 7, 6, 5, 5, 4, 3, 2"
+                  ],
+                  [
+                    "M1",
+                    "places each item in the first bin with room"
+                  ],
+                  [
+                    "A1",
+                    "[8, 4], [7, 5], [6, 5], [3, 2]"
+                  ]
+                ]
+              },
+              {
+                "q": "Explain whether your packing is optimal.",
+                "m": 1,
+                "ms": [
+                  [
+                    "B1",
+                    "it uses 4 bins, equal to the lower bound, so it is optimal"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "stem": "<p>The list 12, 18, 7, 25, 14 is to be sorted into descending order using a bubble sort.</p>",
+            "parts": [
+              {
+                "q": "Write down the list after the first pass.",
+                "m": 2,
+                "ms": [
+                  [
+                    "M1",
+                    "compares adjacent pairs from the left"
+                  ],
+                  [
+                    "A1",
+                    "18, 12, 25, 14, 7"
+                  ]
+                ]
+              },
+              {
+                "q": "Complete the sort, stating the result of each further pass.",
+                "m": 2,
+                "ms": [
+                  [
+                    "A1",
+                    "pass 2: 18, 25, 14, 12, 7"
+                  ],
+                  [
+                    "A1",
+                    "pass 3: 25, 18, 14, 12, 7; pass 4 makes no swaps"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "stem": "",
+            "parts": [
+              {
+                "q": "Use a binary search to locate 61 in the list 12, 19, 25, 33, 40, 47, 56, 61, 68, 75.",
+                "m": 3,
+                "ms": [
+                  [
+                    "M1",
+                    "first middle: position 6, value 47"
+                  ],
+                  [
+                    "M1",
+                    "then position 9, value 68"
+                  ],
+                  [
+                    "A1",
+                    "then position 8: 61 found"
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -12905,6 +13070,155 @@
       "check": {
         "q": "How many edges does a spanning tree on 7 vertices have?",
         "a": 6
+      },
+      "deep": {
+        "tip": "For a minimum spanning tree, Kruskal adds the cheapest edge that does not make a cycle, while Prim grows one tree from a start vertex (and works directly on a distance matrix). Dijkstra finds shortest paths from one vertex: record order of labelling, final labels and working values, then trace the route back from the destination.",
+        "examples": [
+          {
+            "title": "Dijkstra’s algorithm",
+            "q": "In the network AB = 4, AC = 2, BC = 1, BD = 5, CD = 8, CE = 10, DE = 2, find the shortest route from A to E.",
+            "steps": [
+              "Label A 0, then C 2 (from A), then B 3 (via C, better than 4).",
+              "D: from B 3 + 5 = 8, better than 2 + 8 = 10.",
+              "E: from D 8 + 2 = 10, better than 2 + 10 = 12.",
+              "Shortest route A–C–B–D–E, length 10."
+            ]
+          },
+          {
+            "title": "Prim’s algorithm",
+            "q": "Use Prim’s algorithm, starting at A, to find a minimum spanning tree of the same network.",
+            "steps": [
+              "Start at A: add AC (2).",
+              "Add CB (1), the cheapest edge leaving {A, C}.",
+              "Add BD (5), then DE (2).",
+              "Edges AC, CB, BD, DE; total weight 10."
+            ]
+          },
+          {
+            "title": "Kruskal’s algorithm",
+            "q": "Use Kruskal’s algorithm on the same network.",
+            "steps": [
+              "In order: BC 1, AC 2, DE 2, AB 4, BD 5, …",
+              "Accept BC, AC and DE.",
+              "Reject AB (it would make the cycle A–B–C).",
+              "Accept BD; four edges join five vertices, so stop: total 10."
+            ]
+          }
+        ],
+        "fills": [
+          {
+            "q": "A spanning tree on 8 vertices.",
+            "lines": [
+              "number of edges = [[7]]"
+            ]
+          },
+          {
+            "q": "The minimum spanning tree in the worked examples.",
+            "lines": [
+              "total weight = [[10]]"
+            ]
+          },
+          {
+            "q": "Dijkstra in the worked examples.",
+            "lines": [
+              "final label of E = [[10]]"
+            ]
+          }
+        ],
+        "exam": [
+          {
+            "stem": "<p>A network has edges AB 7, AC 3, BC 2, BD 4, CD 8, CE 6, DE 3, DF 5 and EF 4.</p>",
+            "parts": [
+              {
+                "q": "Use Kruskal’s algorithm to find a minimum spanning tree, stating the order in which you add edges.",
+                "m": 3,
+                "ms": [
+                  [
+                    "M1",
+                    "considers edges in order of weight"
+                  ],
+                  [
+                    "M1",
+                    "rejects edges that form a cycle"
+                  ],
+                  [
+                    "A1",
+                    "BC, AC, DE, BD, EF; total 16"
+                  ]
+                ]
+              },
+              {
+                "q": "Use Dijkstra’s algorithm to find the shortest route from A to F.",
+                "m": 4,
+                "ms": [
+                  [
+                    "M1",
+                    "correct labelling order"
+                  ],
+                  [
+                    "M1",
+                    "updates working values"
+                  ],
+                  [
+                    "A1",
+                    "route A–C–E–F"
+                  ],
+                  [
+                    "A1",
+                    "length 13"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "stem": "<p>The distances between four towns P, Q, R and S are: PQ 6, PR 9, PS 4, QR 5, QS 7, RS 3.</p>",
+            "parts": [
+              {
+                "q": "Use Prim’s algorithm, starting at P, to find a minimum spanning tree and its total length.",
+                "m": 3,
+                "ms": [
+                  [
+                    "M1",
+                    "starts at P and adds PS"
+                  ],
+                  [
+                    "M1",
+                    "then SR, then RQ"
+                  ],
+                  [
+                    "A1",
+                    "total length 12"
+                  ]
+                ],
+                "ans": {
+                  "a": 12.0,
+                  "tol": 0.001,
+                  "unit": ""
+                }
+              }
+            ]
+          },
+          {
+            "stem": "",
+            "parts": [
+              {
+                "q": "Explain why a minimum spanning tree does not always contain the shortest route between two given vertices.",
+                "m": 2,
+                "ms": [
+                  [
+                    "B1",
+                    "the tree minimises the total weight of all edges, not the length of any particular route"
+                  ],
+                  [
+                    "B1",
+                    "for example, a direct edge AB of 4 may be left out when AC + CB = 3 is cheaper overall, so the tree route from A to B may be longer than another route"
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -12937,6 +13251,201 @@
       "check": {
         "q": "A route-inspection graph has edge total 40 and just two odd vertices with shortest connecting distance 7. Find the shortest closed tour length.",
         "a": 47
+      },
+      "deep": {
+        "tip": "For route inspection, list the odd vertices, consider every complete pairing, and add the cheapest pairing to the total edge weight; if the route need not be closed, the start and finish should be odd vertices. For the travelling salesperson problem, an upper bound comes from a tour such as nearest neighbour, and a lower bound from a residual minimum spanning tree plus the two shortest edges at the deleted vertex.",
+        "examples": [
+          {
+            "title": "Four odd vertices",
+            "q": "A network has total weight 85 and odd vertices A, B, C, D with shortest distances AB 5, CD 8, AC 6, BD 9, AD 7, BC 4. Find the length of the shortest closed inspection route.",
+            "steps": [
+              "Pairings: AB + CD = 13, AC + BD = 15, AD + BC = 11.",
+              "Repeat the cheapest pairing, AD and BC.",
+              "Length = 85 + 11 = 96."
+            ]
+          },
+          {
+            "title": "Different start and finish",
+            "q": "For the same network, the route may start and finish at different vertices. Find the shortest possible route.",
+            "steps": [
+              "Two odd vertices can be the start and the finish, so only one pair needs repeating.",
+              "Repeat the shortest single path, BC = 4.",
+              "Start at A and finish at D (or vice versa): length 85 + 4 = 89."
+            ]
+          },
+          {
+            "title": "Bounds for a travelling salesperson tour",
+            "q": "Distances: AB 8, AC 5, AD 9, AE 7, BC 6, BD 4, BE 10, CD 7, CE 3, DE 6. Find upper and lower bounds for the shortest tour.",
+            "steps": [
+              "Nearest neighbour from A: A–C (5), C–E (3), E–D (6), D–B (4), B–A (8): upper bound 26.",
+              "Delete A: a minimum spanning tree of B, C, D, E is CE 3, BD 4, BC 6, total 13.",
+              "Add the two shortest edges from A: 5 + 7. Lower bound 25.",
+              "So 25 ≤ shortest tour ≤ 26; the tour of length 26 is in fact optimal."
+            ]
+          }
+        ],
+        "fills": [
+          {
+            "q": "A network with 6 odd vertices.",
+            "lines": [
+              "number of complete pairings = [[15]]"
+            ]
+          },
+          {
+            "q": "A network in which every vertex is even.",
+            "lines": [
+              "repeated length = [[0]]"
+            ]
+          },
+          {
+            "q": "Lower bound 25 and upper bound 26.",
+            "lines": [
+              "the optimal tour is at most [[26]]"
+            ]
+          }
+        ],
+        "exam": [
+          {
+            "stem": "<p>A network has total weight 120 and four odd vertices P, Q, R and S. The shortest distances between them are PQ 9, RS 11, PR 7, QS 14, PS 10 and QR 8.</p>",
+            "parts": [
+              {
+                "q": "Find the length of the shortest route that traverses every edge and returns to its start.",
+                "m": 4,
+                "ms": [
+                  [
+                    "M1",
+                    "considers all three pairings"
+                  ],
+                  [
+                    "A1",
+                    "20, 21 and 18"
+                  ],
+                  [
+                    "M1",
+                    "adds the least to 120"
+                  ],
+                  [
+                    "A1",
+                    "138"
+                  ]
+                ],
+                "ans": {
+                  "a": 138.0,
+                  "tol": 0.001,
+                  "unit": ""
+                }
+              },
+              {
+                "q": "The route must start at P but may finish anywhere. Find the length of the shortest route and state where it finishes.",
+                "m": 3,
+                "ms": [
+                  [
+                    "M1",
+                    "repeats the shortest path between two of Q, R, S"
+                  ],
+                  [
+                    "A1",
+                    "repeats QR (8)"
+                  ],
+                  [
+                    "A1",
+                    "length 128, finishing at S"
+                  ]
+                ],
+                "ans": {
+                  "a": 128.0,
+                  "tol": 0.001,
+                  "unit": ""
+                }
+              }
+            ]
+          },
+          {
+            "stem": "<p>The table gives the distances between five towns: PQ 12, PR 9, PS 15, PT 11, QR 7, QS 10, QT 14, RS 8, RT 13, ST 6.</p>",
+            "parts": [
+              {
+                "q": "Use the nearest neighbour algorithm, starting at P, to find an upper bound for the shortest tour.",
+                "m": 3,
+                "ms": [
+                  [
+                    "M1",
+                    "P–R–Q–S–T"
+                  ],
+                  [
+                    "A1",
+                    "returns to P"
+                  ],
+                  [
+                    "A1",
+                    "43"
+                  ]
+                ],
+                "ans": {
+                  "a": 43.0,
+                  "tol": 0.001,
+                  "unit": ""
+                }
+              },
+              {
+                "q": "By deleting P, find a lower bound for the length of the tour.",
+                "m": 3,
+                "ms": [
+                  [
+                    "M1",
+                    "minimum spanning tree of Q, R, S, T: 21"
+                  ],
+                  [
+                    "M1",
+                    "adds the two shortest edges from P: 9 + 11"
+                  ],
+                  [
+                    "A1",
+                    "41"
+                  ]
+                ],
+                "ans": {
+                  "a": 41.0,
+                  "tol": 0.001,
+                  "unit": ""
+                }
+              },
+              {
+                "q": "What can you conclude?",
+                "m": 1,
+                "ms": [
+                  [
+                    "B1",
+                    "41 ≤ optimal tour ≤ 43"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "stem": "",
+            "parts": [
+              {
+                "q": "A network has 6 odd vertices. Explain why 15 different pairings must be considered in the route inspection algorithm.",
+                "m": 2,
+                "ms": [
+                  [
+                    "M1",
+                    "the first odd vertex can be paired in 5 ways, then 3, then 1"
+                  ],
+                  [
+                    "A1",
+                    "5 × 3 × 1 = 15"
+                  ]
+                ],
+                "ans": {
+                  "a": 15.0,
+                  "tol": 0.001,
+                  "unit": ""
+                }
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -12971,6 +13480,169 @@
       "check": {
         "q": "An activity from event i to j has earliest(i)=3, latest(j)=10 and duration 4. Find total float.",
         "a": 3
+      },
+      "deep": {
+        "tip": "Carry out the forward pass for early event times (take the largest incoming value) and the backward pass for late times (take the smallest outgoing value). An activity is critical when its total float, late finish − early start − duration, is zero; a lower bound for the number of workers is the total activity time divided by the project duration, rounded up.",
+        "examples": [
+          {
+            "title": "Early and late times",
+            "q": "A (3) and B (5) start the project. C (2) and D (4) follow A. E (3) follows B and C. F (2) follows D and E. Find the duration and the critical activities.",
+            "steps": [
+              "Forward pass: C and D start at 3; E starts at max(5, 5) = 5; F starts at max(7, 8) = 8.",
+              "Duration = 10.",
+              "Backward pass: F 8–10; E late finish 8; D late finish 8; C late finish 5; B late finish 5; A late finish 3.",
+              "Floats: D has 1; A, B, C, E and F have 0. Critical paths A–C–E–F and B–E–F."
+            ]
+          },
+          {
+            "title": "A lower bound for workers",
+            "q": "For the same project, find a lower bound for the number of workers needed to finish in 10 days.",
+            "steps": [
+              "Total activity time = 3 + 5 + 2 + 4 + 3 + 2 = 19.",
+              "19 ÷ 10 = 1.9.",
+              "At least 2 workers are needed."
+            ]
+          }
+        ],
+        "fills": [
+          {
+            "q": "LF = 12, ES = 4 and duration 5.",
+            "lines": [
+              "total float = [[3]]"
+            ]
+          },
+          {
+            "q": "A critical activity.",
+            "lines": [
+              "total float = [[0]]"
+            ]
+          },
+          {
+            "q": "Total activity time 47 hours and duration 20 hours.",
+            "lines": [
+              "lower bound = [[3]] workers"
+            ]
+          }
+        ],
+        "exam": [
+          {
+            "stem": "<p>A project has activities A (4 days), B (6), C (3, after A), D (5, after A), E (4, after B and C), F (2, after D) and G (3, after E and F).</p>",
+            "parts": [
+              {
+                "q": "Find the early start time of E and the project duration.",
+                "m": 3,
+                "ms": [
+                  [
+                    "M1",
+                    "forward pass"
+                  ],
+                  [
+                    "A1",
+                    "E starts at 7"
+                  ],
+                  [
+                    "A1",
+                    "duration 14 days"
+                  ]
+                ]
+              },
+              {
+                "q": "Find the late finish time of B and its total float.",
+                "m": 3,
+                "ms": [
+                  [
+                    "M1",
+                    "backward pass"
+                  ],
+                  [
+                    "A1",
+                    "late finish of B = 7"
+                  ],
+                  [
+                    "A1",
+                    "float = 7 − 0 − 6 = 1"
+                  ]
+                ]
+              },
+              {
+                "q": "List the critical activities.",
+                "m": 1,
+                "ms": [
+                  [
+                    "B1",
+                    "A, C, D, E, F and G"
+                  ]
+                ]
+              },
+              {
+                "q": "Find a lower bound for the number of workers needed to complete the project in 14 days.",
+                "m": 2,
+                "ms": [
+                  [
+                    "M1",
+                    "27 ÷ 14"
+                  ],
+                  [
+                    "A1",
+                    "2"
+                  ]
+                ],
+                "ans": {
+                  "a": 2.0,
+                  "tol": 0.001,
+                  "unit": ""
+                }
+              }
+            ]
+          },
+          {
+            "stem": "",
+            "parts": [
+              {
+                "q": "Explain the purpose of a dummy activity in an activity network.",
+                "m": 2,
+                "ms": [
+                  [
+                    "B1",
+                    "it shows a dependency that cannot be shown by the real activities alone"
+                  ],
+                  [
+                    "B1",
+                    "or it ensures each activity is uniquely defined by its start and end events"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "stem": "<p>In the project above, activity D is delayed by 2 days and activity B by 1 day.</p>",
+            "parts": [
+              {
+                "q": "Find the new project duration, explaining your answer.",
+                "m": 3,
+                "ms": [
+                  [
+                    "B1",
+                    "D is critical, so a delay of 2 days delays the project by 2 days"
+                  ],
+                  [
+                    "B1",
+                    "B had 1 day of float, so its delay has no further effect"
+                  ],
+                  [
+                    "A1",
+                    "16 days"
+                  ]
+                ],
+                "ans": {
+                  "a": 16.0,
+                  "tol": 0.001,
+                  "unit": ""
+                }
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -13004,6 +13676,160 @@
       "check": {
         "q": "Evaluate objective 3x+2y at (2,2).",
         "a": 10
+      },
+      "deep": {
+        "tip": "Define the decision variables with units, write the objective, then every constraint (including non-negativity). Draw the feasible region carefully and test the objective at each vertex, or slide an objective line; if the variables must be integers, check the integer points near the optimal vertex rather than rounding.",
+        "examples": [
+          {
+            "title": "Formulating and solving",
+            "q": "A firm makes x units of P and y units of Q. Each P needs 2 hours of machine time and 2 hours of labour; each Q needs 3 hours of machine time and 1 hour of labour. 120 machine hours and 80 labour hours are available. Profits are £30 per P and £40 per Q. Find the best plan.",
+            "steps": [
+              "Maximise 30x + 40y subject to 2x + 3y ≤ 120, 2x + y ≤ 80, x, y ≥ 0.",
+              "Vertices: (0, 0), (40, 0), (30, 20), (0, 40).",
+              "Profits: 0, 1200, 1700, 1600.",
+              "Make 30 of P and 20 of Q for a profit of £1700."
+            ]
+          },
+          {
+            "title": "A minimisation",
+            "q": "Minimise 3x + 2y subject to x + y ≥ 6, x + 3y ≥ 12, x, y ≥ 0.",
+            "steps": [
+              "The feasible region is unbounded, above both lines.",
+              "Vertices: (12, 0), (3, 3), (0, 6).",
+              "Costs: 36, 15, 12.",
+              "Minimum 12 at (0, 6)."
+            ]
+          },
+          {
+            "title": "An integer solution",
+            "q": "Maximise 5x + 4y subject to 6x + 4y ≤ 24, x + 2y ≤ 6, with x and y non-negative integers.",
+            "steps": [
+              "The continuous optimum is at (3, 1.5), with value 21.",
+              "Test nearby integer points: (3, 1) gives 19, (2, 2) gives 18, (4, 0) gives 20.",
+              "(4, 0) is feasible: 24 ≤ 24 and 4 ≤ 6.",
+              "The integer optimum is x = 4, y = 0, value 20."
+            ]
+          }
+        ],
+        "fills": [
+          {
+            "q": "At (30, 20).",
+            "lines": [
+              "profit 30x + 40y = [[1700]]"
+            ]
+          },
+          {
+            "q": "The line x + y = 10.",
+            "lines": [
+              "meets the y-axis at (0, [[10]])"
+            ]
+          },
+          {
+            "q": "Two ≤ constraints in a simplex tableau.",
+            "lines": [
+              "number of slack variables = [[2]]"
+            ]
+          }
+        ],
+        "exam": [
+          {
+            "stem": "<p>Maximise P = 4x + 5y subject to x + y ≤ 9, x + 3y ≤ 21, 2x + y ≤ 16, x ≥ 0, y ≥ 0.</p>",
+            "parts": [
+              {
+                "q": "Find the coordinates of the vertices of the feasible region.",
+                "m": 3,
+                "ms": [
+                  [
+                    "M1",
+                    "solves pairs of boundary equations"
+                  ],
+                  [
+                    "A1",
+                    "(8, 0) and (7, 2)"
+                  ],
+                  [
+                    "A1",
+                    "(3, 6), (0, 7) and (0, 0)"
+                  ]
+                ]
+              },
+              {
+                "q": "Find the optimal solution and the maximum value of P.",
+                "m": 3,
+                "ms": [
+                  [
+                    "M1",
+                    "evaluates P at each vertex"
+                  ],
+                  [
+                    "A1",
+                    "x = 3, y = 6"
+                  ],
+                  [
+                    "A1",
+                    "P = 42"
+                  ]
+                ],
+                "ans": {
+                  "a": 42.0,
+                  "tol": 0.001,
+                  "unit": ""
+                }
+              }
+            ]
+          },
+          {
+            "stem": "",
+            "parts": [
+              {
+                "q": "Minimise C = 2x + 3y subject to x + y ≥ 8, x + 2y ≥ 10, 3x + y ≥ 12, x ≥ 0, y ≥ 0.",
+                "m": 4,
+                "ms": [
+                  [
+                    "M1",
+                    "identifies the unbounded feasible region"
+                  ],
+                  [
+                    "M1",
+                    "vertices (0, 12), (2, 6), (6, 2), (10, 0)"
+                  ],
+                  [
+                    "A1",
+                    "evaluates C: 36, 22, 18, 20"
+                  ],
+                  [
+                    "A1",
+                    "minimum 18 at (6, 2)"
+                  ]
+                ],
+                "ans": {
+                  "a": 18.0,
+                  "tol": 0.001,
+                  "unit": ""
+                }
+              }
+            ]
+          },
+          {
+            "stem": "",
+            "parts": [
+              {
+                "q": "Explain why rounding the optimal vertex of a linear programme may not give the optimal integer solution.",
+                "m": 2,
+                "ms": [
+                  [
+                    "B1",
+                    "the rounded point may lie outside the feasible region"
+                  ],
+                  [
+                    "B1",
+                    "or another integer point may give a better value of the objective"
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -13037,6 +13863,147 @@
       "check": {
         "q": "For entering column entries 1,2 and right-hand sides 6,8, find the minimum eligible ratio.",
         "a": 4
+      },
+      "deep": {
+        "tip": "Choose the pivot column with the most negative entry in the objective row, then the pivot row by the smallest non-negative ratio of value to pivot-column entry. Divide the pivot row by the pivot, clear the rest of the column, and stop when the objective row has no negative entries; read basic variables from the columns that are unit vectors.",
+        "examples": [
+          {
+            "title": "Two iterations to the optimum",
+            "q": "Use the simplex algorithm to maximise P = 2x + 3y subject to x + 2y ≤ 8 and 3x + 2y ≤ 12.",
+            "steps": [
+              "Initial tableau with slacks s and t; P row (−2, −3, 0, 0 | 0). Pivot on the y column: ratios 8/2 = 4 and 12/2 = 6, so row 1.",
+              "After pivoting: y = 4 − ½x − ½s, and the P row becomes (−½, 0, 3/2, 0 | 12).",
+              "Pivot on the x column: ratios 4/½ = 8 and 4/2 = 2, so row 2.",
+              "Optimal: x = 2, y = 3, P = 13, with both slacks zero."
+            ]
+          },
+          {
+            "title": "A ≥ constraint",
+            "q": "Explain how the constraint x + y ≥ 3 is handled in the two-stage simplex method.",
+            "steps": [
+              "Subtract a surplus variable: x + y − s = 3.",
+              "The origin then gives s = −3, which is not allowed, so add an artificial variable a: x + y − s + a = 3.",
+              "Stage 1 minimises the sum of the artificial variables.",
+              "If that minimum is 0 a feasible starting point has been found; if it is positive, the problem has no feasible solution."
+            ]
+          }
+        ],
+        "fills": [
+          {
+            "q": "Ratios 8/2 and 12/2.",
+            "lines": [
+              "pivot row value = [[4]]"
+            ]
+          },
+          {
+            "q": "The final tableau of the first worked example.",
+            "lines": [
+              "P = [[13]]"
+            ]
+          },
+          {
+            "q": "At (2, 3) for x + 2y ≤ 8.",
+            "lines": [
+              "slack = [[0]]"
+            ]
+          }
+        ],
+        "exam": [
+          {
+            "stem": "<p>Maximise P = 5x + 4y subject to 2x + y ≤ 10, x + 2y ≤ 8, x ≥ 0, y ≥ 0.</p>",
+            "parts": [
+              {
+                "q": "Write down the initial simplex tableau.",
+                "m": 2,
+                "ms": [
+                  [
+                    "B1",
+                    "slack variables in both constraint rows"
+                  ],
+                  [
+                    "B1",
+                    "objective row P − 5x − 4y = 0"
+                  ]
+                ]
+              },
+              {
+                "q": "Identify the first pivot, explaining your choice.",
+                "m": 2,
+                "ms": [
+                  [
+                    "B1",
+                    "x column: most negative entry −5"
+                  ],
+                  [
+                    "B1",
+                    "ratios 10/2 = 5 and 8/1 = 8, so row 1"
+                  ]
+                ]
+              },
+              {
+                "q": "Complete the algorithm and state the optimal values of x, y and P.",
+                "m": 4,
+                "ms": [
+                  [
+                    "M1",
+                    "correct first iteration: P = 25"
+                  ],
+                  [
+                    "M1",
+                    "second pivot in the y column, row 2"
+                  ],
+                  [
+                    "A1",
+                    "x = 4, y = 2"
+                  ],
+                  [
+                    "A1",
+                    "P = 28"
+                  ]
+                ],
+                "ans": {
+                  "a": 28.0,
+                  "tol": 0.001,
+                  "unit": ""
+                }
+              }
+            ]
+          },
+          {
+            "stem": "",
+            "parts": [
+              {
+                "q": "In stage 1 of the two-stage simplex method, the minimum value of the sum of the artificial variables is 3. State what this shows.",
+                "m": 1,
+                "ms": [
+                  [
+                    "B1",
+                    "the original problem has no feasible solution"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "stem": "<p>The final tableau for maximising P = 5x + 4y, subject to 2x + y ≤ 10 and x + 2y ≤ 8, gives x = 4, y = 2 with both slack variables non-basic.</p>",
+            "parts": [
+              {
+                "q": "State the values of the slack variables and interpret them.",
+                "m": 2,
+                "ms": [
+                  [
+                    "B1",
+                    "both slack variables are 0"
+                  ],
+                  [
+                    "B1",
+                    "both resources are fully used at the optimum"
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -13072,6 +14039,164 @@
       "check": {
         "q": "Supplies are 20 and 30, and demands are 25 and 25. What is the total supply?",
         "a": 50
+      },
+      "deep": {
+        "tip": "Balance supply and demand first (add a dummy with zero costs if necessary), then check the initial solution has m + n − 1 occupied cells. Find shadow costs from the occupied cells (Rᵢ + Kⱼ = cost), compute improvement indices for the empty cells, and enter the most negative one using a stepping-stone loop of alternating + and − cells.",
+        "examples": [
+          {
+            "title": "A north-west corner solution",
+            "q": "Supplies A 30, B 40, C 30; demands X 20, Y 45, Z 35; costs A: 8, 6, 10; B: 9, 12, 13; C: 14, 9, 16. Find the north-west corner solution and its cost.",
+            "steps": [
+              "A: X 20, Y 10. B: Y 35, Z 5. C: Z 30.",
+              "Five occupied cells = 3 + 3 − 1, so the solution is not degenerate.",
+              "Cost = 160 + 60 + 420 + 65 + 480.",
+              "£1185."
+            ]
+          },
+          {
+            "title": "Improvement indices and one iteration",
+            "q": "Improve the solution in the previous example.",
+            "steps": [
+              "Shadow costs: R_A = 0, K_X = 8, K_Y = 6, R_B = 6, K_Z = 7, R_C = 9.",
+              "Indices: AZ 3, BX −5, CX −3, CY −6; enter CY.",
+              "Loop CY+, BY−, BZ+, CZ−: θ = min(35, 30) = 30.",
+              "New solution: A X 20, Y 10; B Y 5, Z 35; C Y 30. Cost £1005 (recalculate the indices to test for optimality)."
+            ]
+          }
+        ],
+        "fills": [
+          {
+            "q": "3 sources and 4 destinations.",
+            "lines": [
+              "occupied cells needed = [[6]]"
+            ]
+          },
+          {
+            "q": "Occupied cell with cost 12 and R = 6.",
+            "lines": [
+              "K = [[6]]"
+            ]
+          },
+          {
+            "q": "Empty cell cost 9, R = 9, K = 6.",
+            "lines": [
+              "improvement index = [[-6]]"
+            ]
+          }
+        ],
+        "exam": [
+          {
+            "stem": "<p>Supplies: S₁ 35, S₂ 25. Demands: D₁ 20, D₂ 25, D₃ 15. Costs: S₁: 5, 3, 6; S₂: 4, 7, 2.</p>",
+            "parts": [
+              {
+                "q": "Find the north-west corner solution and its cost.",
+                "m": 3,
+                "ms": [
+                  [
+                    "M1",
+                    "allocates from the top-left"
+                  ],
+                  [
+                    "A1",
+                    "S₁: 20, 15; S₂: 10, 15"
+                  ],
+                  [
+                    "A1",
+                    "cost 245"
+                  ]
+                ],
+                "ans": {
+                  "a": 245.0,
+                  "tol": 0.001,
+                  "unit": ""
+                }
+              },
+              {
+                "q": "Calculate shadow costs and improvement indices for the unused cells.",
+                "m": 3,
+                "ms": [
+                  [
+                    "M1",
+                    "R₁ = 0, K₁ = 5, K₂ = 3, R₂ = 4, K₃ = −2"
+                  ],
+                  [
+                    "A1",
+                    "S₁D₃: 8"
+                  ],
+                  [
+                    "A1",
+                    "S₂D₁: −5"
+                  ]
+                ]
+              },
+              {
+                "q": "Use the stepping-stone method to obtain an improved solution and its cost.",
+                "m": 3,
+                "ms": [
+                  [
+                    "M1",
+                    "loop S₂D₁+, S₂D₂−, S₁D₂+, S₁D₁−"
+                  ],
+                  [
+                    "A1",
+                    "θ = 10"
+                  ],
+                  [
+                    "A1",
+                    "S₁: 10, 25, 0; S₂: 10, 0, 15; cost 195"
+                  ]
+                ],
+                "ans": {
+                  "a": 195.0,
+                  "tol": 0.001,
+                  "unit": ""
+                }
+              }
+            ]
+          },
+          {
+            "stem": "",
+            "parts": [
+              {
+                "q": "Explain what is meant by a degenerate solution of a transportation problem and how it is dealt with.",
+                "m": 2,
+                "ms": [
+                  [
+                    "B1",
+                    "fewer than m + n − 1 cells are occupied"
+                  ],
+                  [
+                    "B1",
+                    "place a zero in a suitable empty cell so that shadow costs can be found"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "stem": "<p>The improved solution from question 1 is S₁: 10, 25, 0; S₂: 10, 0, 15.</p>",
+            "parts": [
+              {
+                "q": "Show that this solution is optimal.",
+                "m": 3,
+                "ms": [
+                  [
+                    "M1",
+                    "shadow costs R₁ = 0, K₁ = 5, K₂ = 3, R₂ = −1, K₃ = 3"
+                  ],
+                  [
+                    "M1",
+                    "improvement indices S₁D₃ = 3 and S₂D₂ = 5"
+                  ],
+                  [
+                    "A1",
+                    "no negative indices, so the solution is optimal"
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -13106,6 +14231,150 @@
       "check": {
         "q": "For costs [[4,1],[2,5]], find the cost of the off-diagonal assignment.",
         "a": 3
+      },
+      "deep": {
+        "tip": "Make the matrix square with a dummy row or column of zeros, and for a maximisation subtract every entry from the largest. Reduce rows then columns, cover the zeros with the fewest lines, and if fewer than n lines are needed adjust by the smallest uncovered value (subtract it from uncovered entries and add it where lines cross) before trying again.",
+        "examples": [
+          {
+            "title": "The Hungarian algorithm",
+            "q": "Find the minimum cost allocation for the cost matrix A: 10, 7, 8; B: 6, 9, 5; C: 8, 7, 8.",
+            "steps": [
+              "Row reduction: A: 3, 0, 1; B: 1, 4, 0; C: 1, 0, 1.",
+              "Column reduction (column 1 minimum 1): A: 2, 0, 1; B: 0, 4, 0; C: 0, 0, 1.",
+              "Covering the zeros needs 3 lines (column 1, column 2, row B), so an allocation is possible.",
+              "A–2, B–3, C–1: cost 7 + 5 + 8 = 20."
+            ]
+          },
+          {
+            "title": "A maximisation",
+            "q": "Maximise the total score for A: 40, 35, 50; B: 30, 45, 40; C: 45, 40, 35.",
+            "steps": [
+              "Subtract every entry from 50: A: 10, 15, 0; B: 20, 5, 10; C: 5, 10, 15.",
+              "Apply the Hungarian algorithm to minimise.",
+              "A–3, B–2, C–1.",
+              "Maximum total = 50 + 45 + 45 = 140."
+            ]
+          },
+          {
+            "title": "A dummy row",
+            "q": "Two workers are to do two of three jobs. Costs: W₁: 7, 5, 8; W₂: 6, 9, 4. Find the minimum cost.",
+            "steps": [
+              "Add a dummy worker with costs 0, 0, 0 to make the matrix square.",
+              "The Hungarian algorithm gives W₁–job 2, W₂–job 3, dummy–job 1.",
+              "Minimum cost 5 + 4 = 9; job 1 is not done."
+            ]
+          }
+        ],
+        "fills": [
+          {
+            "q": "A 3 × 4 cost matrix.",
+            "lines": [
+              "add [[1]] dummy row"
+            ]
+          },
+          {
+            "q": "A row 7, 9, 5 reduced.",
+            "lines": [
+              "row becomes 2, 4, [[0]]"
+            ]
+          },
+          {
+            "q": "A maximisation with largest entry 50 and an entry 35.",
+            "lines": [
+              "transformed entry = [[15]]"
+            ]
+          }
+        ],
+        "exam": [
+          {
+            "stem": "<p>Four workers A, B, C, D are to be assigned to tasks 1, 2, 3, 4. Costs: A: 12, 9, 14, 10; B: 8, 11, 10, 13; C: 15, 12, 9, 11; D: 10, 14, 12, 9.</p>",
+            "parts": [
+              {
+                "q": "Reduce the rows and then the columns of the cost matrix.",
+                "m": 2,
+                "ms": [
+                  [
+                    "M1",
+                    "subtracts the row minima 9, 8, 9, 9"
+                  ],
+                  [
+                    "A1",
+                    "correct reduced matrix after the column step"
+                  ]
+                ]
+              },
+              {
+                "q": "Use the Hungarian algorithm to find the minimum cost allocation.",
+                "m": 4,
+                "ms": [
+                  [
+                    "M1",
+                    "covers the zeros with the minimum number of lines"
+                  ],
+                  [
+                    "M1",
+                    "adjusts the matrix if fewer than 4 lines are needed"
+                  ],
+                  [
+                    "A1",
+                    "A–2, B–1, C–3, D–4"
+                  ],
+                  [
+                    "A1",
+                    "minimum cost 35"
+                  ]
+                ],
+                "ans": {
+                  "a": 35.0,
+                  "tol": 0.001,
+                  "unit": ""
+                }
+              }
+            ]
+          },
+          {
+            "stem": "",
+            "parts": [
+              {
+                "q": "Explain how the Hungarian algorithm is adapted when the problem is to maximise a total profit.",
+                "m": 2,
+                "ms": [
+                  [
+                    "B1",
+                    "subtract every entry from the largest entry (or multiply by −1)"
+                  ],
+                  [
+                    "B1",
+                    "then minimise the transformed matrix as usual"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "stem": "",
+            "parts": [
+              {
+                "q": "Formulate the assignment of 3 workers to 3 tasks with costs cᵢⱼ as a linear programming problem.",
+                "m": 3,
+                "ms": [
+                  [
+                    "B1",
+                    "xᵢⱼ = 1 if worker i does task j, otherwise 0; minimise Σcᵢⱼxᵢⱼ"
+                  ],
+                  [
+                    "B1",
+                    "Σⱼ xᵢⱼ = 1 for each worker"
+                  ],
+                  [
+                    "B1",
+                    "Σᵢ xᵢⱼ = 1 for each task"
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -13140,6 +14409,129 @@
       "check": {
         "q": "A feasible flow of value 5 matches a cut capacity of 5. Find maximum flow.",
         "a": 5
+      },
+      "deep": {
+        "tip": "A flow must satisfy capacities on every arc and conservation at every intermediate vertex. Find flow-augmenting routes until none remain, then prove maximality with a cut: by the max-flow min-cut theorem, a flow equal to the capacity of a cut is maximal. Count only arcs directed from the source side to the sink side when finding a cut’s capacity.",
+        "examples": [
+          {
+            "title": "Augmenting and a cut",
+            "q": "Arcs: SA 10, SB 8, AB 3, AC 6, BD 9, CT 7, DT 8, CD 4. Find the maximum flow from S to T.",
+            "steps": [
+              "Augment S–A–C–T by 6 and S–B–D–T by 8: flow 14.",
+              "Any further route must use CT or DT, but DT is full and C can only receive 6.",
+              "The cut separating {S, A, B, D} from {C, T} has capacity AC + DT = 6 + 8 = 14.",
+              "Flow 14 = cut 14, so the maximum flow is 14."
+            ]
+          },
+          {
+            "title": "Several sources",
+            "q": "Sources S₁ (supply 15) and S₂ (supply 10) feed A and B: S₁A 9, S₁B 8, S₂B 7, AT 12, BT 11. Find the maximum flow.",
+            "steps": [
+              "Add a supersource S with arcs SS₁ 15 and SS₂ 10.",
+              "Through A at most 9 (only S₁ feeds it); through B at most min(11, 8 + 7) = 11.",
+              "Maximum flow 9 + 11 = 20; the cut through S₁A and BT has capacity 9 + 11 = 20, confirming it."
+            ]
+          }
+        ],
+        "fills": [
+          {
+            "q": "Arcs from the source side: 6 and 8.",
+            "lines": [
+              "cut capacity = [[14]]"
+            ]
+          },
+          {
+            "q": "A flow of 12 and a cut of capacity 12.",
+            "lines": [
+              "the maximum flow is [[12]]"
+            ]
+          },
+          {
+            "q": "An arc of capacity 9 carrying 5.",
+            "lines": [
+              "spare capacity = [[4]]"
+            ]
+          }
+        ],
+        "exam": [
+          {
+            "stem": "<p>Arcs and capacities: SA 12, SB 9, AC 7, AD 6, BD 8, BC 3, CT 10, DT 11.</p>",
+            "parts": [
+              {
+                "q": "Find a flow of value 21.",
+                "m": 2,
+                "ms": [
+                  [
+                    "M1",
+                    "routes using SA and SB"
+                  ],
+                  [
+                    "A1",
+                    "for example SA 12 (AC 7, AD 5), SB 9 (BC 3, BD 6), CT 10, DT 11"
+                  ]
+                ]
+              },
+              {
+                "q": "Use a cut to prove that this flow is maximal.",
+                "m": 2,
+                "ms": [
+                  [
+                    "M1",
+                    "cut {CT, DT}"
+                  ],
+                  [
+                    "A1",
+                    "capacity 21 = flow, so maximal by the max-flow min-cut theorem"
+                  ]
+                ]
+              },
+              {
+                "q": "The capacity of CT is increased to 12. Explain whether the maximum flow increases.",
+                "m": 1,
+                "ms": [
+                  [
+                    "B1",
+                    "the cut {SA, SB} has capacity 21, so the maximum flow is still 21"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "stem": "",
+            "parts": [
+              {
+                "q": "Explain how a network with two sinks and a vertex of limited capacity can be modelled so that the maximum flow algorithm applies.",
+                "m": 2,
+                "ms": [
+                  [
+                    "B1",
+                    "add a supersink joined from each sink by an arc of sufficient capacity"
+                  ],
+                  [
+                    "B1",
+                    "replace the vertex by two vertices joined by an arc with the vertex capacity"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "stem": "",
+            "parts": [
+              {
+                "q": "A cut has capacity 18 and a feasible flow has value 15. What can be concluded about the maximum flow?",
+                "m": 1,
+                "ms": [
+                  [
+                    "B1",
+                    "15 ≤ maximum flow ≤ 18"
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -13173,6 +14565,156 @@
       "check": {
         "q": "Two candidate route costs are 2+8 and 5+1. Find their minimum.",
         "a": 6
+      },
+      "deep": {
+        "tip": "Work backwards from the final stage, recording at each state the best value so far and the action that achieves it. The objective may be a minimum total, a maximum total, a minimax (smallest largest stage value) or a maximin (largest smallest stage value), so state which before starting; then trace the optimal decisions forwards from the start.",
+        "examples": [
+          {
+            "title": "A minimum-cost route",
+            "q": "Stages: S to A 5, B 3, C 6; A to D 4, E 7; B to D 6, E 5; C to E 3, F 6; D to T 8, E to T 6, F to T 3. Find the cheapest route.",
+            "steps": [
+              "Stage 1 (to T): D 8, E 6, F 3.",
+              "Stage 2: A min(4 + 8, 7 + 6) = 12; B min(6 + 8, 5 + 6) = 11; C min(3 + 6, 6 + 3) = 9.",
+              "Stage 3: S min(5 + 12, 3 + 11, 6 + 9) = 14.",
+              "Route S–B–E–T, cost 14."
+            ]
+          },
+          {
+            "title": "A maximin route",
+            "q": "For the same network, find the route whose smallest arc value is as large as possible.",
+            "steps": [
+              "Stage 1: D 8, E 6, F 3.",
+              "Stage 2: A max(min(4, 8), min(7, 6)) = 6; B max(min(6, 8), min(5, 6)) = 6; C max(min(3, 6), min(6, 3)) = 3.",
+              "Stage 3: S max(min(5, 6), min(3, 6), min(6, 3)) = 5.",
+              "Route S–A–E–T, maximin value 5."
+            ]
+          },
+          {
+            "title": "Allocating resources",
+            "q": "Four units of resource are shared between projects P, Q and R. Returns for 0–4 units: P 0, 5, 11, 12, 14; Q 0, 6, 10, 12, 13; R 0, 3, 8, 11, 15. Maximise the total return.",
+            "steps": [
+              "Stage Q + R: best return for k units is 0, 6, 10, 14, 18 for k = 0 to 4 (for example k = 3: max(0 + 11, 6 + 8, 10 + 3, 12 + 0) = 14).",
+              "Stage P: P(a) + best(4 − a) for a = 0 to 4 gives 18, 19, 21, 18, 14.",
+              "The maximum is 21 with 2 units to P, leaving 2 units, best used as 2 to Q and 0 to R.",
+              "Allocation P 2, Q 2, R 0: return 11 + 10 + 0 = 21."
+            ]
+          }
+        ],
+        "fills": [
+          {
+            "q": "Minimum stage values from D, E, F to T: 8, 6, 3.",
+            "lines": [
+              "value at C via E (3) = [[9]]"
+            ]
+          },
+          {
+            "q": "Maximin at a state with options min(4, 8) and min(7, 6).",
+            "lines": [
+              "value = [[6]]"
+            ]
+          },
+          {
+            "q": "Minimax with stage values 5, 7, 6 on a route.",
+            "lines": [
+              "route value = [[7]]"
+            ]
+          }
+        ],
+        "exam": [
+          {
+            "stem": "<p>Use the network in the worked examples.</p>",
+            "parts": [
+              {
+                "q": "Explain why dynamic programming works backwards from T.",
+                "m": 1,
+                "ms": [
+                  [
+                    "B1",
+                    "the best continuation from each state is then known when earlier decisions are made (principle of optimality)"
+                  ]
+                ]
+              },
+              {
+                "q": "Find the minimax route from S to T and its value.",
+                "m": 4,
+                "ms": [
+                  [
+                    "M1",
+                    "stage values: D 8, E 6, F 3"
+                  ],
+                  [
+                    "M1",
+                    "A 7, B 6, C 6 at stage 2"
+                  ],
+                  [
+                    "A1",
+                    "S: min(max(5, 7), max(3, 6), max(6, 6)) = 6"
+                  ],
+                  [
+                    "A1",
+                    "S–B–E–T (or S–C–E–T / S–C–F–T), value 6"
+                  ]
+                ],
+                "ans": {
+                  "a": 6.0,
+                  "tol": 0.001,
+                  "unit": ""
+                }
+              }
+            ]
+          },
+          {
+            "stem": "<p>A firm must supply 3 machines at the end of each of the next two months. Making 1, 2, 3, 4 or 5 machines in a month costs 4, 7, 9, 12 or 16 respectively. Each machine stored from month 1 to month 2 costs 1. No stock is held at the start or required at the end.</p>",
+            "parts": [
+              {
+                "q": "Use dynamic programming to find the production plan that minimises total cost.",
+                "m": 4,
+                "ms": [
+                  [
+                    "M1",
+                    "stage 2: with s machines in stock, make 3 − s, at cost 9, 7 or 4"
+                  ],
+                  [
+                    "M1",
+                    "stage 1: make 3 + s with storage cost s"
+                  ],
+                  [
+                    "A1",
+                    "totals 18, 20 and 22 for s = 0, 1, 2"
+                  ],
+                  [
+                    "A1",
+                    "make 3 in each month: cost 18"
+                  ]
+                ],
+                "ans": {
+                  "a": 18.0,
+                  "tol": 0.001,
+                  "unit": ""
+                }
+              }
+            ]
+          },
+          {
+            "stem": "",
+            "parts": [
+              {
+                "q": "In dynamic programming, explain the terms stage, state and action.",
+                "m": 2,
+                "ms": [
+                  [
+                    "B1",
+                    "a stage is a step in the decision process; a state is the situation at the start of a stage"
+                  ],
+                  [
+                    "B1",
+                    "an action is a decision that moves from a state at one stage to a state at the next"
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -13207,6 +14749,159 @@
       "check": {
         "q": "For payoffs [[3,0],[1,2]], solve 1+2p=2−2p for row mixing probability p.",
         "a": 0.25
+      },
+      "deep": {
+        "tip": "Check for a saddle point first: if the largest row minimum equals the smallest column maximum, both players should play safe. Otherwise remove dominated strategies, then for a 2 × n game plot the row player’s expected gain against p for each column and choose p at the highest point of the lower boundary.",
+        "examples": [
+          {
+            "title": "A stable solution",
+            "q": "Find the play-safe strategies for the game with row payoffs R1: 4, 2, 5; R2: 1, 1, 0; R3: 6, 2, 3.",
+            "steps": [
+              "Row minima 2, 0, 2: the row player’s maximin is 2 (R1 or R3).",
+              "Column maxima 6, 2, 5: the column player’s minimax is 2 (C2).",
+              "Maximin = minimax = 2, so there is a saddle point.",
+              "Play safe: R1 or R3 against C2; value 2."
+            ]
+          },
+          {
+            "title": "A 2 × 3 game",
+            "q": "Row payoffs: R1: 3, −1, 2; R2: −2, 4, 1. Find the row player’s optimal mixed strategy and the value.",
+            "steps": [
+              "Let R1 be played with probability p. Expected gains: C1: 5p − 2; C2: 4 − 5p; C3: p + 1.",
+              "The row player maximises the least of these lines.",
+              "The lowest boundary is highest where 5p − 2 = 4 − 5p, so p = 0.6 (and then C3 gives 1.6 ≥ 1).",
+              "Play R1 with probability 0.6 and R2 with 0.4; value 1."
+            ]
+          },
+          {
+            "title": "Dominance",
+            "q": "Reduce the game R1: 3, 1, 4; R2: 2, 0, 3; R3: 5, 2, 1 using dominance.",
+            "steps": [
+              "Every entry of R1 exceeds the matching entry of R2.",
+              "So R1 dominates R2, and R2 can be removed.",
+              "The game reduces to R1: 3, 1, 4; R3: 5, 2, 1, which has the same value."
+            ]
+          }
+        ],
+        "fills": [
+          {
+            "q": "Row minima 2, 0, 2.",
+            "lines": [
+              "maximin = [[2]]"
+            ]
+          },
+          {
+            "q": "Column maxima 6, 2, 5.",
+            "lines": [
+              "minimax = [[2]]"
+            ]
+          },
+          {
+            "q": "A zero-sum game where the row player wins 3.",
+            "lines": [
+              "the column player’s payoff = [[-3]]"
+            ]
+          }
+        ],
+        "exam": [
+          {
+            "stem": "<p>A two-person zero-sum game has row payoffs R1: 2, −1; R2: −1, 3.</p>",
+            "parts": [
+              {
+                "q": "Show that the game has no saddle point.",
+                "m": 2,
+                "ms": [
+                  [
+                    "M1",
+                    "row minima −1, −1 and column maxima 2, 3"
+                  ],
+                  [
+                    "A1",
+                    "maximin −1 ≠ minimax 2"
+                  ]
+                ]
+              },
+              {
+                "q": "Find the optimal strategy for the row player and the value of the game.",
+                "m": 4,
+                "ms": [
+                  [
+                    "M1",
+                    "expected gains 3p − 1 and 3 − 4p"
+                  ],
+                  [
+                    "M1",
+                    "equates: 3p − 1 = 3 − 4p"
+                  ],
+                  [
+                    "A1",
+                    "p = 4/7"
+                  ],
+                  [
+                    "A1",
+                    "value 5/7"
+                  ]
+                ],
+                "ans": {
+                  "a": 0.7142857143,
+                  "tol": 0.001,
+                  "unit": ""
+                }
+              }
+            ]
+          },
+          {
+            "stem": "<p>Row payoffs: R1: 4, −2, 1; R2: −1, 3, 0.</p>",
+            "parts": [
+              {
+                "q": "Find the row player’s optimal mixed strategy and the value of the game.",
+                "m": 4,
+                "ms": [
+                  [
+                    "M1",
+                    "lines 5p − 1, 3 − 5p, p"
+                  ],
+                  [
+                    "M1",
+                    "finds the highest point of the lower boundary"
+                  ],
+                  [
+                    "A1",
+                    "p = ½"
+                  ],
+                  [
+                    "A1",
+                    "value ½"
+                  ]
+                ],
+                "ans": {
+                  "a": 0.5,
+                  "tol": 0.001,
+                  "unit": ""
+                }
+              }
+            ]
+          },
+          {
+            "stem": "",
+            "parts": [
+              {
+                "q": "Explain how a zero-sum game can be formulated as a linear programming problem for the row player.",
+                "m": 2,
+                "ms": [
+                  [
+                    "B1",
+                    "add a constant so that all payoffs are positive"
+                  ],
+                  [
+                    "B1",
+                    "maximise V subject to the expected gain against each column being at least V, with the probabilities summing to 1"
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -13241,6 +14936,180 @@
       "check": {
         "q": "Find the equilibrium L satisfying L=0.8L+10.",
         "a": 50
+      },
+      "deep": {
+        "tip": "Identify the order and the type before solving: a first-order recurrence uₙ₊₁ = auₙ + b has a constant particular solution b/(1 − a) when a ≠ 1, and second-order linear recurrences use the auxiliary equation. Always check one value from the recurrence, and interpret the long-term behaviour (the limit exists when |a| &lt; 1).",
+        "examples": [
+          {
+            "title": "Repaying a loan",
+            "q": "A debt of £5000 has 1% interest added each month, after which £200 is repaid. Find the debt after n months and when it is cleared.",
+            "steps": [
+              "uₙ₊₁ = 1.01uₙ − 200, u₀ = 5000.",
+              "Constant solution c = 1.01c − 200, so c = 20 000.",
+              "uₙ = 20 000 − 15 000(1.01)ⁿ.",
+              "uₙ ≤ 0 when 1.01ⁿ ≥ 4/3: n ≥ 28.9, so the debt is cleared in the 29th month."
+            ]
+          },
+          {
+            "title": "A second-order recurrence",
+            "q": "Solve uₙ₊₂ = uₙ₊₁ + 2uₙ with u₀ = 1 and u₁ = 5.",
+            "steps": [
+              "m² − m − 2 = 0 gives m = 2 or m = −1.",
+              "uₙ = A(2)ⁿ + B(−1)ⁿ, with A + B = 1 and 2A − B = 5.",
+              "A = 2 and B = −1.",
+              "uₙ = 2ⁿ⁺¹ − (−1)ⁿ; check u₂ = 8 − 1 = 7 = 5 + 2."
+            ]
+          }
+        ],
+        "fills": [
+          {
+            "q": "uₙ₊₁ = 0.5uₙ + 6.",
+            "lines": [
+              "constant solution = [[12]]"
+            ]
+          },
+          {
+            "q": "uₙ₊₁ = 0.8uₙ + 10.",
+            "lines": [
+              "limit = [[50]]"
+            ]
+          },
+          {
+            "q": "uₙ₊₁ = 3uₙ with u₀ = 2.",
+            "lines": [
+              "u₃ = [[54]]"
+            ]
+          }
+        ],
+        "exam": [
+          {
+            "stem": "<p>A fish population is modelled by Pₙ₊₁ = 0.9Pₙ + 400, where P₀ = 2000.</p>",
+            "parts": [
+              {
+                "q": "Find Pₙ in terms of n.",
+                "m": 3,
+                "ms": [
+                  [
+                    "M1",
+                    "constant solution 4000"
+                  ],
+                  [
+                    "M1",
+                    "Pₙ = 4000 + C(0.9)ⁿ"
+                  ],
+                  [
+                    "A1",
+                    "Pₙ = 4000 − 2000(0.9)ⁿ"
+                  ]
+                ]
+              },
+              {
+                "q": "State the long-term population.",
+                "m": 1,
+                "ms": [
+                  [
+                    "B1",
+                    "4000"
+                  ]
+                ],
+                "ans": {
+                  "a": 4000.0,
+                  "tol": 0.001,
+                  "unit": ""
+                }
+              },
+              {
+                "q": "Find the first year in which the population exceeds 3500.",
+                "m": 2,
+                "ms": [
+                  [
+                    "M1",
+                    "0.9ⁿ &lt; 0.25"
+                  ],
+                  [
+                    "A1",
+                    "n = 14"
+                  ]
+                ],
+                "ans": {
+                  "a": 14.0,
+                  "tol": 0.001,
+                  "unit": ""
+                }
+              }
+            ]
+          },
+          {
+            "stem": "<p>uₙ₊₂ − 5uₙ₊₁ + 6uₙ = 0, with u₀ = 1 and u₁ = 4.</p>",
+            "parts": [
+              {
+                "q": "Find uₙ in terms of n.",
+                "m": 4,
+                "ms": [
+                  [
+                    "M1",
+                    "auxiliary equation m² − 5m + 6 = 0"
+                  ],
+                  [
+                    "A1",
+                    "m = 2, 3"
+                  ],
+                  [
+                    "M1",
+                    "A + B = 1 and 2A + 3B = 4"
+                  ],
+                  [
+                    "A1",
+                    "uₙ = 2(3)ⁿ − 2ⁿ"
+                  ]
+                ]
+              },
+              {
+                "q": "Find u₄.",
+                "m": 1,
+                "ms": [
+                  [
+                    "B1",
+                    "146"
+                  ]
+                ],
+                "ans": {
+                  "a": 146.0,
+                  "tol": 0.001,
+                  "unit": ""
+                }
+              }
+            ]
+          },
+          {
+            "stem": "<p>£100 is paid into a savings account at the end of each month. Interest of 0.5% is added to the balance each month before the payment. The account starts empty.</p>",
+            "parts": [
+              {
+                "q": "Find the balance after 24 payments.",
+                "m": 3,
+                "ms": [
+                  [
+                    "M1",
+                    "sₙ₊₁ = 1.005sₙ + 100"
+                  ],
+                  [
+                    "M1",
+                    "sₙ = 20 000(1.005ⁿ − 1)"
+                  ],
+                  [
+                    "A1",
+                    "£2543.20"
+                  ]
+                ],
+                "ans": {
+                  "a": 2543.2,
+                  "tol": 0.0001,
+                  "unit": "£"
+                }
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -13274,6 +15143,170 @@
       "check": {
         "q": "Find the expected value of 100 with probability 0.6 and −40 otherwise.",
         "a": 44
+      },
+      "deep": {
+        "tip": "Draw the tree from left to right with decision nodes (squares) and chance nodes (circles), and put payoffs at the ends. Roll back from right to left: at a chance node take the expected value; at a decision node choose the best branch and mark the rejected branches. The expected value of perfect information is the expected value with perfect information minus the best expected monetary value without it.",
+        "examples": [
+          {
+            "title": "Rolling back a tree",
+            "q": "A firm can develop a product (cost 50) or license it for a fixed 60. If developed, the product succeeds with probability 0.6 (income 200) or fails (income 20). Which option has the greater expected monetary value?",
+            "steps": [
+              "Chance node: 0.6 × 200 + 0.4 × 20 = 128.",
+              "Develop: 128 − 50 = 78.",
+              "License: 60.",
+              "Develop, since 78 &gt; 60."
+            ]
+          },
+          {
+            "title": "Expected value of perfect information",
+            "q": "For the same decision, find the expected value of perfect information.",
+            "steps": [
+              "If success were known in advance: develop, net 150. If failure were known: license, 60.",
+              "Expected value with perfect information = 0.6 × 150 + 0.4 × 60 = 114.",
+              "EVPI = 114 − 78 = 36: the most worth paying for a perfect forecast."
+            ]
+          }
+        ],
+        "fills": [
+          {
+            "q": "Outcomes 100 (probability 0.3) and −20 (probability 0.7).",
+            "lines": [
+              "EMV = [[16]]"
+            ]
+          },
+          {
+            "q": "Expected value with perfect information 90; best EMV 72.",
+            "lines": [
+              "EVPI = [[18]]"
+            ]
+          },
+          {
+            "q": "The branches leaving a chance node.",
+            "lines": [
+              "their probabilities sum to [[1]]"
+            ]
+          }
+        ],
+        "exam": [
+          {
+            "stem": "<p>A company can build a large plant, a small plant, or neither. Demand will be high with probability 0.7 or low with probability 0.3. Profits (£k): large plant 500 (high) or −100 (low); small plant 250 (high) or 80 (low); neither 0.</p>",
+            "parts": [
+              {
+                "q": "Use expected monetary value to decide which option the company should choose.",
+                "m": 3,
+                "ms": [
+                  [
+                    "M1",
+                    "EMV large = 0.7 × 500 + 0.3 × (−100) = 320"
+                  ],
+                  [
+                    "M1",
+                    "EMV small = 0.7 × 250 + 0.3 × 80 = 199"
+                  ],
+                  [
+                    "A1",
+                    "build the large plant"
+                  ]
+                ]
+              },
+              {
+                "q": "Find the expected value of perfect information.",
+                "m": 3,
+                "ms": [
+                  [
+                    "M1",
+                    "with perfect information: 0.7 × 500 + 0.3 × 80 = 374"
+                  ],
+                  [
+                    "M1",
+                    "374 − 320"
+                  ],
+                  [
+                    "A1",
+                    "54 (£54 000)"
+                  ]
+                ],
+                "ans": {
+                  "a": 54.0,
+                  "tol": 0.001,
+                  "unit": ""
+                }
+              },
+              {
+                "q": "State the most the company should pay for a market survey.",
+                "m": 1,
+                "ms": [
+                  [
+                    "B1",
+                    "no more than £54 000, the EVPI"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "stem": "<p>A contestant can take £1000 or gamble: with probability 0.4 she wins £3000, otherwise nothing.</p>",
+            "parts": [
+              {
+                "q": "Find the EMV of gambling and state the decision that maximises EMV.",
+                "m": 2,
+                "ms": [
+                  [
+                    "M1",
+                    "0.4 × 3000"
+                  ],
+                  [
+                    "A1",
+                    "£1200: gamble"
+                  ]
+                ],
+                "ans": {
+                  "a": 1200.0,
+                  "tol": 0.001,
+                  "unit": ""
+                }
+              },
+              {
+                "q": "Give a reason why she might still take the £1000.",
+                "m": 1,
+                "ms": [
+                  [
+                    "B1",
+                    "she may be risk-averse: the 0.6 chance of nothing outweighs the higher EMV (utility differs from money)"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "stem": "<p>A chance node has outcomes 100, 40 and −30 with probabilities p, 0.25 and 0.35.</p>",
+            "parts": [
+              {
+                "q": "Find p and the expected value at the node.",
+                "m": 3,
+                "ms": [
+                  [
+                    "B1",
+                    "p = 0.4"
+                  ],
+                  [
+                    "M1",
+                    "0.4 × 100 + 0.25 × 40 + 0.35 × (−30)"
+                  ],
+                  [
+                    "A1",
+                    "39.5"
+                  ]
+                ],
+                "ans": {
+                  "a": 39.5,
+                  "tol": 0.001,
+                  "unit": ""
+                }
+              }
+            ]
+          }
+        ]
       }
     }
   ],
