@@ -2,10 +2,12 @@ from pathlib import Path
 import json
 from content import LESSONS,MODULES
 from checks import CHECKS
+from deep_core import DEEP
 P=Path(__file__).resolve().parents[1]
 for lesson in LESSONS:
  assert lesson['id'] in CHECKS,lesson['id']
  lesson['check']={'q':CHECKS[lesson['id']][0],'a':CHECKS[lesson['id']][1]}
+ if lesson['id'] in DEEP:lesson['deep']=DEEP[lesson['id']]
 index=(P/'index.html').read_text(encoding='utf-8')
 if 'src="further-tools.js' not in index:index=index.replace('<script src="further-data.js', '<script src="further-tools.js?v=20261023"></script>\n<script src="further-data.js',1)
 (P/'index.html').write_text(index,encoding='utf-8')
