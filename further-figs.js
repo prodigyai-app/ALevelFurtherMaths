@@ -48,4 +48,18 @@ Object.assign(window.FURTHER_FIGS,{
  'fs1-geometric:1':()=>bars(k=>k?0.2*0.8**(k-1):0,12,k=>k>=1&&k<=4,'Geo(0.2) with X ≤ 4 shaded','Each bar is 0.8 times the one before; the shaded bars total 1 − 0.8⁴.'),
  'fs1-clt:1':()=>{const pdf=x=>Math.exp(-(((x-2.5)/0.25)**2)/2)/(0.25*Math.sqrt(2*PI)),top=pdf(2.5)*1.15;return G({w:380,h:226,x:[1.6,3.4],y:[0,top],xstep:0.25,xlabEvery:2,ylab:false,ystep:top,padL:16,padB:46,xl:'sample mean',xlBelow:true},A=>A.shadeBetween(pdf,()=>0,2.9,3.4)+A.fn(pdf,'mf-ink')+line(A.X(2.9),A.Y(0),A.X(2.9),A.Y(pdf(2.9)),'mf-ink mf-dash')+text(A.X(3.05),A.Y(top*0.2),'0.0548',{small:true,acc:true,a:'start'}),'Distribution of the sample mean, N(2.5, 0.25²)','The sample mean is far less spread out than a single observation; the shaded tail is P(mean > 2.9).');},
 });
+
+const ball=(x,y,r,lab,m)=>`<circle cx="${x}" cy="${y}" r="${r}" class="mf-fill2"/><circle cx="${x}" cy="${y}" r="${r}" class="mf-ink"/>`+text(x,y+5,lab,{small:true,bold:true})+text(x,y+r+16,m,{small:true});
+Object.assign(window.FURTHER_FIGS,{
+ 'fp2-mapping:1':()=>{const L=axes({...sq([-0.6,2.6],[-1.4,1.4],220),xl:'Re',yl:'Im'}),R=axes({...sq([-0.6,2.6],[-1.4,1.4],220),xl:'Re',yl:'Im'});const left=L.svg+circle(L,1,0,1)+L.point(1,0,'');const right=R.svg+line(R.X(0.5),R.Y(-1.35),R.X(0.5),R.Y(1.35),'mf-acc')+text(R.X(0.5)+6,R.Y(1.1),'u = ½',{small:true,acc:true,a:'start'});
+   return fig(svg(470,L.h,left+`<g transform="translate(250,0)">${right}</g>`+text(235,L.h/2-8,'w = 1/z',{small:true,bold:true})+line(222,L.h/2,248,L.h/2,'mf-ink'),{label:'Circle mapped to a line by w = 1/z'}),'z-plane (left): the circle |z − 1| = 1 passes through 0. w-plane (right): its image is the line Re(w) = ½.');},
+ 'fp2-eigen':()=>G({...sq([-2.5,2.5],[-2.5,2.5],300),xl:'x',yl:'y'},A=>A.fn(x=>x,'mf-acc mf-dash')+A.fn(x=>-x,'mf-ink mf-dash')+arrow(A.X(0),A.Y(0),A.X(1),A.Y(1),'mf-acc')+arrow(A.X(0),A.Y(0),A.X(1),A.Y(-1),'mf-ink')+text(A.X(0.2),A.Y(1.7),'λ = 3: (1, 1)',{small:true,acc:true,a:'start'})+text(A.X(0.2),A.Y(-1.8),'λ = 1: (1, −1)',{small:true,a:'start'}),'Eigenvector directions of [[2,1],[1,2]]','Along y = x vectors are stretched by 3; along y = −x they are unchanged. These lines are invariant.'),
+ 'fm1-direct:1':()=>{let g=text(20,30,'before',{small:true,bold:true,a:'start'})+ball(90,60,20,'3 kg','')+arrow(112,60,160,60)+text(136,50,'5',{small:true,acc:true})+ball(260,60,16,'2 kg','')+arrow(242,60,206,60)+text(224,50,'2',{small:true,acc:true});
+   g+=text(20,120,'after',{small:true,bold:true,a:'start'})+ball(90,150,20,'3 kg','')+arrow(112,150,150,150)+text(132,140,'v₁',{small:true,acc:true})+ball(260,150,16,'2 kg','')+arrow(278,150,326,150)+text(302,140,'v₂',{small:true,acc:true})+arrow(20,190,70,190,'mf-ink')+text(76,194,'positive direction',{small:true,a:'start'});
+   return fig(svg(360,204,g,{label:'Before and after a direct collision'}),'Draw both after-velocities in the positive direction; a negative answer means that particle moves the other way.',{max:380});},
+ 'fm1-oblique:1':()=>{let g=`<rect x="20" y="150" width="320" height="10" class="mf-fill2"/>`+line(20,150,340,150);const P=[180,150];
+   g+=arrow(P[0]-120*0.5,P[1]-120*0.866,P[0]-4,P[1]-6,'mf-ink')+arrow(P[0]+4,P[1]-6,P[0]+60,P[1]-52,'mf-acc')+line(P[0],150,P[0],40,'mf-thin')+angle(P,[20,150],[P[0]-60,P[1]-104],32,'60°',{small:true});
+   g+=text(110,60,'10 m s⁻¹',{small:true,a:'end'})+text(250,92,'5 along, 4.33 away',{small:true,acc:true,a:'start'});
+   return fig(svg(360,170,g,{label:'Sphere rebounding from a smooth wall'}),'The component along the wall (5) is unchanged; the component away from the wall is e × 8.66 = 4.33.',{notAccurate:true,max:380});},
+});
 })();
